@@ -191,15 +191,18 @@ config = {
             "name": "IR-AUTO",
             "type": "url-test",
             "proxies": proxy_names_all,
-            "url": "http://www.gstatic.com/generate_204",
-            "interval": 600
+            "url": "https://google.com",
+            "interval": 600,
+            "timeout": 60000
         },
         {
             "name": "IR-BALANCE",
             "type": "load-balance",
+            "strategy": "round-robin"
             "proxies": proxy_names_all,
-            "url": "http://www.gstatic.com/generate_204",
-            "interval": 600
+            "url": "https://google.com",
+            "interval": 600,
+            "timeout": 60000
         }
        
     ],
