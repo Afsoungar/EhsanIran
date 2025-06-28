@@ -188,7 +188,7 @@ config = {
             "type": "url-test",
             "proxies": proxy_names_all,
             "url": "https://google.com",
-            "interval": 600
+            "interval": 600,
             "timeout": 60000
         },
         {
@@ -197,7 +197,7 @@ config = {
             "strategy": "round-robin"
             "proxies": proxy_names_all,
             "url": "https://google.com",
-            "interval": 600
+            "interval": 600,
             "timeout": 60000
         },
         {
