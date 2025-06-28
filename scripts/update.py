@@ -173,6 +173,11 @@ config = {
     "proxies": proxies_all,
     "proxy-groups": [
         {
+            "name": "MAIN",
+            "type": "select",
+            "proxies": ["IR-AUTO", "IR-BALANCE", "IR-ALL", "IR-ALL-RAW"]
+        },
+        {
             "name": "IR-ALL",
             "type": "select",
             "proxies": proxy_names_clean
@@ -195,12 +200,8 @@ config = {
             "proxies": proxy_names_all,
             "url": "http://www.gstatic.com/generate_204",
             "interval": 600
-        },
-        {
-            "name": "MAIN",
-            "type": "select",
-            "proxies": ["IR-AUTO", "IR-BALANCE", "IR-ALL", "IR-ALL-RAW"]
         }
+       
     ],
     "rules": [
         "MATCH,MAIN"
