@@ -1,60 +1,71 @@
 import requests, yaml, os, socket
 from datetime import datetime
 
-# دریافت لیست پراکسی از Proxyscrape
-URL = "https://api.proxyscrape.com/v2/?request=displayproxies&protocol=socks5&country=IR"
-res = requests.get(URL)
-lines = res.text.strip().split("\n")
+# منابع مختلف پراکسی
+SOURCES = [
+    ("https://api.proxyscrape.com/v2/?request=displayproxies&protocol=socks5&country=IR", "socks5"),
+    ("https://api.proxyscrape.com/v2/?request=displayproxies&protocol=socks4&country=IR", "socks4"),
+    ("https://api.proxyscrape.com/v2/?request=displayproxies&protocol=http&country=IR", "http"),
+    ("https://api.proxyscrape.com/v2/?request=displayproxies&protocol=https&country=IR", "http"),
+    ("https://raw.githubusercontent.com/roosterkid/openproxylist/main/proxies/roosterkid.public.list", None)
+]
 
-# بررسی سالم بودن پراکسی
-def is_proxy_alive(ip, port, timeout=3):
+def is_alive(ip, port, timeout=3):
     try:
-        socket.setdefaulttimeout(timeout)
-        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        s = socket.socket()
+        s.settimeout(timeout)
         s.connect((ip, int(port)))
         s.close()
         return True
     except:
         return False
 
-# بررسی و ساخت لیست نهایی
-proxy_list = []
-for i, line in enumerate(lines):
-    parts = line.strip().split(":")
-    if len(parts) != 2:
-        continue
-    ip, port = parts
-    if is_proxy_alive(ip, port):
-        proxy_list.append({
-            "name": f"ir-proxy-{i+1}",
-            "type": "socks5",
+def ip_is_ir(ip):
+    try:
+        r = requests.get(f"http://ip-api.com/json/{ip}", timeout=5).json()
+        return r.get("countryCode") == "IR"
+    except:
+        return False
+
+proxies = []
+idx = 0
+
+for url, ptype in SOURCES:
+    r = requests.get(url, timeout=15)
+    lines = r.text.strip().splitlines()
+    for line in lines:
+        parts = line.split()
+        entry = parts[0] if len(parts)>0 else line
+        if ":" not in entry: continue
+        ip, port = entry.strip().split(":")[:2]
+        if not ip_is_ir(ip): continue
+        if not is_alive(ip, port): continue
+        idx += 1
+        ptype_final = ptype or ("socks5" if port=="1080" else "http")
+        proxies.append({
+            "name": f"ir-{ptype_final}-{idx}",
+            "type": ptype_final,
             "server": ip,
             "port": int(port),
             "udp": True
         })
 
-# ساخت فایل Clash YAML
 config = {
     "mixed-port": 7890,
     "allow-lan": True,
     "mode": "Rule",
     "log-level": "info",
-    "proxies": proxy_list,
-    "proxy-groups": [
-        {
-            "name": "IR-PROXIES",
-            "type": "url-test",
-            "proxies": [p["name"] for p in proxy_list],
-            "interval": 300
-        }
-    ],
-    "rules": [
-        "MATCH,IR-PROXIES"
-    ]
+    "proxies": proxies,
+    "proxy-groups": [{
+        "name": "IR-ALL",
+        "type": "select",
+        "proxies": [p["name"] for p in proxies]
+    }],
+    "rules": ["MATCH,IR-ALL"]
 }
 
 os.makedirs("output", exist_ok=True)
-with open("output/config.yaml", "w", encoding="utf-8") as f:
+with open("output/config.yaml","w",encoding="utf-8") as f:
     yaml.dump(config, f, allow_unicode=True)
 
-print(f"✅ آپدیت شد: {len(proxy_list)} پراکسی سالم در {datetime.now()}")
+print(f"✅ Updated {len(proxies)} proxies at {datetime.now()}")
