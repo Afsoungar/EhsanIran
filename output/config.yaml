@@ -3,81 +3,95 @@ log-level: info
 mixed-port: 7890
 mode: Rule
 proxies:
-- name: 5.160.90.91:3129
-  port: 3129
-  server: 5.160.90.91
-  type: http
-  udp: true
-- name: 185.88.177.197:80
-  port: 80
-  server: 185.88.177.197
-  type: http
-  udp: true
-- name: 80.249.112.162:80
-  port: 80
-  server: 80.249.112.162
-  type: http
-  udp: true
-- name: 109.238.181.53:8083
-  port: 8083
-  server: 109.238.181.53
-  type: http
-  udp: true
-- name: 185.118.153.110:8080
-  port: 8080
-  server: 185.118.153.110
-  type: http
-  udp: true
-- name: 80.249.112.165:80
+- name: 80.249.112.165:80 (174ms)
   port: 80
   server: 80.249.112.165
   type: http
   udp: true
-- name: 46.249.122.1:8080
-  port: 8080
-  server: 46.249.122.1
-  type: http
-  udp: true
-- name: 81.12.96.209:80
+- name: 81.12.96.209:80 (198ms)
   port: 80
   server: 81.12.96.209
   type: http
   udp: true
-- name: 80.249.112.163:80
+- name: 80.249.112.164:80 (177ms)
+  port: 80
+  server: 80.249.112.164
+  type: http
+  udp: true
+- name: 80.249.112.162:80 (180ms)
+  port: 80
+  server: 80.249.112.162
+  type: http
+  udp: true
+- name: 80.249.112.166:80 (174ms)
+  port: 80
+  server: 80.249.112.166
+  type: http
+  udp: true
+- name: 78.38.53.36:80 (166ms)
+  port: 80
+  server: 78.38.53.36
+  type: http
+  udp: true
+- name: 46.34.165.86:443
+  port: 443
+  server: 46.34.165.86
+  type: http
+  udp: true
+- name: 185.202.58.2:3129
+  port: 3129
+  server: 185.202.58.2
+  type: http
+  udp: true
+- name: 46.209.15.187:8080
+  port: 8080
+  server: 46.209.15.187
+  type: http
+  udp: true
+- name: 80.249.112.163:80 (188ms)
   port: 80
   server: 80.249.112.163
   type: http
   udp: true
-- name: 89.42.208.119:80
-  port: 80
-  server: 89.42.208.119
-  type: http
-  udp: true
-- name: 217.218.201.25:5678
-  port: 5678
-  server: 217.218.201.25
-  type: http
-  udp: true
-- name: 2.185.149.4:8888
-  port: 8888
-  server: 2.185.149.4
+- name: 85.133.241.223:3129
+  port: 3129
+  server: 85.133.241.223
   type: http
   udp: true
 proxy-groups:
 - name: IR-ALL
-  proxies:
-  - 5.160.90.91:3129
-  - 185.88.177.197:80
-  - 80.249.112.162:80
-  - 109.238.181.53:8083
-  - 185.118.153.110:8080
-  - 80.249.112.165:80
-  - 46.249.122.1:8080
-  - 81.12.96.209:80
-  - 80.249.112.163:80
-  - 89.42.208.119:80
-  - 217.218.201.25:5678
-  - 2.185.149.4:8888
+  proxies: &id001
+  - 80.249.112.165:80 (174ms)
+  - 81.12.96.209:80 (198ms)
+  - 80.249.112.164:80 (177ms)
+  - 80.249.112.162:80 (180ms)
+  - 80.249.112.166:80 (174ms)
+  - 78.38.53.36:80 (166ms)
+  - 80.249.112.163:80 (188ms)
   type: select
+- name: IR-ALL-RAW
+  proxies:
+  - 80.249.112.163:80 (188ms)
+  - 80.249.112.166:80 (174ms)
+  - 46.209.15.187:8080
+  - 78.38.53.36:80 (166ms)
+  - 85.133.241.223:3129
+  - 80.249.112.162:80 (180ms)
+  - 185.202.58.2:3129
+  - 46.34.165.86:443
+  - 81.12.96.209:80 (198ms)
+  - 80.249.112.165:80 (174ms)
+  - 80.249.112.164:80 (177ms)
+  type: select
+- interval: 600
+  name: IR-AUTO
+  proxies: *id001
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+- interval: 600
+  name: IR-BALANCE
+  proxies: *id001
+  type: load-balance
+  url: http://www.gstatic.com/generate_204
 rules:
-- MATCH,IR-ALL
+- MATCH,IR-AUTO
