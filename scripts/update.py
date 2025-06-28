@@ -4,7 +4,9 @@ from urllib.parse import urlparse, parse_qs
 SOURCES = [
     ("https://api.proxyscrape.com/v2/?request=displayproxies&protocol=socks5&country=IR", "socks5"),
     ("https://api.proxyscrape.com/v2/?request=displayproxies&protocol=http&country=IR", "http"),
-    ("https://api.proxyscrape.com/v2/?request=displayproxies&protocol=https&country=IR", "http")
+    ("https://api.proxyscrape.com/v2/?request=displayproxies&protocol=https&country=IR", "http"),
+    ("https://raw.githubusercontent.com/roosterkid/openproxylist/main/proxies/http.txt", "http"),
+    ("https://raw.githubusercontent.com/roosterkid/openproxylist/main/proxies/socks5.txt", "socks5")
 ]
 
 proxies_all = []
