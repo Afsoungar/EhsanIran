@@ -6,7 +6,8 @@ SOURCES = [
     ("https://api.proxyscrape.com/v2/?request=displayproxies&protocol=http&country=IR", "http"),
     ("https://api.proxyscrape.com/v2/?request=displayproxies&protocol=https&country=IR", "http"),
     ("https://raw.githubusercontent.com/roosterkid/openproxylist/main/proxies/http.txt", "http"),
-    ("https://raw.githubusercontent.com/roosterkid/openproxylist/main/proxies/socks5.txt", "socks5")
+    ("https://raw.githubusercontent.com/roosterkid/openproxylist/main/proxies/socks5.txt", "socks5"),
+    ("https://raw.githubusercontent.com/roosterkid/openproxylist/main/proxies/vmess.txt", "vmess"),
 ]
 
 proxies_all = []
