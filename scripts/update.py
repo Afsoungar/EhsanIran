@@ -1,17 +1,22 @@
-import requests, yaml, os, base64, json
+import requests, yaml, os, socket, time, base64, json
 from urllib.parse import urlparse, parse_qs
 
 SOURCES = [
+    # SOCKS5 / HTTP منابع
     ("https://api.proxyscrape.com/v2/?request=displayproxies&protocol=socks5&country=IR", "socks5"),
     ("https://api.proxyscrape.com/v2/?request=displayproxies&protocol=http&country=IR", "http"),
-    ("https://api.proxyscrape.com/v2/?request=displayproxies&protocol=https&country=IR", "http"),
-    ("https://raw.githubusercontent.com/hookzof/socks5_list/master/proxy.txt", "socks5")
+    ("https://api.proxyscrape.com/v2/?request=displayproxies&protocol=https&country=IR", "http")
 ]
 
-proxies_all = []
-proxy_names = []
-seen_ips = set()
-
+def is_alive(ip, port, timeout=7):
+    try:
+        start = time.time()
+        s = socket.create_connection((ip, int(port)), timeout=timeout)
+        s.close()
+        ping = int((time.time() - start) * 1000)
+        return True, ping
+    except:
+        return False, None
 
 def ip_is_ir(ip):
     try:
@@ -20,38 +25,41 @@ def ip_is_ir(ip):
     except:
         return False
 
-
 def parse_ss(url):
     try:
-        if url.startswith("ss://"):
-            url = url[5:]
-            if "#" in url:
-                url, tag = url.split("#", 1)
-            else:
-                tag = "ss"
-            decoded = base64.b64decode(url.split("@")[-1] if "@" in url else url + "==").decode()
-            method_pass, server_port = decoded.split("@")
-            method, password = method_pass.split(":", 1)
-            server, port = server_port.split(":")
-            return {
-                "name": f"{server}:{port}",
-                "type": "ss",
-                "server": server,
-                "port": int(port),
-                "cipher": method,
-                "password": password,
-                "udp": True
-            }
+        from urllib.parse import unquote
+        url = url[5:]
+        if "#" in url:
+            url, tag = url.split("#", 1)
+        else:
+            tag = "ss"
+        if "@" not in url:
+            url = base64.b64decode(url + "==").decode()
+            method, rest = url.split(":", 1)
+            password, serverport = rest.split("@")
+            server, port = serverport.split(":")
+        else:
+            userinfo, serverinfo = url.split("@")
+            method, password = base64.b64decode(userinfo + "==").decode().split(":")
+            server, port = serverinfo.split(":")
+        return {
+            "name": tag,
+            "type": "ss",
+            "server": server,
+            "port": int(port),
+            "cipher": method,
+            "password": password,
+            "udp": True
+        }
     except:
         return None
-
 
 def parse_vless(url):
     try:
         parsed = urlparse(url)
         q = parse_qs(parsed.query)
         return {
-            "name": f"{parsed.hostname}:{parsed.port}",
+            "name": parsed.fragment or f"{parsed.hostname}:{parsed.port}",
             "type": "vless",
             "server": parsed.hostname,
             "port": int(parsed.port),
@@ -67,6 +75,10 @@ def parse_vless(url):
     except:
         return None
 
+proxies_all = []
+proxy_names_clean = []
+proxy_names_raw = []
+seen_ips = set()
 
 for url, ptype in SOURCES:
     try:
@@ -86,7 +98,8 @@ for url, ptype in SOURCES:
                 port = conf.get("port")
                 if not ip or not port or not ip_is_ir(ip):
                     continue
-                name = f"{ip}:{port}"
+                alive, ping = is_alive(ip, port)
+                name = f"{ip}:{port} ({ping}ms)" if alive else f"{ip}:{port}"
                 proxy_entry = {
                     "name": name,
                     "type": "vmess",
@@ -105,7 +118,10 @@ for url, ptype in SOURCES:
                         "headers": {"Host": conf.get("host", "")}
                     }
                 proxies_all.append(proxy_entry)
-                proxy_names.append(name)
+                if alive:
+                    proxy_names_clean.append(name)
+                else:
+                    proxy_names_raw.append(name)
             except:
                 continue
 
@@ -113,24 +129,33 @@ for url, ptype in SOURCES:
             conf = parse_vless(line)
             if not conf or not ip_is_ir(conf["server"]):
                 continue
+            alive, ping = is_alive(conf["server"], conf["port"])
+            conf["name"] = f"{conf['server']}:{conf['port']} ({ping}ms)" if alive else f"{conf['server']}:{conf['port']}"
             proxies_all.append(conf)
-            proxy_names.append(conf["name"])
+            if alive:
+                proxy_names_clean.append(conf["name"])
+            else:
+                proxy_names_raw.append(conf["name"])
 
         elif ptype == "ss" and line.startswith("ss://"):
             conf = parse_ss(line)
             if not conf or not ip_is_ir(conf["server"]):
                 continue
+            alive, ping = is_alive(conf["server"], conf["port"])
+            conf["name"] = f"{conf['server']}:{conf['port']} ({ping}ms)" if alive else f"{conf['server']}:{conf['port']}"
             proxies_all.append(conf)
-            proxy_names.append(conf["name"])
+            if alive:
+                proxy_names_clean.append(conf["name"])
+            else:
+                proxy_names_raw.append(conf["name"])
 
         elif ":" in line and ptype in ["http", "socks5"]:
             ip, port = line.strip().split(":")[:2]
-            if ip in seen_ips:
+            if ip in seen_ips or not ip_is_ir(ip):
                 continue
             seen_ips.add(ip)
-            if not ip_is_ir(ip):
-                continue
-            name = f"{ip}:{port}"
+            alive, ping = is_alive(ip, port)
+            name = f"{ip}:{port} ({ping}ms)" if alive else f"{ip}:{port}"
             proxy_entry = {
                 "name": name,
                 "type": ptype,
@@ -139,8 +164,12 @@ for url, ptype in SOURCES:
                 "udp": True
             }
             proxies_all.append(proxy_entry)
-            proxy_names.append(name)
+            if alive:
+                proxy_names_clean.append(name)
+            else:
+                proxy_names_raw.append(name)
 
+# ساخت فایل کانفیگ Clash
 config = {
     "mixed-port": 7890,
     "allow-lan": True,
@@ -151,14 +180,33 @@ config = {
         {
             "name": "IR-ALL",
             "type": "select",
-            "proxies": proxy_names
+            "proxies": proxy_names_clean
+        },
+        {
+            "name": "IR-ALL-RAW",
+            "type": "select",
+            "proxies": list(set(proxy_names_clean + proxy_names_raw))
+        },
+        {
+            "name": "IR-AUTO",
+            "type": "url-test",
+            "proxies": proxy_names_clean,
+            "url": "http://www.gstatic.com/generate_204",
+            "interval": 600
+        },
+        {
+            "name": "IR-BALANCE",
+            "type": "load-balance",
+            "proxies": proxy_names_clean,
+            "url": "http://www.gstatic.com/generate_204",
+            "interval": 600
         }
     ],
-    "rules": ["MATCH,IR-ALL"]
+    "rules": ["MATCH,IR-AUTO"]
 }
 
 os.makedirs("output", exist_ok=True)
 with open("output/config.yaml", "w", encoding="utf-8") as f:
     yaml.dump(config, f, allow_unicode=True)
 
-print(f"✅ Collected {len(proxies_all)} Iranian proxies.")
+print(f"✅ Updated {len(proxy_names_clean)} clean proxies and {len(proxies_all)} total")
