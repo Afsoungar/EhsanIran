@@ -3,44 +3,9 @@ log-level: info
 mixed-port: 7890
 mode: Rule
 proxies:
-- name: 80.249.112.166:80
+- name: 80.249.112.163:80
   port: 80
-  server: 80.249.112.166
-  type: http
-  udp: true
-- name: 5.160.146.195:8080
-  port: 8080
-  server: 5.160.146.195
-  type: http
-  udp: true
-- name: 185.88.177.197:8080
-  port: 8080
-  server: 185.88.177.197
-  type: http
-  udp: true
-- name: 213.207.200.222:8080
-  port: 8080
-  server: 213.207.200.222
-  type: http
-  udp: true
-- name: 81.12.96.209:80
-  port: 80
-  server: 81.12.96.209
-  type: http
-  udp: true
-- name: 188.136.208.244:8080
-  port: 8080
-  server: 188.136.208.244
-  type: http
-  udp: true
-- name: 81.12.40.250:8080
-  port: 8080
-  server: 81.12.40.250
-  type: http
-  udp: true
-- name: 80.249.112.164:80
-  port: 80
-  server: 80.249.112.164
+  server: 80.249.112.163
   type: http
   udp: true
 - name: 80.249.112.162:80
@@ -48,34 +13,39 @@ proxies:
   server: 80.249.112.162
   type: http
   udp: true
+- name: 81.12.96.209:80
+  port: 80
+  server: 81.12.96.209
+  type: http
+  udp: true
+- name: 213.207.200.222:8080
+  port: 8080
+  server: 213.207.200.222
+  type: http
+  udp: true
 - name: 80.249.112.165:80
   port: 80
   server: 80.249.112.165
   type: http
   udp: true
-- name: 109.201.13.186:8080
+- name: 109.201.13.187:8080
   port: 8080
-  server: 109.201.13.186
+  server: 109.201.13.187
   type: http
   udp: true
-- name: 78.38.53.36:80
+- name: 80.249.112.164:80
   port: 80
-  server: 78.38.53.36
+  server: 80.249.112.164
   type: http
   udp: true
-- name: 109.230.92.50:3129
-  port: 3129
-  server: 109.230.92.50
-  type: http
-  udp: true
-- name: 80.249.112.163:80
+- name: 80.249.112.166:80
   port: 80
-  server: 80.249.112.163
+  server: 80.249.112.166
   type: http
   udp: true
-- name: 93.118.138.137:8080
+- name: 185.88.177.197:8080
   port: 8080
-  server: 93.118.138.137
+  server: 185.88.177.197
   type: http
   udp: true
 - name: 217.218.201.25:5678
@@ -88,26 +58,32 @@ proxies:
   server: 2.185.149.4
   type: http
   udp: true
+- name: 78.38.53.36:80
+  port: 80
+  server: 78.38.53.36
+  type: socks5
+  udp: true
+- name: 77.104.75.97:5678
+  port: 5678
+  server: 77.104.75.97
+  type: socks5
+  udp: true
 proxy-groups:
 - name: IR-ALL
   proxies:
-  - 80.249.112.166:80
-  - 5.160.146.195:8080
-  - 185.88.177.197:8080
-  - 213.207.200.222:8080
-  - 81.12.96.209:80
-  - 188.136.208.244:8080
-  - 81.12.40.250:8080
-  - 80.249.112.164:80
-  - 80.249.112.162:80
-  - 80.249.112.165:80
-  - 109.201.13.186:8080
-  - 78.38.53.36:80
-  - 109.230.92.50:3129
   - 80.249.112.163:80
-  - 93.118.138.137:8080
+  - 80.249.112.162:80
+  - 81.12.96.209:80
+  - 213.207.200.222:8080
+  - 80.249.112.165:80
+  - 109.201.13.187:8080
+  - 80.249.112.164:80
+  - 80.249.112.166:80
+  - 185.88.177.197:8080
   - 217.218.201.25:5678
   - 2.185.149.4:8888
+  - 78.38.53.36:80
+  - 77.104.75.97:5678
   type: select
 rules:
 - MATCH,IR-ALL
