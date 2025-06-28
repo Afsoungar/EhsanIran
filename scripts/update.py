@@ -2,7 +2,6 @@ import requests, yaml, os, socket, time, base64, json
 from urllib.parse import urlparse, parse_qs
 
 SOURCES = [
-    # منابع پراکسی
     ("https://api.proxyscrape.com/v2/?request=displayproxies&protocol=socks5&country=IR", "socks5"),
     ("https://api.proxyscrape.com/v2/?request=displayproxies&protocol=http&country=IR", "http"),
     ("https://api.proxyscrape.com/v2/?request=displayproxies&protocol=https&country=IR", "http")
@@ -165,7 +164,7 @@ for url, ptype in SOURCES:
             except:
                 continue
 
-# ⚙️ ایجاد فایل کانفیگ نهایی
+# ✅ ساختن فایل کانفیگ Clash
 config = {
     "mixed-port": 7890,
     "allow-lan": True,
@@ -207,3 +206,9 @@ config = {
         "MATCH,MAIN"
     ]
 }
+
+os.makedirs("output", exist_ok=True)
+with open("output/config.yaml", "w", encoding="utf-8") as f:
+    yaml.dump(config, f, allow_unicode=True)
+
+print(f"✅ Done: {len(proxy_names_all)} proxies total — {len(proxy_names_clean)} with valid ping.")
