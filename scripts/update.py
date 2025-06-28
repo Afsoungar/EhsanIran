@@ -187,18 +187,15 @@ config = {
             "name": "IR-AUTO",
             "type": "url-test",
             "proxies": proxy_names_all,
-            "url": "https://google.com",
-            "interval": 600,
-            "timeout": 60000
+            "url": "http://www.gstatic.com/generate_204",
+            "interval": 600
         },
         {
             "name": "IR-BALANCE",
             "type": "load-balance",
-            "strategy": "round-robin"
             "proxies": proxy_names_all,
-            "url": "https://google.com",
-            "interval": 600,
-            "timeout": 60000
+            "url": "http://www.gstatic.com/generate_204",
+            "interval": 600
         },
         {
             "name": "MAIN",
@@ -210,9 +207,3 @@ config = {
         "MATCH,MAIN"
     ]
 }
-
-os.makedirs("output", exist_ok=True)
-with open("output/config.yaml", "w", encoding="utf-8") as f:
-    yaml.dump(config, f, allow_unicode=True)
-
-print(f"✅ Done: {len(proxy_names_all)} proxies total — {len(proxy_names_clean)} with valid ping.")
