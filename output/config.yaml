@@ -3,51 +3,43 @@ log-level: info
 mixed-port: 7890
 mode: Rule
 proxies:
-- name: ir-http-1
-  port: 80
-  server: 81.12.96.209
-  type: http
-  udp: true
-- name: ir-http-2
-  port: 80
-  server: 80.249.112.163
-  type: http
-  udp: true
-- name: ir-http-3
+- name: 80.249.112.164:80 (174ms)
   port: 80
   server: 80.249.112.164
   type: http
   udp: true
-- name: ir-http-4
+- name: 80.249.112.166:80 (177ms)
   port: 80
   server: 80.249.112.166
   type: http
   udp: true
-- name: ir-http-5
+- name: 80.249.112.162:80 (173ms)
   port: 80
-  server: 81.12.96.209
+  server: 80.249.112.162
   type: http
   udp: true
-- name: ir-http-6
+- name: 80.249.112.163:80 (178ms)
   port: 80
   server: 80.249.112.163
-  type: http
-  udp: true
-- name: ir-http-7
-  port: 80
-  server: 80.249.112.164
   type: http
   udp: true
 proxy-groups:
 - name: IR-ALL
   proxies:
-  - ir-http-1
-  - ir-http-2
-  - ir-http-3
-  - ir-http-4
-  - ir-http-5
-  - ir-http-6
-  - ir-http-7
+  - 80.249.112.164:80 (174ms)
+  - 80.249.112.166:80 (177ms)
+  - 80.249.112.162:80 (173ms)
+  - 80.249.112.163:80 (178ms)
+  type: select
+- name: IR-ALL-RAW
+  proxies:
+  - 217.218.201.25:5678
+  - 2.185.149.4:8888
+  - 188.136.208.244:8080
+  - 80.249.112.164:80
+  - 80.249.112.166:80
+  - 80.249.112.162:80
+  - 80.249.112.163:80
   type: select
 rules:
 - MATCH,IR-ALL
