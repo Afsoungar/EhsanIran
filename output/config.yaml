@@ -3,85 +3,111 @@ log-level: info
 mixed-port: 7890
 mode: Rule
 proxies:
-- name: 80.249.112.165:80 (174ms)
-  port: 80
-  server: 80.249.112.165
-  type: http
-  udp: true
-- name: 81.12.96.209:80 (198ms)
-  port: 80
-  server: 81.12.96.209
-  type: http
-  udp: true
-- name: 80.249.112.164:80 (177ms)
-  port: 80
-  server: 80.249.112.164
-  type: http
-  udp: true
-- name: 80.249.112.162:80 (180ms)
-  port: 80
-  server: 80.249.112.162
-  type: http
-  udp: true
-- name: 80.249.112.166:80 (174ms)
-  port: 80
-  server: 80.249.112.166
-  type: http
-  udp: true
-- name: 78.38.53.36:80 (166ms)
-  port: 80
-  server: 78.38.53.36
-  type: http
-  udp: true
-- name: 46.34.165.86:443
+- name: 46.34.165.86:443 (210ms)
   port: 443
   server: 46.34.165.86
   type: http
   udp: true
-- name: 185.202.58.2:3129
-  port: 3129
-  server: 185.202.58.2
-  type: http
-  udp: true
-- name: 46.209.15.187:8080
+- name: 5.160.47.72:8080 (1280ms)
   port: 8080
-  server: 46.209.15.187
+  server: 5.160.47.72
   type: http
   udp: true
-- name: 80.249.112.163:80 (188ms)
+- name: 81.12.96.209:80 (276ms)
+  port: 80
+  server: 81.12.96.209
+  type: http
+  udp: true
+- name: 78.38.53.36:80 (232ms)
+  port: 80
+  server: 78.38.53.36
+  type: http
+  udp: true
+- name: 80.249.112.166:80 (209ms)
+  port: 80
+  server: 80.249.112.166
+  type: http
+  udp: true
+- name: 80.249.112.162:80 (207ms)
+  port: 80
+  server: 80.249.112.162
+  type: http
+  udp: true
+- name: 80.249.112.163:80 (202ms)
   port: 80
   server: 80.249.112.163
   type: http
   udp: true
-- name: 85.133.241.223:3129
-  port: 3129
-  server: 85.133.241.223
+- name: 5.202.174.38:8080
+  port: 8080
+  server: 5.202.174.38
+  type: http
+  udp: true
+- name: 80.249.112.164:80 (191ms)
+  port: 80
+  server: 80.249.112.164
+  type: http
+  udp: true
+- name: 84.241.6.102:8080
+  port: 8080
+  server: 84.241.6.102
+  type: http
+  udp: true
+- name: 93.118.138.137:8080
+  port: 8080
+  server: 93.118.138.137
+  type: http
+  udp: true
+- name: 80.249.112.165:80 (209ms)
+  port: 80
+  server: 80.249.112.165
+  type: http
+  udp: true
+- name: 185.126.5.72:8080
+  port: 8080
+  server: 185.126.5.72
+  type: http
+  udp: true
+- name: 217.218.201.25:5678
+  port: 5678
+  server: 217.218.201.25
+  type: http
+  udp: true
+- name: 2.185.149.4:8888
+  port: 8888
+  server: 2.185.149.4
   type: http
   udp: true
 proxy-groups:
 - name: IR-ALL
-  proxies: &id001
-  - 80.249.112.165:80 (174ms)
-  - 81.12.96.209:80 (198ms)
-  - 80.249.112.164:80 (177ms)
-  - 80.249.112.162:80 (180ms)
-  - 80.249.112.166:80 (174ms)
-  - 78.38.53.36:80 (166ms)
-  - 80.249.112.163:80 (188ms)
+  proxies:
+  - 46.34.165.86:443 (210ms)
+  - 5.160.47.72:8080 (1280ms)
+  - 81.12.96.209:80 (276ms)
+  - 78.38.53.36:80 (232ms)
+  - 80.249.112.166:80 (209ms)
+  - 80.249.112.162:80 (207ms)
+  - 80.249.112.163:80 (202ms)
+  - 80.249.112.164:80 (191ms)
+  - 80.249.112.165:80 (209ms)
   type: select
 - name: IR-ALL-RAW
-  proxies:
-  - 80.249.112.163:80 (188ms)
-  - 80.249.112.166:80 (174ms)
-  - 46.209.15.187:8080
-  - 78.38.53.36:80 (166ms)
-  - 85.133.241.223:3129
-  - 80.249.112.162:80 (180ms)
-  - 185.202.58.2:3129
-  - 46.34.165.86:443
-  - 81.12.96.209:80 (198ms)
-  - 80.249.112.165:80 (174ms)
-  - 80.249.112.164:80 (177ms)
+  proxies: &id001
+  - 46.34.165.86:443 (210ms)
+  - 5.160.47.72:8080 (1280ms)
+  - 81.12.96.209:80 (276ms)
+  - 78.38.53.36:80 (232ms)
+  - 80.249.112.166:80 (209ms)
+  - 80.249.112.162:80 (207ms)
+  - 80.249.112.163:80 (202ms)
+  - 5.202.174.38:8080
+  - 80.249.112.164:80 (191ms)
+  - 84.241.6.102:8080
+  - 93.118.138.137:8080
+  - 80.249.112.165:80 (209ms)
+  - 185.126.5.72:8080
+  - 217.218.201.25:5678
+  - 2.185.149.4:8888
   type: select
 - interval: 600
   name: IR-AUTO
@@ -93,5 +119,12 @@ proxy-groups:
   proxies: *id001
   type: load-balance
   url: http://www.gstatic.com/generate_204
+- name: MAIN
+  proxies:
+  - IR-AUTO
+  - IR-BALANCE
+  - IR-ALL
+  - IR-ALL-RAW
+  type: select
 rules:
-- MATCH,IR-AUTO
+- MATCH,MAIN
