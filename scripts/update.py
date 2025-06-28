@@ -4,11 +4,7 @@ from datetime import datetime
 SOURCES = [
     ("https://api.proxyscrape.com/v2/?request=displayproxies&protocol=socks5&country=IR", "socks5"),
     ("https://api.proxyscrape.com/v2/?request=displayproxies&protocol=http&country=IR", "http"),
-    ("https://api.proxyscrape.com/v2/?request=displayproxies&protocol=https&country=IR", "http"),
-    ("https://proxyspace.pro/http.txt?country=ir", "http"),
-    ("https://proxyspace.pro/socks5.txt?country=ir", "socks5"),
-    ("https://proxyscan.io/download?type=http&format=txt&country=IR", "http"),
-    ("https://proxyscan.io/download?type=socks5&format=txt&country=IR", "socks5")
+    ("https://api.proxyscrape.com/v2/?request=displayproxies&protocol=https&country=IR", "http")
 ]
 
 def is_alive(ip, port, timeout=3):
@@ -80,17 +76,30 @@ config = {
     "proxies": proxies_all,
     "proxy-groups": [
         {
-            "name": "IR-ALL",
+            "name": "ALL",
+            "type": "select",
+            "use": IR-ALL-RAW + IR-ALL + Test-ALL
+        }
+        {
+            "name": "IR-ALL-RAW",
             "type": "select",
             "proxies": proxy_names_clean
         },
         {
-            "name": "IR-ALL-RAW",
+            "name": "IR-ALL",
             "type": "select",
+            "proxies": proxy_names_clean + proxy_names_raw
+        },
+        {
+            "name": "Test-ALL",
+            "type": "fallback",
+            "url": "https://google.com",
+            "interval": "1600"
+            "timeout": "60000"
             "proxies": proxy_names_clean + proxy_names_raw
         }
     ],
-    "rules": ["MATCH,IR-ALL"]
+    "rules": ["MATCH,ALL"]
 }
 
 os.makedirs("output", exist_ok=True)
