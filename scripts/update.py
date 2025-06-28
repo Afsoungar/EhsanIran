@@ -79,7 +79,7 @@ config = {
             "name": "ALL",
             "type": "select",
             "use": IR-ALL-RAW + IR-ALL + Test-ALL
-        }
+        },
         {
             "name": "IR-ALL-RAW",
             "type": "select",
