@@ -2,7 +2,7 @@ import requests, yaml, os, socket, time, base64, json
 from urllib.parse import urlparse, parse_qs
 
 SOURCES = [
-    # SOCKS5 / HTTP منابع
+    # منابع پراکسی
     ("https://api.proxyscrape.com/v2/?request=displayproxies&protocol=socks5&country=IR", "socks5"),
     ("https://api.proxyscrape.com/v2/?request=displayproxies&protocol=http&country=IR", "http"),
     ("https://api.proxyscrape.com/v2/?request=displayproxies&protocol=https&country=IR", "http")
@@ -27,7 +27,6 @@ def ip_is_ir(ip):
 
 def parse_ss(url):
     try:
-        from urllib.parse import unquote
         url = url[5:]
         if "#" in url:
             url, tag = url.split("#", 1)
@@ -77,18 +76,20 @@ def parse_vless(url):
 
 proxies_all = []
 proxy_names_clean = []
-proxy_names_raw = []
+proxy_names_all = []
 seen_ips = set()
 
 for url, ptype in SOURCES:
     try:
         r = requests.get(url, timeout=20)
+        lines = r.text.strip().splitlines()
     except:
         continue
-    lines = r.text.strip().splitlines()
 
     for line in lines:
         line = line.strip()
+        if not line:
+            continue
 
         if ptype == "vmess" and line.startswith("vmess://"):
             try:
@@ -100,7 +101,7 @@ for url, ptype in SOURCES:
                     continue
                 alive, ping = is_alive(ip, port)
                 name = f"{ip}:{port} ({ping}ms)" if alive else f"{ip}:{port}"
-                proxy_entry = {
+                proxy = {
                     "name": name,
                     "type": "vmess",
                     "server": ip,
@@ -113,15 +114,13 @@ for url, ptype in SOURCES:
                     "udp": True
                 }
                 if conf.get("net") == "ws":
-                    proxy_entry["ws-opts"] = {
+                    proxy["ws-opts"] = {
                         "path": conf.get("path", "/"),
                         "headers": {"Host": conf.get("host", "")}
                     }
-                proxies_all.append(proxy_entry)
-                if alive:
-                    proxy_names_clean.append(name)
-                else:
-                    proxy_names_raw.append(name)
+                proxies_all.append(proxy)
+                proxy_names_all.append(name)
+                if alive: proxy_names_clean.append(name)
             except:
                 continue
 
@@ -132,10 +131,8 @@ for url, ptype in SOURCES:
             alive, ping = is_alive(conf["server"], conf["port"])
             conf["name"] = f"{conf['server']}:{conf['port']} ({ping}ms)" if alive else f"{conf['server']}:{conf['port']}"
             proxies_all.append(conf)
-            if alive:
-                proxy_names_clean.append(conf["name"])
-            else:
-                proxy_names_raw.append(conf["name"])
+            proxy_names_all.append(conf["name"])
+            if alive: proxy_names_clean.append(conf["name"])
 
         elif ptype == "ss" and line.startswith("ss://"):
             conf = parse_ss(line)
@@ -144,32 +141,31 @@ for url, ptype in SOURCES:
             alive, ping = is_alive(conf["server"], conf["port"])
             conf["name"] = f"{conf['server']}:{conf['port']} ({ping}ms)" if alive else f"{conf['server']}:{conf['port']}"
             proxies_all.append(conf)
-            if alive:
-                proxy_names_clean.append(conf["name"])
-            else:
-                proxy_names_raw.append(conf["name"])
+            proxy_names_all.append(conf["name"])
+            if alive: proxy_names_clean.append(conf["name"])
 
         elif ":" in line and ptype in ["http", "socks5"]:
-            ip, port = line.strip().split(":")[:2]
-            if ip in seen_ips or not ip_is_ir(ip):
+            try:
+                ip, port = line.strip().split(":")[:2]
+                if ip in seen_ips or not ip_is_ir(ip):
+                    continue
+                seen_ips.add(ip)
+                alive, ping = is_alive(ip, port)
+                name = f"{ip}:{port} ({ping}ms)" if alive else f"{ip}:{port}"
+                proxy = {
+                    "name": name,
+                    "type": ptype,
+                    "server": ip,
+                    "port": int(port),
+                    "udp": True
+                }
+                proxies_all.append(proxy)
+                proxy_names_all.append(name)
+                if alive: proxy_names_clean.append(name)
+            except:
                 continue
-            seen_ips.add(ip)
-            alive, ping = is_alive(ip, port)
-            name = f"{ip}:{port} ({ping}ms)" if alive else f"{ip}:{port}"
-            proxy_entry = {
-                "name": name,
-                "type": ptype,
-                "server": ip,
-                "port": int(port),
-                "udp": True
-            }
-            proxies_all.append(proxy_entry)
-            if alive:
-                proxy_names_clean.append(name)
-            else:
-                proxy_names_raw.append(name)
 
-# ساخت فایل کانفیگ Clash
+# ⚙️ ایجاد فایل کانفیگ نهایی
 config = {
     "mixed-port": 7890,
     "allow-lan": True,
@@ -185,28 +181,38 @@ config = {
         {
             "name": "IR-ALL-RAW",
             "type": "select",
-            "proxies": list(set(proxy_names_clean + proxy_names_raw))
+            "proxies": proxy_names_all
         },
         {
             "name": "IR-AUTO",
             "type": "url-test",
-            "proxies": proxy_names_clean,
-            "url": "http://www.gstatic.com/generate_204",
+            "proxies": proxy_names_all,
+            "url": "https://google.com",
             "interval": 600
+            "timeout": 60000
         },
         {
             "name": "IR-BALANCE",
             "type": "load-balance",
-            "proxies": proxy_names_clean,
-            "url": "http://www.gstatic.com/generate_204",
+            "strategy": "round-robin"
+            "proxies": proxy_names_all,
+            "url": "https://google.com",
             "interval": 600
+            "timeout": 60000
+        },
+        {
+            "name": "MAIN",
+            "type": "select",
+            "proxies": ["IR-AUTO", "IR-BALANCE", "IR-ALL", "IR-ALL-RAW"]
         }
     ],
-    "rules": ["MATCH,IR-AUTO"]
+    "rules": [
+        "MATCH,MAIN"
+    ]
 }
 
 os.makedirs("output", exist_ok=True)
 with open("output/config.yaml", "w", encoding="utf-8") as f:
     yaml.dump(config, f, allow_unicode=True)
 
-print(f"✅ Updated {len(proxy_names_clean)} clean proxies and {len(proxies_all)} total")
+print(f"✅ Done: {len(proxy_names_all)} proxies total — {len(proxy_names_clean)} with valid ping.")
