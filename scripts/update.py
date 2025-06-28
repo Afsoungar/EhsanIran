@@ -7,7 +7,7 @@ SOURCES = [
     ("https://api.proxyscrape.com/v2/?request=displayproxies&protocol=socks5&country=IR", "socks5"),
     ("https://api.proxyscrape.com/v2/?request=displayproxies&protocol=http&country=IR", "http"),
     ("https://api.proxyscrape.com/v2/?request=displayproxies&protocol=https&country=IR", "http"),
-    ("https://raw.githubusercontent.com/TheSpeedX/SOCKS-List/master/http.txt", "http"),
+    ("https://raw.githubusercontent.com/TheSpeedX/SOCKS-List/master/http.txt", "http")
     ("https://raw.githubusercontent.com/TheSpeedX/SOCKS-List/master/socks5.txt", "socks5"),
     ("https://raw.githubusercontent.com/hookzof/socks5_list/master/proxy.txt", "socks5"),
 
