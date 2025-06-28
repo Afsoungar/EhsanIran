@@ -4,7 +4,11 @@ from datetime import datetime
 SOURCES = [
     ("https://api.proxyscrape.com/v2/?request=displayproxies&protocol=socks5&country=IR", "socks5"),
     ("https://api.proxyscrape.com/v2/?request=displayproxies&protocol=http&country=IR", "http"),
-    ("https://api.proxyscrape.com/v2/?request=displayproxies&protocol=https&country=IR", "http")
+    ("https://api.proxyscrape.com/v2/?request=displayproxies&protocol=https&country=IR", "http"),
+    ("https://proxyspace.pro/http.txt?country=ir", "http"),
+    ("https://proxyspace.pro/socks5.txt?country=ir", "socks5"),
+    ("https://proxyscan.io/download?type=http&format=txt&country=IR", "http"),
+    ("https://proxyscan.io/download?type=socks5&format=txt&country=IR", "socks5")
 ]
 
 def is_alive(ip, port, timeout=3):
