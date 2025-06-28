@@ -14,7 +14,7 @@ def is_alive(ip, port, timeout=3):
         start = time.time()
         s = socket.create_connection((ip, int(port)), timeout=timeout)
         s.close()
-        ping = int((time.time() - start) * 1000)  # ping in ms
+        ping = int((time.time() - start) * 1000)
         return True, ping
     except:
         return False, None
@@ -26,11 +26,10 @@ def ip_is_ir(ip):
     except:
         return False
 
-# لیست‌های نهایی
-proxies_clean = []
-proxies_raw = []
-seen = set()
-idx = 0
+proxies_all = []
+proxy_names_clean = []
+proxy_names_raw = []
+seen_ips = set()
 
 for url, ptype in SOURCES:
     try:
@@ -39,55 +38,61 @@ for url, ptype in SOURCES:
         continue
     lines = r.text.strip().splitlines()
     for line in lines:
-        parts = line.strip().split()
-        entry = parts[0] if len(parts)>0 else line
-        if ":" not in entry: continue
-        ip, port = entry.split(":")[:2]
-        if ip in seen: continue
-        seen.add(ip)
-        if not ip_is_ir(ip): continue  # فقط پراکسی ایرانی
-        # در هر صورت پراکسی رو به RAW اضافه کن
+        entry = line.strip().split()[0]
+        if ":" not in entry:
+            continue
+        ip, port = entry.strip().split(":")[:2]
+        if ip in seen_ips:
+            continue
+        seen_ips.add(ip)
+        if not ip_is_ir(ip):
+            continue
+
+        proxy_type = ptype or ("socks5" if port == "1080" else "http")
+        base_name = f"{ip}:{port}"
         proxy_entry = {
-            "name": f"{ip}:{port}",
-            "type": ptype or ("socks5" if port == "1080" else "http"),
+            "type": proxy_type,
             "server": ip,
             "port": int(port),
             "udp": True
         }
-        proxies_raw.append(proxy_entry)
 
-        # تست سالم بودن و پینگ
+        # بررسی سلامت
         alive, ping = is_alive(ip, port)
         if alive:
-            idx += 1
-            proxy_entry_clean = proxy_entry.copy()
-            proxy_entry_clean["name"] = f"{ip}:{port} ({ping}ms)"
-            proxies_clean.append(proxy_entry_clean)
+            full_name = f"{base_name} ({ping}ms)"
+            proxy_entry["name"] = full_name
+            proxy_names_clean.append(full_name)
+        else:
+            proxy_entry["name"] = base_name
+            proxy_names_raw.append(base_name)
 
-# ساخت کانفیگ Clash
+        proxies_all.append(proxy_entry)
+
+# ساخت فایل کانفیگ Clash
 config = {
     "mixed-port": 7890,
     "allow-lan": True,
     "mode": "Rule",
     "log-level": "info",
-    "proxies": proxies_clean,
+    "proxies": proxies_all,
     "proxy-groups": [
         {
-            "name": "IR-ALL",  # فقط پراکسی‌های سالم
+            "name": "IR-ALL",
             "type": "select",
-            "proxies": [p["name"] for p in proxies_clean]
+            "proxies": proxy_names_clean
         },
         {
-            "name": "IR-ALL-RAW",  # همه پراکسی‌های ایرانی (حتی ناسالم)
+            "name": "IR-ALL-RAW",
             "type": "select",
-            "proxies": [p["name"] for p in proxies_clean + proxies_raw if p["name"] not in [x["name"] for x in proxies_clean]]
+            "proxies": proxy_names_clean + proxy_names_raw
         }
     ],
     "rules": ["MATCH,IR-ALL"]
 }
 
 os.makedirs("output", exist_ok=True)
-with open("output/config.yaml","w",encoding="utf-8") as f:
+with open("output/config.yaml", "w", encoding="utf-8") as f:
     yaml.dump(config, f, allow_unicode=True)
 
-print(f"✅ Updated {len(proxies_clean)} clean proxies and {len(proxies_raw)} total at {datetime.now()}")
+print(f"✅ Updated {len(proxy_names_clean)} clean proxies and {len(proxies_all)} total")
