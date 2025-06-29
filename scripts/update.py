@@ -7,6 +7,9 @@ SOURCES = [
     ("https://api.proxyscrape.com/v2/?request=displayproxies&protocol=https&country=IR", "http"),
     ("https://raw.githubusercontent.com/TheSpeedX/SOCKS-List/master/socks5.txt", "socks5"),
     ("https://raw.githubusercontent.com/hookzof/socks5_list/master/proxy.txt", "socks5"),
+    ("https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/sub/splitted/vmess.txt", "vmess"),
+    ("https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/sub/splitted/vless.txt", "vless"),
+    ("https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/sub/splitted/ss.txt", "ss"),
 ]
 
 def is_alive(ip, port, timeout=7):
@@ -191,7 +194,7 @@ config = {
         },
         {
             "name": "IR-AUTO",
-            "type": "url-test",
+            "type": "fallback",
             "proxies": proxy_names_all,
             "url": "https://google.com",
             "interval": 600,
