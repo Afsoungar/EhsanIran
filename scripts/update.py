@@ -173,8 +173,14 @@ for url, ptype in SOURCES:
 config = {
     "mixed-port": 7890,
     "allow-lan": True,
+    "interface-name": "utun",
     "mode": "Rule",
     "log-level": "info",
+    "tun": {
+        "enable": True,
+        "stack": "system",
+        "dns-hijack": ["any:53"]
+    },
     "proxies": proxies_all,
     "proxy-groups": [
         {
