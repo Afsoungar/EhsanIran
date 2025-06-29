@@ -198,7 +198,7 @@ config = {
         {
             "name": "IR-BALANCE",
             "type": "load-balance",
-            "strategy": "round-robin"
+            "strategy": "round-robin",
             "proxies": proxy_names_all,
             "url": "https://google.com",
             "interval": 600,
