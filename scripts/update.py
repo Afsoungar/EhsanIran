@@ -15,6 +15,8 @@ SOURCES = [
     ("https://proxyhub.me/en/ir-sock5-proxy-list.html", "html-socks5"),
     ("https://www.proxydocker.com/en/socks5-list/country/Iran", "html-socks5"),
     ("https://www.proxydocker.com/en/proxylist/search?need=all&type=http-https&anonymity=all&port=&country=Iran&city=&state=all", "html-http"),
+    ("https://www.freeproxy.world/?type=http&anonymity=&country=IR", "html-http"),
+    ("https://www.freeproxy.world/?type=socks5&anonymity=&country=IR", "html-socks5"),
 ]
 
 failed_sources = []
@@ -92,15 +94,28 @@ def fetch_html_proxies(url, proxy_type):
         res = requests.get(url, headers=headers, timeout=15)
         res.raise_for_status()
         soup = BeautifulSoup(res.text, "html.parser")
-        rows = soup.find_all("tr")
-        for row in rows:
-            cols = row.find_all("td")
-            if len(cols) < 2:
-                continue
-            ip, port = cols[0].text.strip(), cols[1].text.strip()
-            if not re.match(r"\\d+\\.\\d+\\.\\d+\\.\\d+", ip):
-                continue
-            proxies.append((ip, port, "socks5" if "socks5" in proxy_type else "http"))
+
+        if "freeproxy.world" in url:
+            table = soup.find("table")
+            rows = table.find_all("tr")[1:] if table else []
+            for row in rows:
+                cols = row.find_all("td")
+                if len(cols) < 2:
+                    continue
+                ip = cols[0].get_text(strip=True)
+                port = cols[1].get_text(strip=True)
+                proxies.append((ip, port, "socks5" if "socks5" in proxy_type else "http"))
+        else:
+            rows = soup.find_all("tr")
+            for row in rows:
+                cols = row.find_all("td")
+                if len(cols) < 2:
+                    continue
+                ip, port = cols[0].text.strip(), cols[1].text.strip()
+                if not re.match(r"^\d+\.\d+\.\d+\.\d+$", ip):
+                    continue
+                proxies.append((ip, port, "socks5" if "socks5" in proxy_type else "http"))
+
         return proxies
     except Exception as e:
         print(f"⚠️ Failed to fetch from {url}: {e}")
@@ -138,7 +153,6 @@ for url, ptype in SOURCES:
     try:
         r = requests.get(url, timeout=20)
         lines = r.text.strip().splitlines()
-        print(f"📥 دریافت شد: {len(lines)} خط")
     except Exception as e:
         print(f"⚠️ خطا در {url}: {e}")
         failed_sources.append(url)
@@ -148,7 +162,6 @@ for url, ptype in SOURCES:
         line = line.strip()
         if not line:
             continue
-        # بررسی vmess / vless / ss / socks5
         try:
             if ptype == "vmess" and line.startswith("vmess://"):
                 decoded = base64.b64decode(line[8:] + "==").decode()
@@ -213,9 +226,10 @@ for url, ptype in SOURCES:
         except:
             continue
 
-# Fallbacks
-if not proxy_names_all: proxy_names_all.append("DIRECT")
-if not proxy_names_clean: proxy_names_clean.append("DIRECT")
+if not proxy_names_all:
+    proxy_names_all.append("DIRECT")
+if not proxy_names_clean:
+    proxy_names_clean.append("DIRECT")
 
 config = {
     "mixed-port": 7890,
@@ -245,6 +259,6 @@ with open("output/config.yaml", "w", encoding="utf-8") as f:
 
 print(f"✅ Done: {len(proxy_names_all)} total — {len(proxy_names_clean)} valid.")
 if failed_sources:
-    print("❌ منابعی که شکست خوردند:")
-    for fail in failed_sources:
-        print(" -", fail)
+    print("❌ منابع شکست‌خورده:")
+    for s in failed_sources:
+        print(" -", s)
