@@ -213,7 +213,8 @@ proxy-groups:
   - IR-ALL-RAW
   type: select
 - name: IR-ALL
-  proxies: []
+  proxies: 
+  - DIRECT
   type: select
 - name: IR-ALL-RAW
   proxies: &id001
