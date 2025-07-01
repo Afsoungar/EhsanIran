@@ -16,6 +16,8 @@ jobs:
         python-version: '3.x'
     - name: Install deps
       run: pip install pyyaml requests
+    - name: Install dependencies
+      run: pip install -r requirements.txt
     - name: Run update script
       run: python scripts/update.py
     - name: Commit changes
