@@ -2,14 +2,10 @@ import requests, yaml, os, socket, time, base64, json
 from urllib.parse import urlparse, parse_qs
 
 SOURCES = [
-    ("https://api.proxyscrape.com/v2/?request=displayproxies&protocol=socks5&country=IR", "socks5"),
-    ("https://api.proxyscrape.com/v2/?request=displayproxies&protocol=http&country=IR", "http"),
-    ("https://api.proxyscrape.com/v2/?request=displayproxies&protocol=https&country=IR", "http"),
-    ("https://raw.githubusercontent.com/TheSpeedX/SOCKS-List/master/socks5.txt", "socks5"),
-    ("https://raw.githubusercontent.com/hookzof/socks5_list/master/proxy.txt", "socks5"),
-    ("https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/sub/splitted/vmess.txt", "vmess"),
-    ("https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/sub/splitted/vless.txt", "vless"),
-    ("https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/sub/splitted/ss.txt", "ss"),
+    ("https://proxyhub.me/en/socks5_proxies.txt", "socks5"),
+    ("https://proxyhub.me/en/http_proxies.txt", "http"),
+    ("https://proxyhub.me/en/ir-http-proxy-list.html", "http"),
+    ("https://proxyhub.me/en/ir-sock5-proxy-list.html", "socks5")
 ]
 
 def is_alive(ip, port, timeout=7):
@@ -87,6 +83,21 @@ for url, ptype in SOURCES:
     try:
         r = requests.get(url, timeout=20)
         lines = r.text.strip().splitlines()
+
+        # Scraping from proxyhub HTML pages
+        if "proxyhub.me/en/ir-http-proxy-list.html" in url or "proxyhub.me/en/ir-sock5-proxy-list.html" in url:
+            from bs4 import BeautifulSoup
+            soup = BeautifulSoup(r.text, "html.parser")
+            table = soup.find("table")
+            lines = []
+            if table:
+                rows = table.find_all("tr")[1:]
+                for row in rows:
+                    cols = row.find_all("td")
+                    if len(cols) >= 2:
+                        ip = cols[0].text.strip()
+                        port = cols[1].text.strip()
+                        lines.append(f"{ip}:{port}")
     except:
         continue
 
@@ -151,9 +162,12 @@ for url, ptype in SOURCES:
         elif ":" in line and ptype in ["http", "socks5"]:
             try:
                 ip, port = line.strip().split(":")[:2]
-                if ip in seen_ips or not ip_is_ir(ip):
+                if ip in seen_ips:
                     continue
                 seen_ips.add(ip)
+                # برای proxyhub.ir نیازی به چک آی‌پی نیست
+                if "proxyhub.me/en/ir-" not in url and not ip_is_ir(ip):
+                    continue
                 alive, ping = is_alive(ip, port)
                 name = f"{ip}:{port} ({ping}ms)" if alive else f"{ip}:{port}"
                 proxy = {
@@ -169,7 +183,7 @@ for url, ptype in SOURCES:
             except:
                 continue
 
-# ✅ ساختن فایل کانفیگ Clash
+# ساخت فایل Clash نهایی
 config = {
     "mixed-port": 7890,
     "allow-lan": True,
@@ -202,7 +216,7 @@ config = {
             "name": "IR-AUTO",
             "type": "fallback",
             "proxies": proxy_names_all,
-            "url": "https://google.com",
+            "url": "https://www.gstatic.com/generate_204",
             "interval": 600,
             "timeout": 60000
         },
@@ -211,11 +225,10 @@ config = {
             "type": "load-balance",
             "strategy": "round-robin",
             "proxies": proxy_names_all,
-            "url": "https://google.com",
+            "url": "https://www.gstatic.com/generate_204",
             "interval": 600,
             "timeout": 60000
         }
-       
     ],
     "rules": [
         "MATCH,MAIN"
@@ -226,4 +239,4 @@ os.makedirs("output", exist_ok=True)
 with open("output/config.yaml", "w", encoding="utf-8") as f:
     yaml.dump(config, f, allow_unicode=True)
 
-print(f"✅ Done: {len(proxy_names_all)} proxies total — {len(proxy_names_clean)} with valid ping.")
+print(f"✅ Done: {len(proxy_names_all)} total — {len(proxy_names_clean)} valid.")
