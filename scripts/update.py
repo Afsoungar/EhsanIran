@@ -182,6 +182,10 @@ for url, ptype in SOURCES:
                 if alive: proxy_names_clean.append(name)
             except:
                 continue
+                if not proxy_names_all:
+                    proxy_names_all.append("DIRECT")
+                if not proxy_names_clean:
+                    proxy_names_clean.append("DIRECT")
 
 # ساخت فایل Clash نهایی
 config = {
