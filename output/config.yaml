@@ -3,86 +3,7 @@ interface-name: utun
 log-level: info
 mixed-port: 7890
 mode: Rule
-proxies:
-- name: 85.185.206.195:3131 (194ms)
-  port: 3131
-  server: 85.185.206.195
-  type: http
-  udp: true
-- name: 80.249.112.166:80 (171ms)
-  port: 80
-  server: 80.249.112.166
-  type: http
-  udp: true
-- name: 80.249.112.162:80 (165ms)
-  port: 80
-  server: 80.249.112.162
-  type: http
-  udp: true
-- name: 185.88.178.154:80 (5325ms)
-  port: 80
-  server: 185.88.178.154
-  type: http
-  udp: true
-- name: 5.160.32.35:8080 (241ms)
-  port: 8080
-  server: 5.160.32.35
-  type: http
-  udp: true
-- name: 81.12.96.209:80 (193ms)
-  port: 80
-  server: 81.12.96.209
-  type: http
-  udp: true
-- name: 80.249.112.165:80 (177ms)
-  port: 80
-  server: 80.249.112.165
-  type: http
-  udp: true
-- name: 188.121.100.221:3129
-  port: 3129
-  server: 188.121.100.221
-  type: http
-  udp: true
-- name: 193.151.141.17:8080 (203ms)
-  port: 8080
-  server: 193.151.141.17
-  type: http
-  udp: true
-- name: 84.241.6.102:8080 (4327ms)
-  port: 8080
-  server: 84.241.6.102
-  type: http
-  udp: true
-- name: 80.249.112.164:80 (170ms)
-  port: 80
-  server: 80.249.112.164
-  type: http
-  udp: true
-- name: 80.249.112.163:80 (174ms)
-  port: 80
-  server: 80.249.112.163
-  type: http
-  udp: true
-- name: 78.38.53.36:80 (167ms)
-  port: 80
-  server: 78.38.53.36
-  type: http
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 185.24.255.24:80
-  network: ws
-  port: 80
-  server: 185.24.255.24
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 80abb903-24e0-4dbd-9c2f-a57e9a267555
-  ws-opts:
-    headers:
-      Host: ''
-    path: /ws
+proxies: []
 proxy-groups:
 - name: MAIN
   proxies:
@@ -92,50 +13,24 @@ proxy-groups:
   - IR-ALL-RAW
   type: select
 - name: IR-ALL
-  proxies:
-  - 85.185.206.195:3131 (194ms)
-  - 80.249.112.166:80 (171ms)
-  - 80.249.112.162:80 (165ms)
-  - 185.88.178.154:80 (5325ms)
-  - 5.160.32.35:8080 (241ms)
-  - 81.12.96.209:80 (193ms)
-  - 80.249.112.165:80 (177ms)
-  - 193.151.141.17:8080 (203ms)
-  - 84.241.6.102:8080 (4327ms)
-  - 80.249.112.164:80 (170ms)
-  - 80.249.112.163:80 (174ms)
-  - 78.38.53.36:80 (167ms)
+  proxies: []
   type: select
 - name: IR-ALL-RAW
-  proxies: &id001
-  - 85.185.206.195:3131 (194ms)
-  - 80.249.112.166:80 (171ms)
-  - 80.249.112.162:80 (165ms)
-  - 185.88.178.154:80 (5325ms)
-  - 5.160.32.35:8080 (241ms)
-  - 81.12.96.209:80 (193ms)
-  - 80.249.112.165:80 (177ms)
-  - 188.121.100.221:3129
-  - 193.151.141.17:8080 (203ms)
-  - 84.241.6.102:8080 (4327ms)
-  - 80.249.112.164:80 (170ms)
-  - 80.249.112.163:80 (174ms)
-  - 78.38.53.36:80 (167ms)
-  - 185.24.255.24:80
+  proxies: &id001 []
   type: select
 - interval: 600
   name: IR-AUTO
   proxies: *id001
   timeout: 60000
   type: fallback
-  url: https://google.com
+  url: https://www.gstatic.com/generate_204
 - interval: 600
   name: IR-BALANCE
   proxies: *id001
   strategy: round-robin
   timeout: 60000
   type: load-balance
-  url: https://google.com
+  url: https://www.gstatic.com/generate_204
 rules:
 - MATCH,MAIN
 tun:
