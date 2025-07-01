@@ -221,7 +221,7 @@ config = {
             "name": "IR-AUTO",
             "type": "fallback",
             "proxies": proxy_names_all,
-            "url": "https://www.gstatic.com/generate_204",
+            "url": "https://google.com",
             "interval": 600,
             "timeout": 60000
         },
@@ -230,7 +230,7 @@ config = {
             "type": "load-balance",
             "strategy": "round-robin",
             "proxies": proxy_names_all,
-            "url": "https://www.gstatic.com/generate_204",
+            "url": "https://google.com",
             "interval": 600,
             "timeout": 60000
         }
