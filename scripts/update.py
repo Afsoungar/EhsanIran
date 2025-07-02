@@ -3,18 +3,7 @@ from urllib.parse import urlparse, parse_qs
 from bs4 import BeautifulSoup
 
 SOURCES = [
-    ("https://api.proxyscrape.com/v2/?request=displayproxies&protocol=socks5&country=IR", "socks5"),
-    ("https://api.proxyscrape.com/v2/?request=displayproxies&protocol=http&country=IR", "http"),
-    ("https://api.proxyscrape.com/v2/?request=displayproxies&protocol=https&country=IR", "http"),
-    ("https://raw.githubusercontent.com/TheSpeedX/SOCKS-List/master/socks5.txt", "socks5"),
-    ("https://raw.githubusercontent.com/hookzof/socks5_list/master/proxy.txt", "socks5"),
-    ("https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/sub/splitted/vmess.txt", "vmess"),
-    ("https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/sub/splitted/vless.txt", "vless"),
-    ("https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/sub/splitted/ss.txt", "ss"),
-    ("https://proxyhub.me/en/ir-http-proxy-list.html", "html-http"),
-    ("https://proxyhub.me/en/ir-sock5-proxy-list.html", "html-socks5"),
-    ("https://www.proxydocker.com/en/socks5-list/country/Iran", "html-socks5"),
-    ("https://www.proxydocker.com/en/proxylist/search?need=all&type=http-https&anonymity=all&port=&country=Iran&city=&state=all", "html-http"),
+    
     ("https://www.freeproxy.world/?type=http&anonymity=&country=IR", "html-http"),
     ("https://www.freeproxy.world/?type=socks5&anonymity=&country=IR", "html-socks5"),
 ]
