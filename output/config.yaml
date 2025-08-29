@@ -4,34 +4,34 @@ log-level: info
 mixed-port: 7890
 mode: Rule
 proxies:
-- name: 79.127.54.89:3130 (314ms)
-  port: 3130
-  server: 79.127.54.89
+- name: 46.34.165.86:443 (1238ms)
+  port: 443
+  server: 46.34.165.86
   type: http
   udp: true
-- name: 31.14.114.71:1081 (294ms)
-  port: 1081
-  server: 31.14.114.71
+- name: 212.16.77.50:3129
+  port: 3129
+  server: 212.16.77.50
   type: http
   udp: true
-- name: 185.4.29.243:7887 (248ms)
-  port: 7887
-  server: 185.4.29.243
+- name: 185.8.173.135:10199 (5332ms)
+  port: 10199
+  server: 185.8.173.135
   type: http
   udp: true
-- name: 2.180.10.65:8443
-  port: 8443
-  server: 2.180.10.65
-  type: http
-  udp: true
-- name: 78.38.100.121:8080 (1339ms)
+- name: 81.12.40.250:8080
   port: 8080
-  server: 78.38.100.121
+  server: 81.12.40.250
   type: http
   udp: true
-- name: 78.38.53.36:80 (333ms)
-  port: 80
-  server: 78.38.53.36
+- name: 81.28.38.3:8080
+  port: 8080
+  server: 81.28.38.3
+  type: http
+  udp: true
+- name: 5.202.191.225:8080 (175ms)
+  port: 8080
+  server: 5.202.191.225
   type: http
   udp: true
 - name: 213.233.178.137:3129
@@ -39,9 +39,14 @@ proxies:
   server: 213.233.178.137
   type: http
   udp: true
-- name: 185.145.185.218:8080 (2422ms)
-  port: 8080
-  server: 185.145.185.218
+- name: 185.4.29.243:7887 (159ms)
+  port: 7887
+  server: 185.4.29.243
+  type: http
+  udp: true
+- name: 78.38.53.36:80 (176ms)
+  port: 80
+  server: 78.38.53.36
   type: http
   udp: true
 - name: 31.47.42.186:1081
@@ -49,9 +54,9 @@ proxies:
   server: 31.47.42.186
   type: http
   udp: true
-- name: 2.190.114.115:1081
+- name: 31.14.114.70:1081 (170ms)
   port: 1081
-  server: 2.190.114.115
+  server: 31.14.114.70
   type: http
   udp: true
 - name: 78.39.245.70:80
@@ -59,49 +64,16 @@ proxies:
   server: 78.39.245.70
   type: http
   udp: true
-- name: 185.128.153.75:33333
-  port: 33333
-  server: 185.128.153.75
+- name: 95.38.75.146:2120
+  port: 2120
+  server: 95.38.75.146
   type: socks5
   udp: true
-- name: 81.12.106.158:8080
+- name: 46.245.123.10:8080
   port: 8080
-  server: 81.12.106.158
+  server: 46.245.123.10
   type: socks5
   udp: true
-- name: 185.128.153.79:3128 (251ms)
-  port: 3128
-  server: 185.128.153.79
-  type: socks5
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 185.24.255.24:80
-  network: ws
-  port: 80
-  server: 185.24.255.24
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 80abb903-24e0-4dbd-9c2f-a57e9a267555
-  ws-opts:
-    headers:
-      Host: ''
-    path: /ws
-- alterId: 0
-  cipher: auto
-  name: 185.143.233.114:80 (8ms)
-  network: ws
-  port: 80
-  server: 185.143.233.114
-  tls: false
-  type: vmess
-  udp: true
-  uuid: cf7f2d7c-d4f8-469a-bfd5-97484bb98d2c
-  ws-opts:
-    headers:
-      Host: 214.zirogame-79.site
-    path: /
 proxy-groups:
 - name: MAIN
   proxies:
@@ -112,33 +84,29 @@ proxy-groups:
   type: select
 - name: IR-ALL
   proxies:
-  - 79.127.54.89:3130 (314ms)
-  - 31.14.114.71:1081 (294ms)
-  - 185.4.29.243:7887 (248ms)
-  - 78.38.100.121:8080 (1339ms)
-  - 78.38.53.36:80 (333ms)
-  - 185.145.185.218:8080 (2422ms)
-  - 185.128.153.79:3128 (251ms)
-  - 185.143.233.114:80 (8ms)
+  - 46.34.165.86:443 (1238ms)
+  - 185.8.173.135:10199 (5332ms)
+  - 5.202.191.225:8080 (175ms)
+  - 185.4.29.243:7887 (159ms)
+  - 78.38.53.36:80 (176ms)
+  - 31.14.114.70:1081 (170ms)
   type: select
 - name: IR-ALL-RAW
   proxies: &id001
-  - 79.127.54.89:3130 (314ms)
-  - 31.14.114.71:1081 (294ms)
-  - 185.4.29.243:7887 (248ms)
-  - 2.180.10.65:8443
-  - 78.38.100.121:8080 (1339ms)
-  - 78.38.53.36:80 (333ms)
+  - 46.34.165.86:443 (1238ms)
+  - 212.16.77.50:3129
+  - 185.8.173.135:10199 (5332ms)
+  - 81.12.40.250:8080
+  - 81.28.38.3:8080
+  - 5.202.191.225:8080 (175ms)
   - 213.233.178.137:3129
-  - 185.145.185.218:8080 (2422ms)
+  - 185.4.29.243:7887 (159ms)
+  - 78.38.53.36:80 (176ms)
   - 31.47.42.186:1081
-  - 2.190.114.115:1081
+  - 31.14.114.70:1081 (170ms)
   - 78.39.245.70:80
-  - 185.128.153.75:33333
-  - 81.12.106.158:8080
-  - 185.128.153.79:3128 (251ms)
-  - 185.24.255.24:80
-  - 185.143.233.114:80 (8ms)
+  - 95.38.75.146:2120
+  - 46.245.123.10:8080
   type: select
 - interval: 600
   name: IR-AUTO
