@@ -4,19 +4,24 @@ log-level: info
 mixed-port: 7890
 mode: Rule
 proxies:
-- name: 78.38.53.36:80 (183ms)
+- name: 46.245.123.10:8080
+  port: 8080
+  server: 46.245.123.10
+  type: http
+  udp: true
+- name: 185.4.29.243:7887 (2233ms)
+  port: 7887
+  server: 185.4.29.243
+  type: http
+  udp: true
+- name: 78.38.53.36:80 (186ms)
   port: 80
   server: 78.38.53.36
   type: http
   udp: true
-- name: 2.180.5.234:8080 (4385ms)
-  port: 8080
-  server: 2.180.5.234
-  type: http
-  udp: true
-- name: 78.38.100.121:8080 (4374ms)
-  port: 8080
-  server: 78.38.100.121
+- name: 46.34.165.86:443 (2273ms)
+  port: 443
+  server: 46.34.165.86
   type: http
   udp: true
 - name: 185.112.151.207:8022 (178ms)
@@ -24,40 +29,21 @@ proxies:
   server: 185.112.151.207
   type: http
   udp: true
-- name: 84.241.6.102:8080
-  port: 8080
-  server: 84.241.6.102
-  type: http
-  udp: true
-- name: 185.4.29.243:7887 (2247ms)
-  port: 7887
-  server: 185.4.29.243
-  type: http
-  udp: true
-- name: 46.245.123.10:8080
-  port: 8080
-  server: 46.245.123.10
-  type: http
-  udp: true
 - name: 31.47.42.186:1081
   port: 1081
   server: 31.47.42.186
   type: http
   udp: true
-- alterId: 0
-  cipher: auto
-  name: 185.143.233.114:80 (46ms)
-  network: ws
-  port: 80
-  server: 185.143.233.114
-  tls: false
-  type: vmess
+- name: 77.104.75.97:5678
+  port: 5678
+  server: 77.104.75.97
+  type: socks5
   udp: true
-  uuid: cf7f2d7c-d4f8-469a-bfd5-97484bb98d2c
-  ws-opts:
-    headers:
-      Host: 214.zirogame-79.site
-    path: /
+- name: 5.202.104.142:3128 (191ms)
+  port: 3128
+  server: 5.202.104.142
+  type: socks5
+  udp: true
 proxy-groups:
 - name: MAIN
   proxies:
@@ -68,24 +54,22 @@ proxy-groups:
   type: select
 - name: IR-ALL
   proxies:
-  - 78.38.53.36:80 (183ms)
-  - 2.180.5.234:8080 (4385ms)
-  - 78.38.100.121:8080 (4374ms)
+  - 185.4.29.243:7887 (2233ms)
+  - 78.38.53.36:80 (186ms)
+  - 46.34.165.86:443 (2273ms)
   - 185.112.151.207:8022 (178ms)
-  - 185.4.29.243:7887 (2247ms)
-  - 185.143.233.114:80 (46ms)
+  - 5.202.104.142:3128 (191ms)
   type: select
 - name: IR-ALL-RAW
   proxies: &id001
-  - 78.38.53.36:80 (183ms)
-  - 2.180.5.234:8080 (4385ms)
-  - 78.38.100.121:8080 (4374ms)
-  - 185.112.151.207:8022 (178ms)
-  - 84.241.6.102:8080
-  - 185.4.29.243:7887 (2247ms)
   - 46.245.123.10:8080
+  - 185.4.29.243:7887 (2233ms)
+  - 78.38.53.36:80 (186ms)
+  - 46.34.165.86:443 (2273ms)
+  - 185.112.151.207:8022 (178ms)
   - 31.47.42.186:1081
-  - 185.143.233.114:80 (46ms)
+  - 77.104.75.97:5678
+  - 5.202.104.142:3128 (191ms)
   type: select
 - interval: 600
   name: IR-AUTO
