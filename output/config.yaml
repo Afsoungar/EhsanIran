@@ -4,17 +4,27 @@ log-level: info
 mixed-port: 7890
 mode: Rule
 proxies:
-- name: 185.112.151.207:8022 (251ms)
-  port: 8022
-  server: 185.112.151.207
+- name: 37.32.25.40:8080 (1180ms)
+  port: 8080
+  server: 37.32.25.40
   type: http
   udp: true
-- name: 79.127.56.147:8080 (2277ms)
+- name: 79.127.56.147:8080 (186ms)
   port: 8080
   server: 79.127.56.147
   type: http
   udp: true
-- name: 85.133.144.81:8080 (220ms)
+- name: 46.209.217.108:8088 (4240ms)
+  port: 8088
+  server: 46.209.217.108
+  type: http
+  udp: true
+- name: 46.32.21.66:8080
+  port: 8080
+  server: 46.32.21.66
+  type: http
+  udp: true
+- name: 85.133.144.81:8080 (160ms)
   port: 8080
   server: 85.133.144.81
   type: http
@@ -29,135 +39,16 @@ proxies:
   server: 5.216.134.83
   type: http
   udp: true
-- name: 93.126.23.193:8080
-  port: 8080
-  server: 93.126.23.193
-  type: socks5
-  udp: true
-- name: 194.33.105.89:8081
-  port: 8081
-  server: 194.33.105.89
-  type: socks5
-  udp: true
-- name: 77.104.76.230:8080
-  port: 8080
-  server: 77.104.76.230
-  type: socks5
-  udp: true
-- name: 217.219.162.114:5678
-  port: 5678
-  server: 217.219.162.114
-  type: socks5
-  udp: true
-- name: 78.157.57.71:3128
-  port: 3128
-  server: 78.157.57.71
-  type: socks5
-  udp: true
-- name: 185.94.98.211:80 (240ms)
-  port: 80
-  server: 185.94.98.211
-  type: socks5
-  udp: true
-- name: 151.232.18.66:5678 (1221ms)
-  port: 5678
-  server: 151.232.18.66
-  type: socks5
-  udp: true
-- name: 78.39.10.11:3128
+- name: 78.39.10.11:3128 (3246ms)
   port: 3128
   server: 78.39.10.11
   type: socks5
   udp: true
-- name: 81.91.157.134:5678 (223ms)
-  port: 5678
-  server: 81.91.157.134
+- name: 80.75.213.22:3128
+  port: 3128
+  server: 80.75.213.22
   type: socks5
   udp: true
-- alterId: 0
-  cipher: auto
-  name: 37.32.23.122:443
-  network: ws
-  port: 443
-  server: 37.32.23.122
-  tls: false
-  type: vmess
-  udp: true
-  uuid: d12bc882-43c7-415e-87c5-2a7fdc8371c0
-  ws-opts:
-    headers:
-      Host: ''
-    path: /websocket/
-- alterId: 0
-  cipher: auto
-  name: 185.24.255.24:80
-  network: ws
-  port: 80
-  server: 185.24.255.24
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 80abb903-24e0-4dbd-9c2f-a57e9a267555
-  ws-opts:
-    headers:
-      Host: ''
-    path: /ws
-- alterId: 0
-  cipher: auto
-  name: 2.189.59.5:443
-  network: ws
-  port: 443
-  server: 2.189.59.5
-  tls: true
-  type: vmess
-  udp: true
-  uuid: 05641cf5-58d2-4ba4-a9f1-b3cda0b1fb1d
-  ws-opts:
-    headers:
-      Host: obdii.cfd
-    path: /linkws
-- alterId: 0
-  cipher: auto
-  name: 2.189.59.6:443
-  network: ws
-  port: 443
-  server: 2.189.59.6
-  tls: true
-  type: vmess
-  udp: true
-  uuid: 05641cf5-58d2-4ba4-a9f1-b3cda0b1fb1d
-  ws-opts:
-    headers:
-      Host: obdii.cfd
-    path: /
-- alterId: 0
-  cipher: auto
-  name: 2.189.59.3:443
-  network: ws
-  port: 443
-  server: 2.189.59.3
-  tls: true
-  type: vmess
-  udp: true
-  uuid: 05641cf5-58d2-4ba4-a9f1-b3cda0b1fb1d
-  ws-opts:
-    headers:
-      Host: obdii.cfd
-    path: /
-- alterId: 0
-  cipher: auto
-  name: 2.189.59.4:443
-  network: ws
-  port: 443
-  server: 2.189.59.4
-  tls: true
-  type: vmess
-  udp: true
-  uuid: 05641cf5-58d2-4ba4-a9f1-b3cda0b1fb1d
-  ws-opts:
-    headers:
-      Host: obdii.cfd
-    path: /linkws
 proxy-groups:
 - name: MAIN
   proxies:
@@ -168,35 +59,23 @@ proxy-groups:
   type: select
 - name: IR-ALL
   proxies:
-  - 185.112.151.207:8022 (251ms)
-  - 79.127.56.147:8080 (2277ms)
-  - 85.133.144.81:8080 (220ms)
-  - 185.94.98.211:80 (240ms)
-  - 151.232.18.66:5678 (1221ms)
-  - 81.91.157.134:5678 (223ms)
+  - 37.32.25.40:8080 (1180ms)
+  - 79.127.56.147:8080 (186ms)
+  - 46.209.217.108:8088 (4240ms)
+  - 85.133.144.81:8080 (160ms)
+  - 78.39.10.11:3128 (3246ms)
   type: select
 - name: IR-ALL-RAW
   proxies: &id001
-  - 185.112.151.207:8022 (251ms)
-  - 79.127.56.147:8080 (2277ms)
-  - 85.133.144.81:8080 (220ms)
+  - 37.32.25.40:8080 (1180ms)
+  - 79.127.56.147:8080 (186ms)
+  - 46.209.217.108:8088 (4240ms)
+  - 46.32.21.66:8080
+  - 85.133.144.81:8080 (160ms)
   - 94.182.107.211:8080
   - 5.216.134.83:8081
-  - 93.126.23.193:8080
-  - 194.33.105.89:8081
-  - 77.104.76.230:8080
-  - 217.219.162.114:5678
-  - 78.157.57.71:3128
-  - 185.94.98.211:80 (240ms)
-  - 151.232.18.66:5678 (1221ms)
-  - 78.39.10.11:3128
-  - 81.91.157.134:5678 (223ms)
-  - 37.32.23.122:443
-  - 185.24.255.24:80
-  - 2.189.59.5:443
-  - 2.189.59.6:443
-  - 2.189.59.3:443
-  - 2.189.59.4:443
+  - 78.39.10.11:3128 (3246ms)
+  - 80.75.213.22:3128
   type: select
 - interval: 600
   name: IR-AUTO
