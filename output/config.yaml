@@ -4,14 +4,19 @@ log-level: info
 mixed-port: 7890
 mode: Rule
 proxies:
-- name: 46.32.21.66:8080
+- name: 79.127.56.147:8080
   port: 8080
-  server: 46.32.21.66
+  server: 79.127.56.147
   type: http
   udp: true
-- name: 185.88.177.197:80 (241ms)
-  port: 80
-  server: 185.88.177.197
+- name: 79.127.54.89:3130 (185ms)
+  port: 3130
+  server: 79.127.54.89
+  type: http
+  udp: true
+- name: 81.28.38.3:8080
+  port: 8080
+  server: 81.28.38.3
   type: http
   udp: true
 - name: 31.25.92.114:8080
@@ -19,40 +24,16 @@ proxies:
   server: 31.25.92.114
   type: http
   udp: true
-- name: 5.202.191.225:8080
-  port: 8080
-  server: 5.202.191.225
-  type: http
-  udp: true
-- name: 37.152.183.29:3128 (3382ms)
-  port: 3128
-  server: 37.152.183.29
+- name: 81.12.124.185:5678
+  port: 5678
+  server: 81.12.124.185
   type: socks5
   udp: true
-- name: 194.39.254.35:80 (236ms)
+- name: 45.131.4.201:80 (7ms)
   port: 80
-  server: 194.39.254.35
+  server: 45.131.4.201
   type: socks5
   udp: true
-- name: 185.118.153.110:8080
-  port: 8080
-  server: 185.118.153.110
-  type: socks5
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 185.24.255.24:80
-  network: ws
-  port: 80
-  server: 185.24.255.24
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 80abb903-24e0-4dbd-9c2f-a57e9a267555
-  ws-opts:
-    headers:
-      Host: ''
-    path: /ws
 proxy-groups:
 - name: MAIN
   proxies:
@@ -63,20 +44,17 @@ proxy-groups:
   type: select
 - name: IR-ALL
   proxies:
-  - 185.88.177.197:80 (241ms)
-  - 37.152.183.29:3128 (3382ms)
-  - 194.39.254.35:80 (236ms)
+  - 79.127.54.89:3130 (185ms)
+  - 45.131.4.201:80 (7ms)
   type: select
 - name: IR-ALL-RAW
   proxies: &id001
-  - 46.32.21.66:8080
-  - 185.88.177.197:80 (241ms)
+  - 79.127.56.147:8080
+  - 79.127.54.89:3130 (185ms)
+  - 81.28.38.3:8080
   - 31.25.92.114:8080
-  - 5.202.191.225:8080
-  - 37.152.183.29:3128 (3382ms)
-  - 194.39.254.35:80 (236ms)
-  - 185.118.153.110:8080
-  - 185.24.255.24:80
+  - 81.12.124.185:5678
+  - 45.131.4.201:80 (7ms)
   type: select
 - interval: 600
   name: IR-AUTO
