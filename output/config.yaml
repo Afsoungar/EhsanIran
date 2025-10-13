@@ -4,35 +4,20 @@ log-level: info
 mixed-port: 7890
 mode: Rule
 proxies:
+- name: 185.88.177.197:8080 (176ms)
+  port: 8080
+  server: 185.88.177.197
+  type: http
+  udp: true
 - name: 79.127.56.147:8080
   port: 8080
   server: 79.127.56.147
-  type: http
-  udp: true
-- name: 79.127.54.89:3130 (185ms)
-  port: 3130
-  server: 79.127.54.89
-  type: http
-  udp: true
-- name: 81.28.38.3:8080
-  port: 8080
-  server: 81.28.38.3
   type: http
   udp: true
 - name: 31.25.92.114:8080
   port: 8080
   server: 31.25.92.114
   type: http
-  udp: true
-- name: 81.12.124.185:5678
-  port: 5678
-  server: 81.12.124.185
-  type: socks5
-  udp: true
-- name: 45.131.4.201:80 (7ms)
-  port: 80
-  server: 45.131.4.201
-  type: socks5
   udp: true
 proxy-groups:
 - name: MAIN
@@ -44,17 +29,13 @@ proxy-groups:
   type: select
 - name: IR-ALL
   proxies:
-  - 79.127.54.89:3130 (185ms)
-  - 45.131.4.201:80 (7ms)
+  - 185.88.177.197:8080 (176ms)
   type: select
 - name: IR-ALL-RAW
   proxies: &id001
+  - 185.88.177.197:8080 (176ms)
   - 79.127.56.147:8080
-  - 79.127.54.89:3130 (185ms)
-  - 81.28.38.3:8080
   - 31.25.92.114:8080
-  - 81.12.124.185:5678
-  - 45.131.4.201:80 (7ms)
   type: select
 - interval: 600
   name: IR-AUTO
