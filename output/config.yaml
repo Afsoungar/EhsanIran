@@ -4,19 +4,29 @@ log-level: info
 mixed-port: 7890
 mode: Rule
 proxies:
-- name: 31.25.92.114:8080
+- name: 185.88.177.197:8080 (217ms)
+  port: 8080
+  server: 185.88.177.197
+  type: http
+  udp: true
+- name: 94.101.187.3:3129
+  port: 3129
+  server: 94.101.187.3
+  type: http
+  udp: true
+- name: 31.25.92.114:8080 (1325ms)
   port: 8080
   server: 31.25.92.114
   type: http
   udp: true
-- name: 185.171.54.36:4153 (4243ms)
-  port: 4153
-  server: 185.171.54.36
+- name: 45.131.4.23:80 (1ms)
+  port: 80
+  server: 45.131.4.23
   type: socks5
   udp: true
-- name: 77.104.76.23:8080
-  port: 8080
-  server: 77.104.76.23
+- name: 89.42.197.84:60606 (3357ms)
+  port: 60606
+  server: 89.42.197.84
   type: socks5
   udp: true
 - alterId: 0
@@ -33,20 +43,6 @@ proxies:
     headers:
       Host: ''
     path: /websocket/
-- alterId: 0
-  cipher: auto
-  name: 185.143.233.114:80 (51ms)
-  network: ws
-  port: 80
-  server: 185.143.233.114
-  tls: false
-  type: vmess
-  udp: true
-  uuid: cf7f2d7c-d4f8-469a-bfd5-97484bb98d2c
-  ws-opts:
-    headers:
-      Host: 185.143.233.114
-    path: /
 proxy-groups:
 - name: MAIN
   proxies:
@@ -57,16 +53,19 @@ proxy-groups:
   type: select
 - name: IR-ALL
   proxies:
-  - 185.171.54.36:4153 (4243ms)
-  - 185.143.233.114:80 (51ms)
+  - 185.88.177.197:8080 (217ms)
+  - 31.25.92.114:8080 (1325ms)
+  - 45.131.4.23:80 (1ms)
+  - 89.42.197.84:60606 (3357ms)
   type: select
 - name: IR-ALL-RAW
   proxies: &id001
-  - 31.25.92.114:8080
-  - 185.171.54.36:4153 (4243ms)
-  - 77.104.76.23:8080
+  - 185.88.177.197:8080 (217ms)
+  - 94.101.187.3:3129
+  - 31.25.92.114:8080 (1325ms)
+  - 45.131.4.23:80 (1ms)
+  - 89.42.197.84:60606 (3357ms)
   - 37.32.23.122:443
-  - 185.143.233.114:80 (51ms)
   type: select
 - interval: 600
   name: IR-AUTO
