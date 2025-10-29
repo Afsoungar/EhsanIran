@@ -4,19 +4,29 @@ log-level: info
 mixed-port: 7890
 mode: Rule
 proxies:
-- name: 37.32.24.181:8080 (5379ms)
+- name: 78.38.100.121:8080
   port: 8080
-  server: 37.32.24.181
+  server: 78.38.100.121
   type: http
   udp: true
-- name: 46.245.123.10:8080
+- name: 95.215.160.100:8080 (4332ms)
   port: 8080
-  server: 46.245.123.10
+  server: 95.215.160.100
   type: http
   udp: true
-- name: 212.16.77.50:3129
-  port: 3129
-  server: 212.16.77.50
+- name: 217.219.149.145:8080 (177ms)
+  port: 8080
+  server: 217.219.149.145
+  type: http
+  udp: true
+- name: 185.88.177.197:80 (180ms)
+  port: 80
+  server: 185.88.177.197
+  type: http
+  udp: true
+- name: 81.28.36.162:8080 (2448ms)
+  port: 8080
+  server: 81.28.36.162
   type: http
   udp: true
 - name: 31.25.92.114:8080
@@ -24,16 +34,35 @@ proxies:
   server: 31.25.92.114
   type: http
   udp: true
+- name: 109.238.181.53:8083
+  port: 8083
+  server: 109.238.181.53
+  type: http
+  udp: true
 - name: 94.182.44.187:5678
   port: 5678
   server: 94.182.44.187
   type: http
   udp: true
-- name: 85.9.87.26:8080
-  port: 8080
-  server: 85.9.87.26
+- name: 81.12.124.113:5678
+  port: 5678
+  server: 81.12.124.113
   type: socks5
   udp: true
+- alterId: 0
+  cipher: auto
+  name: 185.143.233.114:80 (47ms)
+  network: ws
+  port: 80
+  server: 185.143.233.114
+  tls: false
+  type: vmess
+  udp: true
+  uuid: cf7f2d7c-d4f8-469a-bfd5-97484bb98d2c
+  ws-opts:
+    headers:
+      Host: 185.143.233.114
+    path: /
 proxy-groups:
 - name: MAIN
   proxies:
@@ -44,16 +73,24 @@ proxy-groups:
   type: select
 - name: IR-ALL
   proxies:
-  - 37.32.24.181:8080 (5379ms)
+  - 95.215.160.100:8080 (4332ms)
+  - 217.219.149.145:8080 (177ms)
+  - 185.88.177.197:80 (180ms)
+  - 81.28.36.162:8080 (2448ms)
+  - 185.143.233.114:80 (47ms)
   type: select
 - name: IR-ALL-RAW
   proxies: &id001
-  - 37.32.24.181:8080 (5379ms)
-  - 46.245.123.10:8080
-  - 212.16.77.50:3129
+  - 78.38.100.121:8080
+  - 95.215.160.100:8080 (4332ms)
+  - 217.219.149.145:8080 (177ms)
+  - 185.88.177.197:80 (180ms)
+  - 81.28.36.162:8080 (2448ms)
   - 31.25.92.114:8080
+  - 109.238.181.53:8083
   - 94.182.44.187:5678
-  - 85.9.87.26:8080
+  - 81.12.124.113:5678
+  - 185.143.233.114:80 (47ms)
   type: select
 - interval: 600
   name: IR-AUTO
