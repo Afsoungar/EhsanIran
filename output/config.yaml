@@ -4,40 +4,94 @@ log-level: info
 mixed-port: 7890
 mode: Rule
 proxies:
-- name: 46.100.90.246:8080
-  port: 8080
-  server: 46.100.90.246
-  type: http
-  udp: true
-- name: 31.25.92.114:8080 (2275ms)
-  port: 8080
-  server: 31.25.92.114
-  type: http
-  udp: true
 - name: 46.148.41.9:8090
   port: 8090
   server: 46.148.41.9
   type: http
   udp: true
-- name: 185.88.177.197:80 (174ms)
+- name: 185.172.212.233:8080
+  port: 8080
+  server: 185.172.212.233
+  type: http
+  udp: true
+- name: 31.25.92.114:8080
+  port: 8080
+  server: 31.25.92.114
+  type: http
+  udp: true
+- name: 109.162.251.37:4153
+  port: 4153
+  server: 109.162.251.37
+  type: socks5
+  udp: true
+- name: 91.222.198.125:5678
+  port: 5678
+  server: 91.222.198.125
+  type: socks5
+  udp: true
+- name: 78.38.67.210:3636
+  port: 3636
+  server: 78.38.67.210
+  type: socks5
+  udp: true
+- name: 217.219.162.114:5678
+  port: 5678
+  server: 217.219.162.114
+  type: socks5
+  udp: true
+- name: 151.232.55.190:80 (255ms)
   port: 80
-  server: 185.88.177.197
+  server: 151.232.55.190
+  type: socks5
+  udp: true
+- name: 213.233.161.245:4153
+  port: 4153
+  server: 213.233.161.245
+  type: socks5
+  udp: true
+- name: 185.140.232.98:4145
+  port: 4145
+  server: 185.140.232.98
+  type: socks5
+  udp: true
+- name: 62.220.112.32:1080
+  port: 1080
+  server: 62.220.112.32
+  type: socks5
+  udp: true
+- name: 84.241.22.125:4145
+  port: 4145
+  server: 84.241.22.125
   type: socks5
   udp: true
 - alterId: 0
   cipher: auto
-  name: 185.143.233.114:80 (45ms)
+  name: 185.24.255.24:80
   network: ws
   port: 80
-  server: 185.143.233.114
+  server: 185.24.255.24
   tls: false
   type: vmess
   udp: true
-  uuid: cf7f2d7c-d4f8-469a-bfd5-97484bb98d2c
+  uuid: 80abb903-24e0-4dbd-9c2f-a57e9a267555
   ws-opts:
     headers:
-      Host: 185.143.233.114
-    path: /
+      Host: ''
+    path: /ws
+- alterId: 0
+  cipher: auto
+  name: 2.189.59.7:443
+  network: ws
+  port: 443
+  server: 2.189.59.7
+  tls: true
+  type: vmess
+  udp: true
+  uuid: 05641cf5-58d2-4ba4-a9f1-b3cda0b1fb1d
+  ws-opts:
+    headers:
+      Host: obdii.cfd
+    path: /linkws
 proxy-groups:
 - name: MAIN
   proxies:
@@ -48,17 +102,24 @@ proxy-groups:
   type: select
 - name: IR-ALL
   proxies:
-  - 31.25.92.114:8080 (2275ms)
-  - 185.88.177.197:80 (174ms)
-  - 185.143.233.114:80 (45ms)
+  - 151.232.55.190:80 (255ms)
   type: select
 - name: IR-ALL-RAW
   proxies: &id001
-  - 46.100.90.246:8080
-  - 31.25.92.114:8080 (2275ms)
   - 46.148.41.9:8090
-  - 185.88.177.197:80 (174ms)
-  - 185.143.233.114:80 (45ms)
+  - 185.172.212.233:8080
+  - 31.25.92.114:8080
+  - 109.162.251.37:4153
+  - 91.222.198.125:5678
+  - 78.38.67.210:3636
+  - 217.219.162.114:5678
+  - 151.232.55.190:80 (255ms)
+  - 213.233.161.245:4153
+  - 185.140.232.98:4145
+  - 62.220.112.32:1080
+  - 84.241.22.125:4145
+  - 185.24.255.24:80
+  - 2.189.59.7:443
   type: select
 - interval: 600
   name: IR-AUTO
