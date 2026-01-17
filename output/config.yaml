@@ -14,11 +14,6 @@ proxies:
   server: 85.133.151.242
   type: http
   udp: true
-- name: 81.12.33.121:666
-  port: 666
-  server: 81.12.33.121
-  type: socks5
-  udp: true
 proxy-groups:
 - name: MAIN
   proxies:
@@ -35,7 +30,6 @@ proxy-groups:
   proxies: &id001
   - 31.25.92.114:8080
   - 85.133.151.242:3129
-  - 81.12.33.121:666
   type: select
 - interval: 600
   name: IR-AUTO
