@@ -4,14 +4,14 @@ log-level: info
 mixed-port: 7890
 mode: Rule
 proxies:
-- name: 94.182.149.92:2012 (326ms)
-  port: 2012
-  server: 94.182.149.92
+- name: 89.37.219.220:1367 (3348ms)
+  port: 1367
+  server: 89.37.219.220
   type: http
   udp: true
-- name: 37.152.163.239:54379
-  port: 54379
-  server: 37.152.163.239
+- name: 87.107.164.251:8080 (1336ms)
+  port: 8080
+  server: 87.107.164.251
   type: http
   udp: true
 - name: 31.25.92.114:8080
@@ -19,50 +19,16 @@ proxies:
   server: 31.25.92.114
   type: http
   udp: true
-- name: 109.230.92.50:3128
-  port: 3128
-  server: 109.230.92.50
-  type: socks5
-  udp: true
-- name: 87.107.164.251:8080 (1353ms)
-  port: 8080
-  server: 87.107.164.251
-  type: socks5
-  udp: true
-- name: 45.86.7.235:8080
-  port: 8080
-  server: 45.86.7.235
-  type: socks5
-  udp: true
-- name: 185.171.54.30:4153
+- name: 213.233.161.246:4153
   port: 4153
-  server: 185.171.54.30
+  server: 213.233.161.246
   type: socks5
   udp: true
-- name: 85.133.227.182:80 (263ms)
-  port: 80
-  server: 85.133.227.182
+- name: 45.139.11.187:42444
+  port: 42444
+  server: 45.139.11.187
   type: socks5
   udp: true
-- name: 45.156.186.105:12988
-  port: 12988
-  server: 45.156.186.105
-  type: socks5
-  udp: true
-- alterId: 0
-  cipher: auto
-  name: 185.143.233.114:80 (8ms)
-  network: ws
-  port: 80
-  server: 185.143.233.114
-  tls: false
-  type: vmess
-  udp: true
-  uuid: cf7f2d7c-d4f8-469a-bfd5-97484bb98d2c
-  ws-opts:
-    headers:
-      Host: 185.143.233.114
-    path: /
 - alterId: 0
   cipher: auto
   name: 185.143.233.114:80 (7ms)
@@ -129,24 +95,17 @@ proxy-groups:
   type: select
 - name: IR-ALL
   proxies:
-  - 94.182.149.92:2012 (326ms)
-  - 87.107.164.251:8080 (1353ms)
-  - 85.133.227.182:80 (263ms)
-  - 185.143.233.114:80 (8ms)
+  - 89.37.219.220:1367 (3348ms)
+  - 87.107.164.251:8080 (1336ms)
   - 185.143.233.114:80 (7ms)
   type: select
 - name: IR-ALL-RAW
   proxies: &id001
-  - 94.182.149.92:2012 (326ms)
-  - 37.152.163.239:54379
+  - 89.37.219.220:1367 (3348ms)
+  - 87.107.164.251:8080 (1336ms)
   - 31.25.92.114:8080
-  - 109.230.92.50:3128
-  - 87.107.164.251:8080 (1353ms)
-  - 45.86.7.235:8080
-  - 185.171.54.30:4153
-  - 85.133.227.182:80 (263ms)
-  - 45.156.186.105:12988
-  - 185.143.233.114:80 (8ms)
+  - 213.233.161.246:4153
+  - 45.139.11.187:42444
   - 185.143.233.114:80 (7ms)
   - 2.189.59.6:443
   - 2.189.59.3:443
