@@ -4,9 +4,9 @@ log-level: info
 mixed-port: 7890
 mode: Rule
 proxies:
-- name: 5.57.38.64:27913 (247ms)
-  port: 27913
-  server: 5.57.38.64
+- name: 46.209.30.11:8080
+  port: 8080
+  server: 46.209.30.11
   type: http
   udp: true
 - name: 185.239.1.63:3129
@@ -19,26 +19,30 @@ proxies:
   server: 31.25.92.114
   type: http
   udp: true
-- name: 45.86.7.235:8080
-  port: 8080
-  server: 45.86.7.235
+- name: 85.133.227.150:80 (1250ms)
+  port: 80
+  server: 85.133.227.150
   type: socks5
   udp: true
-- name: 78.38.108.194:1080
-  port: 1080
-  server: 78.38.108.194
+- name: 85.133.227.182:80
+  port: 80
+  server: 85.133.227.182
   type: socks5
   udp: true
-- name: 217.219.173.237:8080
-  port: 8080
-  server: 217.219.173.237
-  type: socks5
+- alterId: 0
+  cipher: auto
+  name: 2.189.59.7:443
+  network: ws
+  port: 443
+  server: 2.189.59.7
+  tls: true
+  type: vmess
   udp: true
-- name: 93.126.31.33:8080 (1314ms)
-  port: 8080
-  server: 93.126.31.33
-  type: socks5
-  udp: true
+  uuid: 05641cf5-58d2-4ba4-a9f1-b3cda0b1fb1d
+  ws-opts:
+    headers:
+      Host: obdii.cfd
+    path: /linkws
 proxy-groups:
 - name: MAIN
   proxies:
@@ -49,18 +53,16 @@ proxy-groups:
   type: select
 - name: IR-ALL
   proxies:
-  - 5.57.38.64:27913 (247ms)
-  - 93.126.31.33:8080 (1314ms)
+  - 85.133.227.150:80 (1250ms)
   type: select
 - name: IR-ALL-RAW
   proxies: &id001
-  - 5.57.38.64:27913 (247ms)
+  - 46.209.30.11:8080
   - 185.239.1.63:3129
   - 31.25.92.114:8080
-  - 45.86.7.235:8080
-  - 78.38.108.194:1080
-  - 217.219.173.237:8080
-  - 93.126.31.33:8080 (1314ms)
+  - 85.133.227.150:80 (1250ms)
+  - 85.133.227.182:80
+  - 2.189.59.7:443
   type: select
 - interval: 600
   name: IR-AUTO
