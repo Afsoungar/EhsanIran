@@ -4,12 +4,7 @@ log-level: info
 mixed-port: 7890
 mode: Rule
 proxies:
-- name: 5.57.38.64:27913 (201ms)
-  port: 27913
-  server: 5.57.38.64
-  type: http
-  udp: true
-- name: 185.13.229.254:1376
+- name: 185.13.229.254:1376 (2322ms)
   port: 1376
   server: 185.13.229.254
   type: http
@@ -19,29 +14,49 @@ proxies:
   server: 185.239.1.63
   type: http
   udp: true
-- name: 31.25.92.114:8080 (217ms)
+- name: 31.25.92.114:8080
   port: 8080
   server: 31.25.92.114
   type: http
   udp: true
-- name: 94.182.177.92:80 (201ms)
+- name: 81.12.104.43:3629
+  port: 3629
+  server: 81.12.104.43
+  type: socks5
+  udp: true
+- name: 46.245.123.10:8080
+  port: 8080
+  server: 46.245.123.10
+  type: socks5
+  udp: true
+- name: 79.127.127.7:1369
+  port: 1369
+  server: 79.127.127.7
+  type: socks5
+  udp: true
+- name: 185.8.175.147:80 (260ms)
   port: 80
-  server: 94.182.177.92
+  server: 185.8.175.147
+  type: socks5
+  udp: true
+- name: 5.160.168.134:5678
+  port: 5678
+  server: 5.160.168.134
   type: socks5
   udp: true
 - alterId: 0
   cipher: auto
-  name: 185.143.233.114:80 (110ms)
+  name: 2.189.59.6:443
   network: ws
-  port: 80
-  server: 185.143.233.114
-  tls: false
+  port: 443
+  server: 2.189.59.6
+  tls: true
   type: vmess
   udp: true
-  uuid: cf7f2d7c-d4f8-469a-bfd5-97484bb98d2c
+  uuid: 05641cf5-58d2-4ba4-a9f1-b3cda0b1fb1d
   ws-opts:
     headers:
-      Host: 214.zirogame-79.site
+      Host: obdii.cfd
     path: /
 proxy-groups:
 - name: MAIN
@@ -53,19 +68,20 @@ proxy-groups:
   type: select
 - name: IR-ALL
   proxies:
-  - 5.57.38.64:27913 (201ms)
-  - 31.25.92.114:8080 (217ms)
-  - 94.182.177.92:80 (201ms)
-  - 185.143.233.114:80 (110ms)
+  - 185.13.229.254:1376 (2322ms)
+  - 185.8.175.147:80 (260ms)
   type: select
 - name: IR-ALL-RAW
   proxies: &id001
-  - 5.57.38.64:27913 (201ms)
-  - 185.13.229.254:1376
+  - 185.13.229.254:1376 (2322ms)
   - 185.239.1.63:3129
-  - 31.25.92.114:8080 (217ms)
-  - 94.182.177.92:80 (201ms)
-  - 185.143.233.114:80 (110ms)
+  - 31.25.92.114:8080
+  - 81.12.104.43:3629
+  - 46.245.123.10:8080
+  - 79.127.127.7:1369
+  - 185.8.175.147:80 (260ms)
+  - 5.160.168.134:5678
+  - 2.189.59.6:443
   type: select
 - interval: 600
   name: IR-AUTO
