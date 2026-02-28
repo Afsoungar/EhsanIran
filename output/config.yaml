@@ -4,6 +4,16 @@ log-level: info
 mixed-port: 7890
 mode: Rule
 proxies:
+- name: 95.38.195.74:1081
+  port: 1081
+  server: 95.38.195.74
+  type: http
+  udp: true
+- name: 5.236.93.14:9000 (271ms)
+  port: 9000
+  server: 5.236.93.14
+  type: http
+  udp: true
 - name: 185.239.1.63:3129
   port: 3129
   server: 185.239.1.63
@@ -14,36 +24,54 @@ proxies:
   server: 31.25.92.114
   type: http
   udp: true
-- name: 94.182.219.50:12845 (2263ms)
-  port: 12845
-  server: 94.182.219.50
+- name: 217.219.121.66:58224
+  port: 58224
+  server: 217.219.121.66
   type: http
   udp: true
-- name: 81.91.157.134:5678
-  port: 5678
-  server: 81.91.157.134
+- name: 78.38.67.95:4153
+  port: 4153
+  server: 78.38.67.95
   type: socks5
   udp: true
-- name: 94.182.177.92:80 (225ms)
+- name: 89.42.198.79:4153
+  port: 4153
+  server: 89.42.198.79
+  type: socks5
+  udp: true
+- name: 81.12.33.121:666 (174ms)
+  port: 666
+  server: 81.12.33.121
+  type: socks5
+  udp: true
+- alterId: 0
+  cipher: auto
+  name: 185.24.255.24:80
+  network: ws
   port: 80
-  server: 94.182.177.92
-  type: socks5
+  server: 185.24.255.24
+  tls: false
+  type: vmess
   udp: true
-- name: 80.71.112.114:55243
-  port: 55243
-  server: 80.71.112.114
-  type: socks5
+  uuid: 80abb903-24e0-4dbd-9c2f-a57e9a267555
+  ws-opts:
+    headers:
+      Host: ''
+    path: /ws
+- alterId: 0
+  cipher: auto
+  name: 2.189.59.7:443
+  network: ws
+  port: 443
+  server: 2.189.59.7
+  tls: true
+  type: vmess
   udp: true
-- name: 84.241.6.102:1080 (1258ms)
-  port: 1080
-  server: 84.241.6.102
-  type: socks5
-  udp: true
-- name: 87.107.78.242:1543
-  port: 1543
-  server: 87.107.78.242
-  type: socks5
-  udp: true
+  uuid: 05641cf5-58d2-4ba4-a9f1-b3cda0b1fb1d
+  ws-opts:
+    headers:
+      Host: obdii.cfd
+    path: /linkws
 proxy-groups:
 - name: MAIN
   proxies:
@@ -54,20 +82,21 @@ proxy-groups:
   type: select
 - name: IR-ALL
   proxies:
-  - 94.182.219.50:12845 (2263ms)
-  - 94.182.177.92:80 (225ms)
-  - 84.241.6.102:1080 (1258ms)
+  - 5.236.93.14:9000 (271ms)
+  - 81.12.33.121:666 (174ms)
   type: select
 - name: IR-ALL-RAW
   proxies: &id001
+  - 95.38.195.74:1081
+  - 5.236.93.14:9000 (271ms)
   - 185.239.1.63:3129
   - 31.25.92.114:8080
-  - 94.182.219.50:12845 (2263ms)
-  - 81.91.157.134:5678
-  - 94.182.177.92:80 (225ms)
-  - 80.71.112.114:55243
-  - 84.241.6.102:1080 (1258ms)
-  - 87.107.78.242:1543
+  - 217.219.121.66:58224
+  - 78.38.67.95:4153
+  - 89.42.198.79:4153
+  - 81.12.33.121:666 (174ms)
+  - 185.24.255.24:80
+  - 2.189.59.7:443
   type: select
 - interval: 600
   name: IR-AUTO
