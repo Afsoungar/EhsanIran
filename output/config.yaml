@@ -19,6 +19,11 @@ proxies:
   server: 217.219.121.66
   type: http
   udp: true
+- name: 81.91.157.134:5678
+  port: 5678
+  server: 81.91.157.134
+  type: socks5
+  udp: true
 - alterId: 0
   cipher: auto
   name: 185.24.255.24:80
@@ -61,84 +66,6 @@ proxies:
     headers:
       Host: obdii.cfd
     path: /linkws
-- alterId: 0
-  cipher: auto
-  name: 2.189.59.3:443
-  network: ws
-  port: 443
-  server: 2.189.59.3
-  tls: true
-  type: vmess
-  udp: true
-  uuid: 05641cf5-58d2-4ba4-a9f1-b3cda0b1fb1d
-  ws-opts:
-    headers:
-      Host: obdii.cfd
-    path: /
-- alterId: 0
-  cipher: auto
-  name: 2.189.59.4:443
-  network: ws
-  port: 443
-  server: 2.189.59.4
-  tls: true
-  type: vmess
-  udp: true
-  uuid: 05641cf5-58d2-4ba4-a9f1-b3cda0b1fb1d
-  ws-opts:
-    headers:
-      Host: obdii.cfd
-    path: /linkws
-- name: 151.232.72.15:80
-  port: 80
-  server: 151.232.72.15
-  type: http
-  udp: true
-- name: 151.232.72.12:80
-  port: 80
-  server: 151.232.72.12
-  type: http
-  udp: true
-- name: 46.209.207.149:8080
-  port: 8080
-  server: 46.209.207.149
-  type: http
-  udp: true
-- name: 5.190.141.144:8080
-  port: 8080
-  server: 5.190.141.144
-  type: http
-  udp: true
-- name: 151.232.72.17:80
-  port: 80
-  server: 151.232.72.17
-  type: http
-  udp: true
-- name: 151.232.72.23:80
-  port: 80
-  server: 151.232.72.23
-  type: http
-  udp: true
-- name: 151.232.72.20:80
-  port: 80
-  server: 151.232.72.20
-  type: http
-  udp: true
-- name: 95.38.172.161:8080
-  port: 8080
-  server: 95.38.172.161
-  type: http
-  udp: true
-- name: 151.232.72.14:80
-  port: 80
-  server: 151.232.72.14
-  type: http
-  udp: true
-- name: 94.74.132.129:808
-  port: 808
-  server: 94.74.132.129
-  type: http
-  udp: true
 proxy-groups:
 - name: MAIN
   proxies:
@@ -156,21 +83,10 @@ proxy-groups:
   - 185.239.1.63:3129
   - 31.25.92.114:8080
   - 217.219.121.66:58224
+  - 81.91.157.134:5678
   - 185.24.255.24:80
   - 193.39.9.61:13909
   - 2.189.59.5:443
-  - 2.189.59.3:443
-  - 2.189.59.4:443
-  - 151.232.72.15:80
-  - 151.232.72.12:80
-  - 46.209.207.149:8080
-  - 5.190.141.144:8080
-  - 151.232.72.17:80
-  - 151.232.72.23:80
-  - 151.232.72.20:80
-  - 95.38.172.161:8080
-  - 151.232.72.14:80
-  - 94.74.132.129:808
   type: select
 - interval: 600
   name: IR-AUTO
