@@ -14,25 +14,31 @@ proxies:
   server: 31.25.92.114
   type: http
   udp: true
+- name: 217.219.74.130:17
+  port: 17
+  server: 217.219.74.130
+  type: http
+  udp: true
 - name: 217.219.121.66:58224
   port: 58224
   server: 217.219.121.66
   type: http
   udp: true
-- alterId: 0
-  cipher: auto
-  name: 37.32.23.122:443
-  network: ws
-  port: 443
-  server: 37.32.23.122
-  tls: false
-  type: vmess
+- name: 151.232.72.12:80
+  port: 80
+  server: 151.232.72.12
+  type: http
   udp: true
-  uuid: d12bc882-43c7-415e-87c5-2a7fdc8371c0
-  ws-opts:
-    headers:
-      Host: ''
-    path: /websocket/
+- name: 151.232.72.16:80
+  port: 80
+  server: 151.232.72.16
+  type: http
+  udp: true
+- name: 45.82.139.181:80
+  port: 80
+  server: 45.82.139.181
+  type: http
+  udp: true
 proxy-groups:
 - name: MAIN
   proxies:
@@ -49,8 +55,11 @@ proxy-groups:
   proxies: &id001
   - 185.239.1.63:3129
   - 31.25.92.114:8080
+  - 217.219.74.130:17
   - 217.219.121.66:58224
-  - 37.32.23.122:443
+  - 151.232.72.12:80
+  - 151.232.72.16:80
+  - 45.82.139.181:80
   type: select
 - interval: 600
   name: IR-AUTO
