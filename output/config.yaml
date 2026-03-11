@@ -24,6 +24,11 @@ proxies:
   server: 217.219.121.66
   type: http
   udp: true
+- name: 84.241.6.102:1080
+  port: 1080
+  server: 84.241.6.102
+  type: socks5
+  udp: true
 - alterId: 0
   cipher: auto
   name: 37.32.23.122:443
@@ -38,43 +43,9 @@ proxies:
     headers:
       Host: ''
     path: /websocket/
-- alterId: 0
-  cipher: auto
-  name: 185.143.233.114:80 (80ms)
-  network: ws
-  port: 80
-  server: 185.143.233.114
-  tls: false
-  type: vmess
-  udp: true
-  uuid: cf7f2d7c-d4f8-469a-bfd5-97484bb98d2c
-  ws-opts:
-    headers:
-      Host: 214.zirogame-79.site
-    path: /
 - name: 151.232.72.22:80
   port: 80
   server: 151.232.72.22
-  type: http
-  udp: true
-- name: 5.190.141.144:8080
-  port: 8080
-  server: 5.190.141.144
-  type: http
-  udp: true
-- name: 151.232.72.23:80
-  port: 80
-  server: 151.232.72.23
-  type: http
-  udp: true
-- name: 95.38.172.161:8080
-  port: 8080
-  server: 95.38.172.161
-  type: http
-  udp: true
-- name: 151.232.72.15:80
-  port: 80
-  server: 151.232.72.15
   type: http
   udp: true
 - name: 151.232.72.13:80
@@ -82,14 +53,24 @@ proxies:
   server: 151.232.72.13
   type: http
   udp: true
+- name: 45.82.139.181:80
+  port: 80
+  server: 45.82.139.181
+  type: http
+  udp: true
 - name: 151.232.72.12:80
   port: 80
   server: 151.232.72.12
   type: http
   udp: true
-- name: 31.217.214.131:8090
-  port: 8090
-  server: 31.217.214.131
+- name: 178.252.184.142:8080
+  port: 8080
+  server: 178.252.184.142
+  type: http
+  udp: true
+- name: 151.232.72.23:80
+  port: 80
+  server: 151.232.72.23
   type: http
   udp: true
 - name: 185.23.128.180:3128
@@ -97,9 +78,19 @@ proxies:
   server: 185.23.128.180
   type: http
   udp: true
-- name: 45.82.139.181:80
+- name: 151.232.72.20:80
   port: 80
-  server: 45.82.139.181
+  server: 151.232.72.20
+  type: http
+  udp: true
+- name: 46.209.207.149:8080
+  port: 8080
+  server: 46.209.207.149
+  type: http
+  udp: true
+- name: 151.232.72.15:80
+  port: 80
+  server: 151.232.72.15
   type: http
   udp: true
 - name: 151.232.72.19:80
@@ -112,24 +103,9 @@ proxies:
   server: 151.232.72.21
   type: http
   udp: true
-- name: 46.209.207.149:8080
-  port: 8080
-  server: 46.209.207.149
-  type: http
-  udp: true
 - name: 94.74.132.129:808
   port: 808
   server: 94.74.132.129
-  type: http
-  udp: true
-- name: 151.232.72.17:80
-  port: 80
-  server: 151.232.72.17
-  type: http
-  udp: true
-- name: 151.232.72.18:80
-  port: 80
-  server: 151.232.72.18
   type: http
   udp: true
 - name: 151.232.72.16:80
@@ -137,19 +113,34 @@ proxies:
   server: 151.232.72.16
   type: http
   udp: true
-- name: 151.232.72.20:80
-  port: 80
-  server: 151.232.72.20
+- name: 5.190.141.144:8080
+  port: 8080
+  server: 5.190.141.144
   type: http
   udp: true
-- name: 178.252.184.142:8080
+- name: 151.232.72.18:80
+  port: 80
+  server: 151.232.72.18
+  type: http
+  udp: true
+- name: 151.232.72.17:80
+  port: 80
+  server: 151.232.72.17
+  type: http
+  udp: true
+- name: 95.38.172.161:8080
   port: 8080
-  server: 178.252.184.142
+  server: 95.38.172.161
   type: http
   udp: true
 - name: 151.232.72.14:80
   port: 80
   server: 151.232.72.14
+  type: http
+  udp: true
+- name: 31.217.214.131:8090
+  port: 8090
+  server: 31.217.214.131
   type: http
   udp: true
 proxy-groups:
@@ -162,7 +153,7 @@ proxy-groups:
   type: select
 - name: IR-ALL
   proxies:
-  - 185.143.233.114:80 (80ms)
+  - DIRECT
   type: select
 - name: IR-ALL-RAW
   proxies: &id001
@@ -170,28 +161,28 @@ proxy-groups:
   - 31.25.92.114:8080
   - 94.101.187.3:3129
   - 217.219.121.66:58224
+  - 84.241.6.102:1080
   - 37.32.23.122:443
-  - 185.143.233.114:80 (80ms)
   - 151.232.72.22:80
-  - 5.190.141.144:8080
-  - 151.232.72.23:80
-  - 95.38.172.161:8080
-  - 151.232.72.15:80
   - 151.232.72.13:80
-  - 151.232.72.12:80
-  - 31.217.214.131:8090
-  - 185.23.128.180:3128
   - 45.82.139.181:80
+  - 151.232.72.12:80
+  - 178.252.184.142:8080
+  - 151.232.72.23:80
+  - 185.23.128.180:3128
+  - 151.232.72.20:80
+  - 46.209.207.149:8080
+  - 151.232.72.15:80
   - 151.232.72.19:80
   - 151.232.72.21:80
-  - 46.209.207.149:8080
   - 94.74.132.129:808
-  - 151.232.72.17:80
-  - 151.232.72.18:80
   - 151.232.72.16:80
-  - 151.232.72.20:80
-  - 178.252.184.142:8080
+  - 5.190.141.144:8080
+  - 151.232.72.18:80
+  - 151.232.72.17:80
+  - 95.38.172.161:8080
   - 151.232.72.14:80
+  - 31.217.214.131:8090
   type: select
 - interval: 600
   name: IR-AUTO
