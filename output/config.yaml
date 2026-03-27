@@ -14,6 +14,11 @@ proxies:
   server: 31.25.92.114
   type: http
   udp: true
+- name: 5.202.52.218:3129
+  port: 3129
+  server: 5.202.52.218
+  type: http
+  udp: true
 proxy-groups:
 - name: MAIN
   proxies:
@@ -30,6 +35,7 @@ proxy-groups:
   proxies: &id001
   - 185.239.1.63:3129
   - 31.25.92.114:8080
+  - 5.202.52.218:3129
   type: select
 - interval: 600
   name: IR-AUTO
