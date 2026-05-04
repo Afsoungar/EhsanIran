@@ -3,7 +3,21 @@ interface-name: utun
 log-level: info
 mixed-port: 7890
 mode: Rule
-proxies: []
+proxies:
+- alterId: 0
+  cipher: auto
+  name: 185.24.255.24:80
+  network: ws
+  port: 80
+  server: 185.24.255.24
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 80abb903-24e0-4dbd-9c2f-a57e9a267555
+  ws-opts:
+    headers:
+      Host: ''
+    path: /ws
 proxy-groups:
 - name: MAIN
   proxies:
@@ -18,7 +32,7 @@ proxy-groups:
   type: select
 - name: IR-ALL-RAW
   proxies: &id001
-  - DIRECT
+  - 185.24.255.24:80
   type: select
 - interval: 600
   name: IR-AUTO
