@@ -6,60 +6,46 @@ mode: Rule
 proxies:
 - alterId: 0
   cipher: auto
-  name: 2.189.59.5:443
+  name: 37.32.23.122:443
   network: ws
   port: 443
-  server: 2.189.59.5
-  tls: true
+  server: 37.32.23.122
+  tls: false
   type: vmess
   udp: true
-  uuid: 05641cf5-58d2-4ba4-a9f1-b3cda0b1fb1d
+  uuid: d12bc882-43c7-415e-87c5-2a7fdc8371c0
   ws-opts:
     headers:
-      Host: obdii.cfd
-    path: /linkws
+      Host: ''
+    path: /websocket/
 - alterId: 0
   cipher: auto
-  name: 2.189.59.6:443
+  name: 185.24.255.24:80
   network: ws
-  port: 443
-  server: 2.189.59.6
-  tls: true
+  port: 80
+  server: 185.24.255.24
+  tls: false
   type: vmess
   udp: true
-  uuid: 05641cf5-58d2-4ba4-a9f1-b3cda0b1fb1d
+  uuid: 80abb903-24e0-4dbd-9c2f-a57e9a267555
   ws-opts:
     headers:
-      Host: obdii.cfd
+      Host: ''
+    path: /ws
+- alterId: 0
+  cipher: auto
+  name: 185.143.233.114:80 (81ms)
+  network: ws
+  port: 80
+  server: 185.143.233.114
+  tls: false
+  type: vmess
+  udp: true
+  uuid: cf7f2d7c-d4f8-469a-bfd5-97484bb98d2c
+  ws-opts:
+    headers:
+      Host: 214.zirogame-79.site
     path: /
-- alterId: 0
-  cipher: auto
-  name: 2.189.59.3:443
-  network: ws
-  port: 443
-  server: 2.189.59.3
-  tls: true
-  type: vmess
-  udp: true
-  uuid: 05641cf5-58d2-4ba4-a9f1-b3cda0b1fb1d
-  ws-opts:
-    headers:
-      Host: obdii.cfd
-    path: /
-- alterId: 0
-  cipher: auto
-  name: 2.189.59.4:443
-  network: ws
-  port: 443
-  server: 2.189.59.4
-  tls: true
-  type: vmess
-  udp: true
-  uuid: 05641cf5-58d2-4ba4-a9f1-b3cda0b1fb1d
-  ws-opts:
-    headers:
-      Host: obdii.cfd
-    path: /linkws
 proxy-groups:
 - name: MAIN
   proxies:
@@ -70,14 +56,13 @@ proxy-groups:
   type: select
 - name: IR-ALL
   proxies:
-  - DIRECT
+  - 185.143.233.114:80 (81ms)
   type: select
 - name: IR-ALL-RAW
   proxies: &id001
-  - 2.189.59.5:443
-  - 2.189.59.6:443
-  - 2.189.59.3:443
-  - 2.189.59.4:443
+  - 37.32.23.122:443
+  - 185.24.255.24:80
+  - 185.143.233.114:80 (81ms)
   type: select
 - interval: 600
   name: IR-AUTO
