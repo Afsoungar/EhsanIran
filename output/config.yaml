@@ -6,7 +6,7 @@ mode: Rule
 proxies:
 - alterId: 0
   cipher: auto
-  name: 185.143.233.114:80 (83ms)
+  name: 185.143.233.114:80 (80ms)
   network: ws
   port: 80
   server: 185.143.233.114
@@ -28,11 +28,11 @@ proxy-groups:
   type: select
 - name: IR-ALL
   proxies:
-  - 185.143.233.114:80 (83ms)
+  - 185.143.233.114:80 (80ms)
   type: select
 - name: IR-ALL-RAW
   proxies: &id001
-  - 185.143.233.114:80 (83ms)
+  - 185.143.233.114:80 (80ms)
   type: select
 - interval: 600
   name: IR-AUTO
