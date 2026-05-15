@@ -4,39 +4,20 @@ log-level: info
 mixed-port: 7890
 mode: Rule
 proxies:
-- name: 185.53.142.171:40000 (174ms)
-  port: 40000
-  server: 185.53.142.171
-  type: http
-  udp: true
 - alterId: 0
   cipher: auto
-  name: 185.143.233.114:80 (84ms)
+  name: 37.32.23.122:443
   network: ws
-  port: 80
-  server: 185.143.233.114
+  port: 443
+  server: 37.32.23.122
   tls: false
   type: vmess
   udp: true
-  uuid: cf7f2d7c-d4f8-469a-bfd5-97484bb98d2c
+  uuid: d12bc882-43c7-415e-87c5-2a7fdc8371c0
   ws-opts:
     headers:
-      Host: 185.143.233.114
-    path: /
-- alterId: 0
-  cipher: auto
-  name: 185.143.233.114:80 (85ms)
-  network: ws
-  port: 80
-  server: 185.143.233.114
-  tls: false
-  type: vmess
-  udp: true
-  uuid: cf7f2d7c-d4f8-469a-bfd5-97484bb98d2c
-  ws-opts:
-    headers:
-      Host: 214.zirogame-79.site
-    path: /
+      Host: ''
+    path: /websocket/
 proxy-groups:
 - name: MAIN
   proxies:
@@ -47,15 +28,11 @@ proxy-groups:
   type: select
 - name: IR-ALL
   proxies:
-  - 185.53.142.171:40000 (174ms)
-  - 185.143.233.114:80 (84ms)
-  - 185.143.233.114:80 (85ms)
+  - DIRECT
   type: select
 - name: IR-ALL-RAW
   proxies: &id001
-  - 185.53.142.171:40000 (174ms)
-  - 185.143.233.114:80 (84ms)
-  - 185.143.233.114:80 (85ms)
+  - 37.32.23.122:443
   type: select
 - interval: 600
   name: IR-AUTO
