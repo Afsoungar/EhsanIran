@@ -3,7 +3,51 @@ interface-name: utun
 log-level: info
 mixed-port: 7890
 mode: Rule
-proxies: []
+proxies:
+- alterId: 0
+  cipher: auto
+  name: 185.143.233.114:80 (81ms)
+  network: ws
+  port: 80
+  server: 185.143.233.114
+  tls: false
+  type: vmess
+  udp: true
+  uuid: cf7f2d7c-d4f8-469a-bfd5-97484bb98d2c
+  ws-opts:
+    headers:
+      Host: 214.zirogame-79.site
+    path: /
+- name: 151.232.72.12:80
+  port: 80
+  server: 151.232.72.12
+  type: http
+  udp: true
+- name: 151.232.72.13:80
+  port: 80
+  server: 151.232.72.13
+  type: http
+  udp: true
+- name: 95.38.172.161:8080
+  port: 8080
+  server: 95.38.172.161
+  type: http
+  udp: true
+- name: 185.23.128.180:3128
+  port: 3128
+  server: 185.23.128.180
+  type: http
+  udp: true
+- name: 151.232.72.18:80
+  port: 80
+  server: 151.232.72.18
+  type: http
+  udp: true
+- name: 46.209.207.149:8080
+  port: 8080
+  server: 46.209.207.149
+  type: http
+  udp: true
 proxy-groups:
 - name: MAIN
   proxies:
@@ -14,11 +58,17 @@ proxy-groups:
   type: select
 - name: IR-ALL
   proxies:
-  - DIRECT
+  - 185.143.233.114:80 (81ms)
   type: select
 - name: IR-ALL-RAW
   proxies: &id001
-  - DIRECT
+  - 185.143.233.114:80 (81ms)
+  - 151.232.72.12:80
+  - 151.232.72.13:80
+  - 95.38.172.161:8080
+  - 185.23.128.180:3128
+  - 151.232.72.18:80
+  - 46.209.207.149:8080
   type: select
 - interval: 600
   name: IR-AUTO
