@@ -4,9 +4,14 @@ log-level: info
 mixed-port: 7890
 mode: Rule
 proxies:
+- name: 2.184.159.149:8080
+  port: 8080
+  server: 2.184.159.149
+  type: http
+  udp: true
 - alterId: 0
   cipher: auto
-  name: 185.143.233.114:80 (126ms)
+  name: 185.143.233.114:80 (2162ms)
   network: ws
   port: 80
   server: 185.143.233.114
@@ -20,7 +25,7 @@ proxies:
     path: /
 - alterId: 0
   cipher: auto
-  name: 185.143.233.114:80 (130ms)
+  name: 185.143.233.114:80 (85ms)
   network: ws
   port: 80
   server: 185.143.233.114
@@ -34,10 +39,10 @@ proxies:
     path: /
 - alterId: 0
   cipher: auto
-  name: 2.189.59.7:443
+  name: 2.189.59.6:443
   network: ws
   port: 443
-  server: 2.189.59.7
+  server: 2.189.59.6
   tls: true
   type: vmess
   udp: true
@@ -45,7 +50,7 @@ proxies:
   ws-opts:
     headers:
       Host: obdii.cfd
-    path: /linkws
+    path: /
 - alterId: 0
   cipher: auto
   name: 2.189.59.3:443
@@ -60,6 +65,20 @@ proxies:
     headers:
       Host: obdii.cfd
     path: /
+- alterId: 0
+  cipher: auto
+  name: 2.189.59.4:443
+  network: ws
+  port: 443
+  server: 2.189.59.4
+  tls: true
+  type: vmess
+  udp: true
+  uuid: 05641cf5-58d2-4ba4-a9f1-b3cda0b1fb1d
+  ws-opts:
+    headers:
+      Host: obdii.cfd
+    path: /linkws
 proxy-groups:
 - name: MAIN
   proxies:
@@ -70,15 +89,17 @@ proxy-groups:
   type: select
 - name: IR-ALL
   proxies:
-  - 185.143.233.114:80 (126ms)
-  - 185.143.233.114:80 (130ms)
+  - 185.143.233.114:80 (2162ms)
+  - 185.143.233.114:80 (85ms)
   type: select
 - name: IR-ALL-RAW
   proxies: &id001
-  - 185.143.233.114:80 (126ms)
-  - 185.143.233.114:80 (130ms)
-  - 2.189.59.7:443
+  - 2.184.159.149:8080
+  - 185.143.233.114:80 (2162ms)
+  - 185.143.233.114:80 (85ms)
+  - 2.189.59.6:443
   - 2.189.59.3:443
+  - 2.189.59.4:443
   type: select
 - interval: 600
   name: IR-AUTO
