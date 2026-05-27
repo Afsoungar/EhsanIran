@@ -4,30 +4,59 @@ log-level: info
 mixed-port: 7890
 mode: Rule
 proxies:
-- name: 185.126.5.72:8080
-  port: 8080
-  server: 185.126.5.72
+- name: 185.53.142.171:20000 (244ms)
+  port: 20000
+  server: 185.53.142.171
+  type: http
+  udp: true
+- name: 151.232.18.66:5678 (227ms)
+  port: 5678
+  server: 151.232.18.66
+  type: http
+  udp: true
+- name: 217.219.162.114:5678
+  port: 5678
+  server: 217.219.162.114
+  type: http
+  udp: true
+- name: 78.38.67.210:3636 (1320ms)
+  port: 3636
+  server: 78.38.67.210
   type: socks5
   udp: true
-- name: 37.235.22.91:8443
-  port: 8443
-  server: 37.235.22.91
+- name: 78.38.67.95:4153
+  port: 4153
+  server: 78.38.67.95
   type: socks5
   udp: true
 - alterId: 0
   cipher: auto
-  name: 37.32.23.122:443 (177ms)
+  name: 185.24.255.24:80
   network: ws
-  port: 443
-  server: 37.32.23.122
+  port: 80
+  server: 185.24.255.24
   tls: false
   type: vmess
   udp: true
-  uuid: d12bc882-43c7-415e-87c5-2a7fdc8371c0
+  uuid: 80abb903-24e0-4dbd-9c2f-a57e9a267555
   ws-opts:
     headers:
       Host: ''
-    path: /websocket/
+    path: /ws
+- alterId: 0
+  cipher: auto
+  name: 2.189.59.7:443
+  network: ws
+  port: 443
+  server: 2.189.59.7
+  tls: true
+  type: vmess
+  udp: true
+  uuid: 05641cf5-58d2-4ba4-a9f1-b3cda0b1fb1d
+  ws-opts:
+    headers:
+      Host: obdii.cfd
+    path: /linkws
 - alterId: 0
   cipher: auto
   name: 193.39.9.61:13909
@@ -108,13 +137,19 @@ proxy-groups:
   type: select
 - name: IR-ALL
   proxies:
-  - 37.32.23.122:443 (177ms)
+  - 185.53.142.171:20000 (244ms)
+  - 151.232.18.66:5678 (227ms)
+  - 78.38.67.210:3636 (1320ms)
   type: select
 - name: IR-ALL-RAW
   proxies: &id001
-  - 185.126.5.72:8080
-  - 37.235.22.91:8443
-  - 37.32.23.122:443 (177ms)
+  - 185.53.142.171:20000 (244ms)
+  - 151.232.18.66:5678 (227ms)
+  - 217.219.162.114:5678
+  - 78.38.67.210:3636 (1320ms)
+  - 78.38.67.95:4153
+  - 185.24.255.24:80
+  - 2.189.59.7:443
   - 193.39.9.61:13909
   - 2.189.59.5:443
   - 2.189.59.6:443
