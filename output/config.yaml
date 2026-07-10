@@ -4,109 +4,24 @@ log-level: info
 mixed-port: 7890
 mode: Rule
 proxies:
-- name: 93.118.142.196:1093 (226ms)
+- name: 93.118.142.196:1093 (231ms)
   port: 1093
   server: 93.118.142.196
   type: socks5
   udp: true
-- name: 5.200.72.62:3129
-  port: 3129
-  server: 5.200.72.62
-  type: http
+- name: 81.91.145.5:10818
+  port: 10818
+  server: 81.91.145.5
+  type: socks5
   udp: true
-- name: 85.133.190.40:8097 (1242ms)
-  port: 8097
-  server: 85.133.190.40
-  type: http
-  udp: true
-- name: 2.180.22.218:80
-  port: 80
-  server: 2.180.22.218
-  type: http
-  udp: true
-- name: 217.219.83.186:2222 (4416ms)
-  port: 2222
-  server: 217.219.83.186
-  type: http
-  udp: true
-- name: 87.107.184.182:8080
+- name: 37.75.246.67:8080 (2265ms)
   port: 8080
-  server: 87.107.184.182
+  server: 37.75.246.67
   type: http
   udp: true
-- name: 46.209.30.11:8080
-  port: 8080
-  server: 46.209.30.11
-  type: http
-  udp: true
-- name: 178.252.171.229:8080
-  port: 8080
-  server: 178.252.171.229
-  type: http
-  udp: true
-- name: 5.160.200.109:8088
-  port: 8088
-  server: 5.160.200.109
-  type: http
-  udp: true
-- name: 185.145.185.218:8080
-  port: 8080
-  server: 185.145.185.218
-  type: http
-  udp: true
-- name: 37.255.203.235:8080
-  port: 8080
-  server: 37.255.203.235
-  type: http
-  udp: true
-- name: 5.202.52.101:6220
+- name: 5.202.52.101:6220 (1554ms)
   port: 6220
   server: 5.202.52.101
-  type: http
-  udp: true
-- name: 5.202.52.103:6220
-  port: 6220
-  server: 5.202.52.103
-  type: http
-  udp: true
-- name: 37.32.29.226:2080 (222ms)
-  port: 2080
-  server: 37.32.29.226
-  type: http
-  udp: true
-- name: 188.121.124.79:2080 (222ms)
-  port: 2080
-  server: 188.121.124.79
-  type: http
-  udp: true
-- name: 46.245.123.30:1081
-  port: 1081
-  server: 46.245.123.30
-  type: http
-  udp: true
-- name: 81.12.54.13:9084 (282ms)
-  port: 9084
-  server: 81.12.54.13
-  type: http
-  udp: true
-- name: 94.182.199.250:8080
-  port: 8080
-  server: 94.182.199.250
-  type: http
-  udp: true
-- name: 46.209.199.145:8090
-  port: 8090
-  server: 46.209.199.145
-  type: http
-  udp: true
-- name: 81.12.32.130:10816
-  port: 10816
-  server: 81.12.32.130
-  type: http
-  udp: true
-- name: 84.241.30.38:8080
-  port: 8080
-  server: 84.241.30.38
   type: http
   udp: true
 - name: 5.160.198.48:10816
@@ -114,49 +29,142 @@ proxies:
   server: 5.160.198.48
   type: http
   udp: true
-- name: 80.191.40.130:5678
-  port: 5678
-  server: 80.191.40.130
+- name: 46.209.199.145:8090
+  port: 8090
+  server: 46.209.199.145
   type: http
   udp: true
-- name: 79.127.30.250:8080
+- name: 46.209.30.11:8080 (5421ms)
   port: 8080
-  server: 79.127.30.250
+  server: 46.209.30.11
   type: http
   udp: true
-- name: 37.75.246.67:8080 (1264ms)
+- name: 78.39.253.48:8080 (5472ms)
   port: 8080
-  server: 37.75.246.67
-  type: socks5
+  server: 78.39.253.48
+  type: http
   udp: true
-- name: 5.202.171.181:9050
+- name: 84.241.30.38:8080 (319ms)
+  port: 8080
+  server: 84.241.30.38
+  type: http
+  udp: true
+- name: 195.181.40.34:8080
+  port: 8080
+  server: 195.181.40.34
+  type: http
+  udp: true
+- name: 46.34.165.86:443 (296ms)
+  port: 443
+  server: 46.34.165.86
+  type: http
+  udp: true
+- name: 81.12.89.74:8080
+  port: 8080
+  server: 81.12.89.74
+  type: http
+  udp: true
+- name: 46.209.15.187:8080
+  port: 8080
+  server: 46.209.15.187
+  type: http
+  udp: true
+- name: 5.202.171.181:9050 (5376ms)
   port: 9050
   server: 5.202.171.181
-  type: socks5
+  type: http
   udp: true
-- name: 81.16.113.168:8080
+- name: 81.90.144.170:9000
+  port: 9000
+  server: 81.90.144.170
+  type: http
+  udp: true
+- name: 81.12.32.130:10816
+  port: 10816
+  server: 81.12.32.130
+  type: http
+  udp: true
+- name: 37.32.29.226:2080 (223ms)
+  port: 2080
+  server: 37.32.29.226
+  type: http
+  udp: true
+- name: 5.160.247.48:8443
+  port: 8443
+  server: 5.160.247.48
+  type: http
+  udp: true
+- name: 81.12.54.13:9084 (280ms)
+  port: 9084
+  server: 81.12.54.13
+  type: http
+  udp: true
+- name: 185.129.213.210:8080 (238ms)
   port: 8080
-  server: 81.16.113.168
-  type: socks5
+  server: 185.129.213.210
+  type: http
   udp: true
-- name: 185.109.244.69:8080
+- name: 213.207.198.254:8080
+  port: 8080
+  server: 213.207.198.254
+  type: http
+  udp: true
+- name: 78.38.67.95:4153
+  port: 4153
+  server: 78.38.67.95
+  type: http
+  udp: true
+- name: 185.109.244.69:8080 (1229ms)
   port: 8080
   server: 185.109.244.69
+  type: http
+  udp: true
+- name: 185.145.185.218:8080
+  port: 8080
+  server: 185.145.185.218
+  type: http
+  udp: true
+- name: 78.39.253.49:8080
+  port: 8080
+  server: 78.39.253.49
   type: socks5
   udp: true
-- name: 188.121.123.38:40000
-  port: 40000
-  server: 188.121.123.38
-  type: socks5
-  udp: true
-- name: 31.7.65.18:443
-  port: 443
-  server: 31.7.65.18
+- name: 178.252.171.229:8080
+  port: 8080
+  server: 178.252.171.229
   type: socks5
   udp: true
 - alterId: 0
   cipher: auto
-  name: iranserver.com:443 (163ms)
+  name: 37.32.23.122:443 (279ms)
+  network: ws
+  port: 443
+  server: 37.32.23.122
+  tls: false
+  type: vmess
+  udp: true
+  uuid: d12bc882-43c7-415e-87c5-2a7fdc8371c0
+  ws-opts:
+    headers:
+      Host: ''
+    path: /websocket/
+- alterId: 0
+  cipher: auto
+  name: zula.ir:443 (475ms)
+  network: ws
+  port: 443
+  server: zula.ir
+  tls: true
+  type: vmess
+  udp: true
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  ws-opts:
+    headers:
+      Host: vip2323.cfd
+    path: /linkvws
+- alterId: 0
+  cipher: auto
+  name: iranserver.com:443 (155ms)
   network: ws
   port: 443
   server: iranserver.com
@@ -170,7 +178,7 @@ proxies:
     path: /linkvws
 - alterId: 0
   cipher: auto
-  name: zula.ir:80 (470ms)
+  name: zula.ir:80 (446ms)
   network: ws
   port: 80
   server: zula.ir
@@ -184,17 +192,31 @@ proxies:
     path: /vmess
 - alterId: 0
   cipher: auto
-  name: zula.ir:2052
+  name: 2.189.59.5:443
   network: ws
-  port: 2052
-  server: zula.ir
-  tls: false
+  port: 443
+  server: 2.189.59.5
+  tls: true
   type: vmess
   udp: true
-  uuid: 726a2899-b33f-4116-8abd-581932352830
+  uuid: 05641cf5-58d2-4ba4-a9f1-b3cda0b1fb1d
   ws-opts:
     headers:
-      Host: zula.ir
+      Host: obdii.cfd
+    path: /linkws
+- alterId: 0
+  cipher: auto
+  name: 2.189.59.6:443
+  network: ws
+  port: 443
+  server: 2.189.59.6
+  tls: true
+  type: vmess
+  udp: true
+  uuid: 05641cf5-58d2-4ba4-a9f1-b3cda0b1fb1d
+  ws-opts:
+    headers:
+      Host: obdii.cfd
     path: /
 - alterId: 0
   cipher: auto
@@ -226,20 +248,6 @@ proxies:
     path: /linkws
 - alterId: 0
   cipher: auto
-  name: site.hooracoffee.ir:443 (936ms)
-  network: ws
-  port: 443
-  server: site.hooracoffee.ir
-  tls: true
-  type: vmess
-  udp: true
-  uuid: ed954dba-5ad5-4688-8174-247944361c38
-  ws-opts:
-    headers:
-      Host: site.hooracoffee.ir
-    path: /www
-- alterId: 0
-  cipher: auto
   name: 185.231.181.82:8443
   network: ws
   port: 8443
@@ -254,23 +262,23 @@ proxies:
     path: /ws
 - alterId: 0
   cipher: auto
-  name: 185.24.255.24:80
+  name: 185.143.233.114:80 (133ms)
   network: ws
   port: 80
-  server: 185.24.255.24
+  server: 185.143.233.114
   tls: false
   type: vmess
   udp: true
-  uuid: 80abb903-24e0-4dbd-9c2f-a57e9a267555
+  uuid: cf7f2d7c-d4f8-469a-bfd5-97484bb98d2c
   ws-opts:
     headers:
-      Host: ''
-    path: /ws
-- cipher: chacha20-ietf-poly1305
-  name: n4.cover20.ir:19964 (724ms)
-  password: zH5VwKuZuabr8Z30patq1/V8DOrIx/bHssWAmk1J51c=
-  port: 19964
-  server: n4.cover20.ir
+      Host: 214.zirogame-79.site
+    path: /
+- cipher: aes-256-gcm
+  name: 103.130.147.40:1122
+  password: wc/eqRPrYjnxfAJ2JKnio7cG2Ko9K9DiMwzonRjU3LI=
+  port: 1122
+  server: 103.130.147.40
   type: ss
   udp: true
 proxy-groups:
@@ -283,59 +291,63 @@ proxy-groups:
   type: select
 - name: IR-ALL
   proxies:
-  - 93.118.142.196:1093 (226ms)
-  - 85.133.190.40:8097 (1242ms)
-  - 217.219.83.186:2222 (4416ms)
-  - 37.32.29.226:2080 (222ms)
-  - 188.121.124.79:2080 (222ms)
-  - 81.12.54.13:9084 (282ms)
-  - 37.75.246.67:8080 (1264ms)
-  - iranserver.com:443 (163ms)
-  - zula.ir:80 (470ms)
-  - site.hooracoffee.ir:443 (936ms)
-  - n4.cover20.ir:19964 (724ms)
+  - 93.118.142.196:1093 (231ms)
+  - 37.75.246.67:8080 (2265ms)
+  - 5.202.52.101:6220 (1554ms)
+  - 46.209.30.11:8080 (5421ms)
+  - 78.39.253.48:8080 (5472ms)
+  - 84.241.30.38:8080 (319ms)
+  - 46.34.165.86:443 (296ms)
+  - 5.202.171.181:9050 (5376ms)
+  - 37.32.29.226:2080 (223ms)
+  - 81.12.54.13:9084 (280ms)
+  - 185.129.213.210:8080 (238ms)
+  - 185.109.244.69:8080 (1229ms)
+  - 37.32.23.122:443 (279ms)
+  - zula.ir:443 (475ms)
+  - iranserver.com:443 (155ms)
+  - zula.ir:80 (446ms)
+  - 185.143.233.114:80 (133ms)
   type: select
 - name: IR-ALL-RAW
   proxies: &id001
-  - 93.118.142.196:1093 (226ms)
-  - 5.200.72.62:3129
-  - 85.133.190.40:8097 (1242ms)
-  - 2.180.22.218:80
-  - 217.219.83.186:2222 (4416ms)
-  - 87.107.184.182:8080
-  - 46.209.30.11:8080
-  - 178.252.171.229:8080
-  - 5.160.200.109:8088
-  - 185.145.185.218:8080
-  - 37.255.203.235:8080
-  - 5.202.52.101:6220
-  - 5.202.52.103:6220
-  - 37.32.29.226:2080 (222ms)
-  - 188.121.124.79:2080 (222ms)
-  - 46.245.123.30:1081
-  - 81.12.54.13:9084 (282ms)
-  - 94.182.199.250:8080
-  - 46.209.199.145:8090
-  - 81.12.32.130:10816
-  - 84.241.30.38:8080
+  - 93.118.142.196:1093 (231ms)
+  - 81.91.145.5:10818
+  - 37.75.246.67:8080 (2265ms)
+  - 5.202.52.101:6220 (1554ms)
   - 5.160.198.48:10816
-  - 80.191.40.130:5678
-  - 79.127.30.250:8080
-  - 37.75.246.67:8080 (1264ms)
-  - 5.202.171.181:9050
-  - 81.16.113.168:8080
-  - 185.109.244.69:8080
-  - 188.121.123.38:40000
-  - 31.7.65.18:443
-  - iranserver.com:443 (163ms)
-  - zula.ir:80 (470ms)
-  - zula.ir:2052
+  - 46.209.199.145:8090
+  - 46.209.30.11:8080 (5421ms)
+  - 78.39.253.48:8080 (5472ms)
+  - 84.241.30.38:8080 (319ms)
+  - 195.181.40.34:8080
+  - 46.34.165.86:443 (296ms)
+  - 81.12.89.74:8080
+  - 46.209.15.187:8080
+  - 5.202.171.181:9050 (5376ms)
+  - 81.90.144.170:9000
+  - 81.12.32.130:10816
+  - 37.32.29.226:2080 (223ms)
+  - 5.160.247.48:8443
+  - 81.12.54.13:9084 (280ms)
+  - 185.129.213.210:8080 (238ms)
+  - 213.207.198.254:8080
+  - 78.38.67.95:4153
+  - 185.109.244.69:8080 (1229ms)
+  - 185.145.185.218:8080
+  - 78.39.253.49:8080
+  - 178.252.171.229:8080
+  - 37.32.23.122:443 (279ms)
+  - zula.ir:443 (475ms)
+  - iranserver.com:443 (155ms)
+  - zula.ir:80 (446ms)
+  - 2.189.59.5:443
+  - 2.189.59.6:443
   - 2.189.59.3:443
   - 2.189.59.4:443
-  - site.hooracoffee.ir:443 (936ms)
   - 185.231.181.82:8443
-  - 185.24.255.24:80
-  - n4.cover20.ir:19964 (724ms)
+  - 185.143.233.114:80 (133ms)
+  - 103.130.147.40:1122
   type: select
 - interval: 600
   name: IR-AUTO
