@@ -4,44 +4,24 @@ log-level: info
 mixed-port: 7890
 mode: Rule
 proxies:
-- name: 2.188.210.83:4443 (171ms)
-  port: 4443
-  server: 2.188.210.83
-  type: socks5
-  udp: true
-- name: 5.202.52.103:6220 (398ms)
-  port: 6220
-  server: 5.202.52.103
+- name: 78.39.253.49:8080 (1349ms)
+  port: 8080
+  server: 78.39.253.49
   type: http
   udp: true
-- name: 31.25.92.114:8080
-  port: 8080
-  server: 31.25.92.114
+- name: 5.200.72.62:3129
+  port: 3129
+  server: 5.200.72.62
   type: http
   udp: true
-- name: 84.241.30.38:8080
-  port: 8080
-  server: 84.241.30.38
+- name: 81.90.144.170:9000
+  port: 9000
+  server: 81.90.144.170
   type: http
   udp: true
-- name: 193.178.203.140:8080
+- name: 185.145.185.218:8080
   port: 8080
-  server: 193.178.203.140
-  type: http
-  udp: true
-- name: 81.12.70.98:8080 (4303ms)
-  port: 8080
-  server: 81.12.70.98
-  type: http
-  udp: true
-- name: 178.252.171.229:8080
-  port: 8080
-  server: 178.252.171.229
-  type: http
-  udp: true
-- name: 37.75.246.67:8080
-  port: 8080
-  server: 37.75.246.67
+  server: 185.145.185.218
   type: http
   udp: true
 - name: 37.255.203.235:8080
@@ -49,54 +29,120 @@ proxies:
   server: 37.255.203.235
   type: http
   udp: true
-- name: 2.188.210.5:4443 (162ms)
+- name: 151.232.18.66:5678 (232ms)
+  port: 5678
+  server: 151.232.18.66
+  type: http
+  udp: true
+- name: 2.188.210.83:4443 (271ms)
+  port: 4443
+  server: 2.188.210.83
+  type: http
+  udp: true
+- name: 2.188.210.5:4443 (271ms)
   port: 4443
   server: 2.188.210.5
   type: http
   udp: true
-- name: 79.175.188.203:443 (173ms)
+- name: 81.12.70.98:8080
+  port: 8080
+  server: 81.12.70.98
+  type: http
+  udp: true
+- name: 195.181.40.34:8080
+  port: 8080
+  server: 195.181.40.34
+  type: http
+  udp: true
+- name: 37.75.246.67:8080 (1315ms)
+  port: 8080
+  server: 37.75.246.67
+  type: socks5
+  udp: true
+- name: 45.142.189.27:3443 (226ms)
+  port: 3443
+  server: 45.142.189.27
+  type: socks5
+  udp: true
+- name: 78.39.253.48:8080
+  port: 8080
+  server: 78.39.253.48
+  type: socks5
+  udp: true
+- name: 193.178.203.141:8080
+  port: 8080
+  server: 193.178.203.141
+  type: socks5
+  udp: true
+- name: 31.7.65.18:443 (1267ms)
   port: 443
-  server: 79.175.188.203
-  type: http
-  udp: true
-- name: 213.207.198.254:8080
-  port: 8080
-  server: 213.207.198.254
-  type: http
-  udp: true
-- name: 185.193.209.1:8080
-  port: 8080
-  server: 185.193.209.1
-  type: http
-  udp: true
-- name: 46.245.123.30:1081
-  port: 1081
-  server: 46.245.123.30
-  type: http
-  udp: true
-- name: 5.202.120.123:3128
-  port: 3128
-  server: 5.202.120.123
+  server: 31.7.65.18
   type: socks5
   udp: true
-- name: 78.38.67.210:3636
-  port: 3636
-  server: 78.38.67.210
-  type: socks5
-  udp: true
-- name: 109.230.83.178:5060
-  port: 5060
-  server: 109.230.83.178
-  type: socks5
-  udp: true
-- name: 81.12.54.13:9080
-  port: 9080
-  server: 81.12.54.13
+- name: 185.212.195.34:8085 (1289ms)
+  port: 8085
+  server: 185.212.195.34
   type: socks5
   udp: true
 - alterId: 0
   cipher: auto
-  name: 185.143.233.114:80 (1104ms)
+  name: varzesh3.com:8880 (168ms)
+  network: ws
+  port: 8880
+  server: varzesh3.com
+  tls: true
+  type: vmess
+  udp: true
+  uuid: 93e982d2-e2f9-460f-a6b4-ccc629038426
+  ws-opts:
+    headers:
+      Host: 4.ir.cdn.mypings.ir
+    path: /
+- alterId: 0
+  cipher: auto
+  name: anten.ir:2082 (293ms)
+  network: ws
+  port: 2082
+  server: anten.ir
+  tls: true
+  type: vmess
+  udp: true
+  uuid: 93e982d2-e2f9-460f-a6b4-ccc629038426
+  ws-opts:
+    headers:
+      Host: 9.ir.cdn.mypings.ir
+    path: /s2BSpP6uUOPQ499phpYH87TsXl
+- alterId: 0
+  cipher: auto
+  name: cl.northbookway.shop:1080 (297ms)
+  network: ws
+  port: 1080
+  server: cl.northbookway.shop
+  tls: true
+  type: vmess
+  udp: true
+  uuid: 5c21b2cb-9aee-4d82-80ac-b6779e6bfec9
+  ws-opts:
+    headers:
+      Host: sub.zirolost.sbs
+    path: /api
+- alterId: 0
+  cipher: auto
+  name: 195.137.167.148:443
+  network: ws
+  port: 443
+  server: 195.137.167.148
+  tls: true
+  type: vmess
+  udp: true
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  ws-opts:
+    headers:
+      Host: nd-truth-210a8hwjhs.bonar11011.workers.dev
+    path: /kellie.makeup/linkvws
+- alterId: 0
+  cipher: auto
+  name: 185.143.233.114:80 (144ms)
   network: ws
   port: 80
   server: 185.143.233.114
@@ -108,20 +154,6 @@ proxies:
     headers:
       Host: 185.143.233.114
     path: /
-- alterId: 0
-  cipher: auto
-  name: 2.189.59.7:443
-  network: ws
-  port: 443
-  server: 2.189.59.7
-  tls: true
-  type: vmess
-  udp: true
-  uuid: 05641cf5-58d2-4ba4-a9f1-b3cda0b1fb1d
-  ws-opts:
-    headers:
-      Host: obdii.cfd
-    path: /linkws
 - alterId: 0
   cipher: auto
   name: 2.189.59.6:443
@@ -138,31 +170,73 @@ proxies:
     path: /
 - alterId: 0
   cipher: auto
-  name: 195.137.167.100:443
+  name: 2.189.59.3:443
   network: ws
   port: 443
-  server: 195.137.167.100
+  server: 2.189.59.3
   tls: true
   type: vmess
   udp: true
-  uuid: f584de15-2034-4170-a723-f48c2bae5e0f
+  uuid: 05641cf5-58d2-4ba4-a9f1-b3cda0b1fb1d
   ws-opts:
     headers:
-      Host: y-old-mode-9c0diab.wiriy73548.workers.dev
-    path: /afrhms16v.bestxray.buzz/linkws
+      Host: obdii.cfd
+    path: /
 - alterId: 0
   cipher: auto
-  name: 185.143.233.114:80 (80ms)
+  name: 2.189.59.4:443
   network: ws
-  port: 80
-  server: 185.143.233.114
+  port: 443
+  server: 2.189.59.4
+  tls: true
+  type: vmess
+  udp: true
+  uuid: 05641cf5-58d2-4ba4-a9f1-b3cda0b1fb1d
+  ws-opts:
+    headers:
+      Host: obdii.cfd
+    path: /linkws
+- alterId: 0
+  cipher: auto
+  name: 185.231.181.82:8443
+  network: ws
+  port: 8443
+  server: 185.231.181.82
   tls: false
   type: vmess
   udp: true
-  uuid: cf7f2d7c-d4f8-469a-bfd5-97484bb98d2c
+  uuid: 37b0f4af-2fbb-4b40-92e2-894bf7bf598c
   ws-opts:
     headers:
-      Host: 214.zirogame-79.site
+      Host: mim.emperorr.sbs
+    path: /ws
+- alterId: 0
+  cipher: auto
+  name: 185.24.255.24:80
+  network: ws
+  port: 80
+  server: 185.24.255.24
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 80abb903-24e0-4dbd-9c2f-a57e9a267555
+  ws-opts:
+    headers:
+      Host: ''
+    path: /ws
+- alterId: 0
+  cipher: auto
+  name: 193.39.9.61:13909
+  network: ws
+  port: 13909
+  server: 193.39.9.61
+  tls: false
+  type: vmess
+  udp: true
+  uuid: a24e44ff-2737-45a7-d0e2-e4ef93762741
+  ws-opts:
+    headers:
+      Host: ''
     path: /
 proxy-groups:
 - name: MAIN
@@ -174,39 +248,48 @@ proxy-groups:
   type: select
 - name: IR-ALL
   proxies:
-  - 2.188.210.83:4443 (171ms)
-  - 5.202.52.103:6220 (398ms)
-  - 81.12.70.98:8080 (4303ms)
-  - 2.188.210.5:4443 (162ms)
-  - 79.175.188.203:443 (173ms)
-  - 185.143.233.114:80 (1104ms)
-  - 185.143.233.114:80 (80ms)
+  - 78.39.253.49:8080 (1349ms)
+  - 151.232.18.66:5678 (232ms)
+  - 2.188.210.83:4443 (271ms)
+  - 2.188.210.5:4443 (271ms)
+  - 37.75.246.67:8080 (1315ms)
+  - 45.142.189.27:3443 (226ms)
+  - 31.7.65.18:443 (1267ms)
+  - 185.212.195.34:8085 (1289ms)
+  - varzesh3.com:8880 (168ms)
+  - anten.ir:2082 (293ms)
+  - cl.northbookway.shop:1080 (297ms)
+  - 185.143.233.114:80 (144ms)
   type: select
 - name: IR-ALL-RAW
   proxies: &id001
-  - 2.188.210.83:4443 (171ms)
-  - 5.202.52.103:6220 (398ms)
-  - 31.25.92.114:8080
-  - 84.241.30.38:8080
-  - 193.178.203.140:8080
-  - 81.12.70.98:8080 (4303ms)
-  - 178.252.171.229:8080
-  - 37.75.246.67:8080
+  - 78.39.253.49:8080 (1349ms)
+  - 5.200.72.62:3129
+  - 81.90.144.170:9000
+  - 185.145.185.218:8080
   - 37.255.203.235:8080
-  - 2.188.210.5:4443 (162ms)
-  - 79.175.188.203:443 (173ms)
-  - 213.207.198.254:8080
-  - 185.193.209.1:8080
-  - 46.245.123.30:1081
-  - 5.202.120.123:3128
-  - 78.38.67.210:3636
-  - 109.230.83.178:5060
-  - 81.12.54.13:9080
-  - 185.143.233.114:80 (1104ms)
-  - 2.189.59.7:443
+  - 151.232.18.66:5678 (232ms)
+  - 2.188.210.83:4443 (271ms)
+  - 2.188.210.5:4443 (271ms)
+  - 81.12.70.98:8080
+  - 195.181.40.34:8080
+  - 37.75.246.67:8080 (1315ms)
+  - 45.142.189.27:3443 (226ms)
+  - 78.39.253.48:8080
+  - 193.178.203.141:8080
+  - 31.7.65.18:443 (1267ms)
+  - 185.212.195.34:8085 (1289ms)
+  - varzesh3.com:8880 (168ms)
+  - anten.ir:2082 (293ms)
+  - cl.northbookway.shop:1080 (297ms)
+  - 195.137.167.148:443
+  - 185.143.233.114:80 (144ms)
   - 2.189.59.6:443
-  - 195.137.167.100:443
-  - 185.143.233.114:80 (80ms)
+  - 2.189.59.3:443
+  - 2.189.59.4:443
+  - 185.231.181.82:8443
+  - 185.24.255.24:80
+  - 193.39.9.61:13909
   type: select
 - interval: 600
   name: IR-AUTO
