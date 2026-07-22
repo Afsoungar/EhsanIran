@@ -4,59 +4,19 @@ log-level: info
 mixed-port: 7890
 mode: Rule
 proxies:
-- name: 2.188.210.5:4443 (272ms)
-  port: 4443
-  server: 2.188.210.5
+- name: 87.107.68.231:1081 (4276ms)
+  port: 1081
+  server: 87.107.68.231
   type: socks5
   udp: true
-- name: 89.46.219.133:8000
-  port: 8000
-  server: 89.46.219.133
-  type: http
-  udp: true
-- name: 185.212.195.34:8085
-  port: 8085
-  server: 185.212.195.34
-  type: http
-  udp: true
-- name: 81.12.70.98:8080 (5417ms)
+- name: 185.109.244.69:8080
   port: 8080
-  server: 81.12.70.98
+  server: 185.109.244.69
   type: http
   udp: true
-- name: 85.9.87.26:8080
-  port: 8080
-  server: 85.9.87.26
-  type: http
-  udp: true
-- name: 5.202.52.103:6220 (2414ms)
-  port: 6220
-  server: 5.202.52.103
-  type: http
-  udp: true
-- name: 2.188.210.83:8443 (291ms)
-  port: 8443
-  server: 2.188.210.83
-  type: http
-  udp: true
-- name: 185.214.39.2:9944 (5434ms)
-  port: 9944
-  server: 185.214.39.2
-  type: http
-  udp: true
-- name: 31.25.92.114:8080 (3404ms)
-  port: 8080
-  server: 31.25.92.114
-  type: http
-  udp: true
-- name: 109.230.83.178:5060
+- name: 109.230.83.178:5060 (2248ms)
   port: 5060
   server: 109.230.83.178
-  type: http
-  udp: true
-- name: 37.255.203.235:8080
-  port: 8080
-  server: 37.255.203.235
   type: http
   udp: true
 - name: 37.191.95.202:80
@@ -64,49 +24,49 @@ proxies:
   server: 37.191.95.202
   type: http
   udp: true
-- name: 46.209.15.187:8080
+- name: 185.145.185.218:8080
   port: 8080
-  server: 46.209.15.187
+  server: 185.145.185.218
   type: http
   udp: true
-- name: 46.245.123.30:1081
-  port: 1081
-  server: 46.245.123.30
+- name: 185.212.195.34:8085 (195ms)
+  port: 8085
+  server: 185.212.195.34
   type: http
   udp: true
-- name: 178.252.171.226:8080
+- name: 46.209.207.152:8080
   port: 8080
-  server: 178.252.171.226
+  server: 46.209.207.152
   type: http
   udp: true
-- name: 5.202.52.101:6220
-  port: 6220
-  server: 5.202.52.101
-  type: http
-  udp: true
-- name: 87.107.68.231:1081 (271ms)
-  port: 1081
-  server: 87.107.68.231
-  type: http
-  udp: true
-- name: 84.241.30.38:8080
+- name: 79.127.30.250:8080
   port: 8080
-  server: 84.241.30.38
+  server: 79.127.30.250
   type: http
   udp: true
-- name: 151.232.18.66:5678 (1246ms)
-  port: 5678
-  server: 151.232.18.66
-  type: socks5
+- name: 185.214.39.2:9944
+  port: 9944
+  server: 185.214.39.2
+  type: http
   udp: true
-- name: 94.182.177.92:80 (2381ms)
-  port: 80
-  server: 94.182.177.92
-  type: socks5
+- name: 80.191.46.62:1090
+  port: 1090
+  server: 80.191.46.62
+  type: http
   udp: true
-- name: 94.182.199.250:8080
+- name: 195.181.40.34:8080
   port: 8080
-  server: 94.182.199.250
+  server: 195.181.40.34
+  type: http
+  udp: true
+- name: 46.209.30.11:8080
+  port: 8080
+  server: 46.209.30.11
+  type: http
+  udp: true
+- name: 85.9.87.26:8080
+  port: 8080
+  server: 85.9.87.26
   type: socks5
   udp: true
 - name: 185.172.214.189:8080
@@ -114,9 +74,24 @@ proxies:
   server: 185.172.214.189
   type: socks5
   udp: true
+- name: 94.182.177.92:80 (198ms)
+  port: 80
+  server: 94.182.177.92
+  type: socks5
+  udp: true
+- name: 185.118.153.110:8080 (5341ms)
+  port: 8080
+  server: 185.118.153.110
+  type: socks5
+  udp: true
+- name: 91.199.27.249:8080 (5324ms)
+  port: 8080
+  server: 91.199.27.249
+  type: socks5
+  udp: true
 - alterId: 0
   cipher: auto
-  name: 37.32.23.122:443 (288ms)
+  name: 37.32.23.122:443 (201ms)
   network: ws
   port: 443
   server: 37.32.23.122
@@ -142,76 +117,6 @@ proxies:
     headers:
       Host: zula.ir
     path: /
-- alterId: 0
-  cipher: auto
-  name: 2.189.59.7:443
-  network: ws
-  port: 443
-  server: 2.189.59.7
-  tls: true
-  type: vmess
-  udp: true
-  uuid: 05641cf5-58d2-4ba4-a9f1-b3cda0b1fb1d
-  ws-opts:
-    headers:
-      Host: obdii.cfd
-    path: /linkws
-- alterId: 0
-  cipher: auto
-  name: linkxt.gozar8.ir:443 (811ms)
-  network: ws
-  port: 443
-  server: linkxt.gozar8.ir
-  tls: true
-  type: vmess
-  udp: true
-  uuid: 6ad27411-ee45-46ed-a33a-5f67e3d13d6a
-  ws-opts:
-    headers:
-      Host: linkxt.gozar8.ir
-    path: /
-- alterId: 0
-  cipher: auto
-  name: 195.137.167.100:443
-  network: ws
-  port: 443
-  server: 195.137.167.100
-  tls: true
-  type: vmess
-  udp: true
-  uuid: f584de15-2034-4170-a723-f48c2bae5e0f
-  ws-opts:
-    headers:
-      Host: y-old-mode-9c0diab.wiriy73548.workers.dev
-    path: /afrhms16v.bestxray.buzz/linkws
-- alterId: 0
-  cipher: auto
-  name: 185.143.233.114:80 (153ms)
-  network: ws
-  port: 80
-  server: 185.143.233.114
-  tls: false
-  type: vmess
-  udp: true
-  uuid: cf7f2d7c-d4f8-469a-bfd5-97484bb98d2c
-  ws-opts:
-    headers:
-      Host: 214.zirogame-79.site
-    path: /
-- alterId: 0
-  cipher: auto
-  name: 193.39.9.61:13909
-  network: ws
-  port: 13909
-  server: 193.39.9.61
-  tls: false
-  type: vmess
-  udp: true
-  uuid: a24e44ff-2737-45a7-d0e2-e4ef93762741
-  ws-opts:
-    headers:
-      Host: ''
-    path: /
 proxy-groups:
 - name: MAIN
   proxies:
@@ -222,50 +127,35 @@ proxy-groups:
   type: select
 - name: IR-ALL
   proxies:
-  - 2.188.210.5:4443 (272ms)
-  - 81.12.70.98:8080 (5417ms)
-  - 5.202.52.103:6220 (2414ms)
-  - 2.188.210.83:8443 (291ms)
-  - 185.214.39.2:9944 (5434ms)
-  - 31.25.92.114:8080 (3404ms)
-  - 87.107.68.231:1081 (271ms)
-  - 151.232.18.66:5678 (1246ms)
-  - 94.182.177.92:80 (2381ms)
-  - 37.32.23.122:443 (288ms)
-  - linkxt.gozar8.ir:443 (811ms)
-  - 185.143.233.114:80 (153ms)
+  - 87.107.68.231:1081 (4276ms)
+  - 109.230.83.178:5060 (2248ms)
+  - 185.212.195.34:8085 (195ms)
+  - 94.182.177.92:80 (198ms)
+  - 185.118.153.110:8080 (5341ms)
+  - 91.199.27.249:8080 (5324ms)
+  - 37.32.23.122:443 (201ms)
   type: select
 - name: IR-ALL-RAW
   proxies: &id001
-  - 2.188.210.5:4443 (272ms)
-  - 89.46.219.133:8000
-  - 185.212.195.34:8085
-  - 81.12.70.98:8080 (5417ms)
-  - 85.9.87.26:8080
-  - 5.202.52.103:6220 (2414ms)
-  - 2.188.210.83:8443 (291ms)
-  - 185.214.39.2:9944 (5434ms)
-  - 31.25.92.114:8080 (3404ms)
-  - 109.230.83.178:5060
-  - 37.255.203.235:8080
+  - 87.107.68.231:1081 (4276ms)
+  - 185.109.244.69:8080
+  - 109.230.83.178:5060 (2248ms)
   - 37.191.95.202:80
-  - 46.209.15.187:8080
-  - 46.245.123.30:1081
-  - 178.252.171.226:8080
-  - 5.202.52.101:6220
-  - 87.107.68.231:1081 (271ms)
-  - 84.241.30.38:8080
-  - 151.232.18.66:5678 (1246ms)
-  - 94.182.177.92:80 (2381ms)
-  - 94.182.199.250:8080
+  - 185.145.185.218:8080
+  - 185.212.195.34:8085 (195ms)
+  - 46.209.207.152:8080
+  - 79.127.30.250:8080
+  - 185.214.39.2:9944
+  - 80.191.46.62:1090
+  - 195.181.40.34:8080
+  - 46.209.30.11:8080
+  - 85.9.87.26:8080
   - 185.172.214.189:8080
-  - 37.32.23.122:443 (288ms)
+  - 94.182.177.92:80 (198ms)
+  - 185.118.153.110:8080 (5341ms)
+  - 91.199.27.249:8080 (5324ms)
+  - 37.32.23.122:443 (201ms)
   - zula.ir:2052
-  - 2.189.59.7:443
-  - linkxt.gozar8.ir:443 (811ms)
-  - 195.137.167.100:443
-  - 185.143.233.114:80 (153ms)
-  - 193.39.9.61:13909
   type: select
 - interval: 600
   name: IR-AUTO
