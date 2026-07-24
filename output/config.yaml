@@ -4,59 +4,29 @@ log-level: info
 mixed-port: 7890
 mode: Rule
 proxies:
-- name: 87.107.68.231:1081 (1317ms)
+- name: 87.107.68.231:1081 (210ms)
   port: 1081
   server: 87.107.68.231
   type: socks5
   udp: true
-- name: 2.188.210.5:4443 (278ms)
-  port: 4443
-  server: 2.188.210.5
-  type: socks5
-  udp: true
-- name: 2.188.210.83:4443 (272ms)
-  port: 4443
-  server: 2.188.210.83
-  type: socks5
-  udp: true
-- name: 81.91.159.14:7776
-  port: 7776
-  server: 81.91.159.14
-  type: http
-  udp: true
-- name: 85.9.87.26:8080
+- name: 185.145.185.218:8080 (4354ms)
   port: 8080
-  server: 85.9.87.26
+  server: 185.145.185.218
   type: http
   udp: true
-- name: 5.202.120.123:3129
-  port: 3129
-  server: 5.202.120.123
-  type: http
-  udp: true
-- name: 78.39.253.49:8080
-  port: 8080
-  server: 78.39.253.49
-  type: http
-  udp: true
-- name: 78.39.253.48:8080
-  port: 8080
-  server: 78.39.253.48
-  type: http
-  udp: true
-- name: 185.83.182.206:2020 (241ms)
+- name: 185.83.182.206:2020 (244ms)
   port: 2020
   server: 185.83.182.206
   type: http
   udp: true
-- name: 193.178.203.141:8080
+- name: 37.75.246.67:8080 (1246ms)
   port: 8080
-  server: 193.178.203.141
+  server: 37.75.246.67
   type: http
   udp: true
-- name: 81.12.70.98:8080 (275ms)
-  port: 8080
-  server: 81.12.70.98
+- name: 178.239.147.91:10818
+  port: 10818
+  server: 178.239.147.91
   type: http
   udp: true
 - name: 81.90.144.170:9000
@@ -64,49 +34,29 @@ proxies:
   server: 81.90.144.170
   type: http
   udp: true
-- name: 185.105.184.45:1110 (222ms)
-  port: 1110
-  server: 185.105.184.45
-  type: http
-  udp: true
-- name: 46.209.30.11:8080 (3380ms)
+- name: 46.209.207.152:8080
   port: 8080
-  server: 46.209.30.11
+  server: 46.209.207.152
   type: http
   udp: true
-- name: 5.202.52.103:6220
-  port: 6220
-  server: 5.202.52.103
-  type: http
-  udp: true
-- name: 46.245.123.30:1081
-  port: 1081
-  server: 46.245.123.30
-  type: http
-  udp: true
-- name: 82.99.227.43:8080 (233ms)
+- name: 185.129.213.210:8080
   port: 8080
-  server: 82.99.227.43
+  server: 185.129.213.210
   type: http
   udp: true
-- name: 195.181.40.34:8080 (1336ms)
-  port: 8080
-  server: 195.181.40.34
+- name: 80.191.46.62:1090 (3295ms)
+  port: 1090
+  server: 80.191.46.62
   type: http
   udp: true
-- name: 185.109.244.69:8080
-  port: 8080
-  server: 185.109.244.69
+- name: 185.212.195.34:8085 (5351ms)
+  port: 8085
+  server: 185.212.195.34
   type: http
   udp: true
-- name: 31.47.51.152:1111
-  port: 1111
-  server: 31.47.51.152
-  type: http
-  udp: true
-- name: 79.175.188.203:443 (294ms)
-  port: 443
-  server: 79.175.188.203
+- name: 89.46.219.134:8000
+  port: 8000
+  server: 89.46.219.134
   type: http
   udp: true
 - name: 84.241.29.213:8080
@@ -114,89 +64,146 @@ proxies:
   server: 84.241.29.213
   type: http
   udp: true
-- name: 5.202.52.101:6220 (3387ms)
+- name: 31.25.92.114:8080
+  port: 8080
+  server: 31.25.92.114
+  type: http
+  udp: true
+- name: 46.209.30.11:8080 (224ms)
+  port: 8080
+  server: 46.209.30.11
+  type: http
+  udp: true
+- name: 81.12.70.99:8080
+  port: 8080
+  server: 81.12.70.99
+  type: http
+  udp: true
+- name: 176.65.241.92:10817
+  port: 10817
+  server: 176.65.241.92
+  type: http
+  udp: true
+- name: 82.99.227.43:8080 (1233ms)
+  port: 8080
+  server: 82.99.227.43
+  type: http
+  udp: true
+- name: 185.105.184.45:1110 (204ms)
+  port: 1110
+  server: 185.105.184.45
+  type: http
+  udp: true
+- name: 84.241.30.38:8080
+  port: 8080
+  server: 84.241.30.38
+  type: http
+  udp: true
+- name: 109.230.83.178:5060 (209ms)
+  port: 5060
+  server: 109.230.83.178
+  type: http
+  udp: true
+- name: 5.202.52.101:6220 (4323ms)
   port: 6220
   server: 5.202.52.101
   type: http
   udp: true
-- name: 185.212.195.34:8085
-  port: 8085
-  server: 185.212.195.34
+- name: 5.202.52.103:6220 (1295ms)
+  port: 6220
+  server: 5.202.52.103
   type: http
   udp: true
-- name: 46.209.199.145:8090 (275ms)
+- name: 81.91.159.14:7776 (214ms)
+  port: 7776
+  server: 81.91.159.14
+  type: http
+  udp: true
+- name: 79.175.188.203:443 (214ms)
+  port: 443
+  server: 79.175.188.203
+  type: http
+  udp: true
+- name: 80.191.40.131:5678
+  port: 5678
+  server: 80.191.40.131
+  type: http
+  udp: true
+- name: 46.209.15.187:8080
+  port: 8080
+  server: 46.209.15.187
+  type: http
+  udp: true
+- name: 94.182.199.250:8080
+  port: 8080
+  server: 94.182.199.250
+  type: http
+  udp: true
+- name: 46.209.199.145:8090
   port: 8090
   server: 46.209.199.145
   type: http
   udp: true
-- name: 85.133.248.62:10808
-  port: 10808
-  server: 85.133.248.62
-  type: socks5
+- name: 5.200.72.62:3129
+  port: 3129
+  server: 5.200.72.62
+  type: http
   udp: true
-- name: 185.155.15.63:8080
+- name: 195.181.40.34:8080
   port: 8080
-  server: 185.155.15.63
-  type: socks5
-  udp: true
-- name: 37.255.203.235:8080
-  port: 8080
-  server: 37.255.203.235
-  type: socks5
+  server: 195.181.40.34
+  type: http
   udp: true
 - name: 185.172.214.189:8080
   port: 8080
   server: 185.172.214.189
   type: socks5
   udp: true
-- alterId: 0
-  cipher: auto
-  name: zula.ir:443 (469ms)
-  network: ws
-  port: 443
-  server: zula.ir
-  tls: true
-  type: vmess
+- name: 78.38.67.210:3636
+  port: 3636
+  server: 78.38.67.210
+  type: socks5
   udp: true
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  ws-opts:
-    headers:
-      Host: vip2323.cfd
-    path: /linkvws
-- alterId: 0
-  cipher: auto
-  name: iranserver.com:443 (172ms)
-  network: ws
-  port: 443
-  server: iranserver.com
-  tls: true
-  type: vmess
+- name: 193.178.203.141:8080
+  port: 8080
+  server: 193.178.203.141
+  type: socks5
   udp: true
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  ws-opts:
-    headers:
-      Host: nina.bond
-    path: /linkvws
+- name: 93.126.6.68:3128
+  port: 3128
+  server: 93.126.6.68
+  type: socks5
+  udp: true
+- name: 85.9.87.26:8080
+  port: 8080
+  server: 85.9.87.26
+  type: socks5
+  udp: true
+- name: 31.216.62.129:2020 (214ms)
+  port: 2020
+  server: 31.216.62.129
+  type: socks5
+  udp: true
 - alterId: 0
   cipher: auto
-  name: zula.ir:80 (386ms)
+  name: zula.ir:2052
   network: ws
-  port: 80
+  port: 2052
   server: zula.ir
   tls: false
   type: vmess
   udp: true
-  uuid: c9e99213-170b-458a-b45b-79454ac7cf4b
+  uuid: 726a2899-b33f-4116-8abd-581932352830
   ws-opts:
     headers:
       Host: zula.ir
-    path: /vmess
+    path: /
 - alterId: 0
   cipher: auto
-  name: 2.189.59.5:443
+  name: 2.189.59.7:443
   network: ws
   port: 443
-  server: 2.189.59.5
+  server: 2.189.59.7
   tls: true
   type: vmess
   udp: true
@@ -221,79 +228,23 @@ proxies:
     path: /
 - alterId: 0
   cipher: auto
-  name: 2.189.59.3:443
+  name: 185.231.181.82:8443
   network: ws
-  port: 443
-  server: 2.189.59.3
-  tls: true
-  type: vmess
-  udp: true
-  uuid: 05641cf5-58d2-4ba4-a9f1-b3cda0b1fb1d
-  ws-opts:
-    headers:
-      Host: obdii.cfd
-    path: /
-- alterId: 0
-  cipher: auto
-  name: 2.189.59.4:443
-  network: ws
-  port: 443
-  server: 2.189.59.4
-  tls: true
-  type: vmess
-  udp: true
-  uuid: 05641cf5-58d2-4ba4-a9f1-b3cda0b1fb1d
-  ws-opts:
-    headers:
-      Host: obdii.cfd
-    path: /linkws
-- alterId: 0
-  cipher: auto
-  name: 118ejob.ir:80 (535ms)
-  network: ws
-  port: 80
-  server: 118ejob.ir
+  port: 8443
+  server: 185.231.181.82
   tls: false
   type: vmess
   udp: true
-  uuid: 47d0805b-6b81-49f1-9813-776032d2c076
+  uuid: 37b0f4af-2fbb-4b40-92e2-894bf7bf598c
   ws-opts:
     headers:
-      Host: at1-vmess.sshmax.xyz
-    path: /vmess
-- alterId: 0
-  cipher: auto
-  name: linkxt.gozar8.ir:443 (877ms)
-  network: ws
-  port: 443
-  server: linkxt.gozar8.ir
-  tls: true
-  type: vmess
-  udp: true
-  uuid: 6ad27411-ee45-46ed-a33a-5f67e3d13d6a
-  ws-opts:
-    headers:
-      Host: linkxt.gozar8.ir
-    path: /
-- alterId: 0
-  cipher: auto
-  name: 185.24.255.24:80
-  network: ws
-  port: 80
-  server: 185.24.255.24
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 80abb903-24e0-4dbd-9c2f-a57e9a267555
-  ws-opts:
-    headers:
-      Host: ''
+      Host: mim.emperorr.sbs
     path: /ws
 - cipher: aes-256-gcm
-  name: 94.183.124.95:82 (294ms)
-  password: EMIruFl6nN37LDQxCIwstG09haCBkyjvZVjWIMOQ0Jk=
-  port: 82
-  server: 94.183.124.95
+  name: 103.130.147.40:1122
+  password: wc/eqRPrYjnxfAJ2JKnio7cG2Ko9K9DiMwzonRjU3LI=
+  port: 1122
+  server: 103.130.147.40
   type: ss
   udp: true
 proxy-groups:
@@ -306,67 +257,65 @@ proxy-groups:
   type: select
 - name: IR-ALL
   proxies:
-  - 87.107.68.231:1081 (1317ms)
-  - 2.188.210.5:4443 (278ms)
-  - 2.188.210.83:4443 (272ms)
-  - 185.83.182.206:2020 (241ms)
-  - 81.12.70.98:8080 (275ms)
-  - 185.105.184.45:1110 (222ms)
-  - 46.209.30.11:8080 (3380ms)
-  - 82.99.227.43:8080 (233ms)
-  - 195.181.40.34:8080 (1336ms)
-  - 79.175.188.203:443 (294ms)
-  - 5.202.52.101:6220 (3387ms)
-  - 46.209.199.145:8090 (275ms)
-  - zula.ir:443 (469ms)
-  - iranserver.com:443 (172ms)
-  - zula.ir:80 (386ms)
-  - 118ejob.ir:80 (535ms)
-  - linkxt.gozar8.ir:443 (877ms)
-  - 94.183.124.95:82 (294ms)
+  - 87.107.68.231:1081 (210ms)
+  - 185.145.185.218:8080 (4354ms)
+  - 185.83.182.206:2020 (244ms)
+  - 37.75.246.67:8080 (1246ms)
+  - 80.191.46.62:1090 (3295ms)
+  - 185.212.195.34:8085 (5351ms)
+  - 46.209.30.11:8080 (224ms)
+  - 82.99.227.43:8080 (1233ms)
+  - 185.105.184.45:1110 (204ms)
+  - 109.230.83.178:5060 (209ms)
+  - 5.202.52.101:6220 (4323ms)
+  - 5.202.52.103:6220 (1295ms)
+  - 81.91.159.14:7776 (214ms)
+  - 79.175.188.203:443 (214ms)
+  - 31.216.62.129:2020 (214ms)
   type: select
 - name: IR-ALL-RAW
   proxies: &id001
-  - 87.107.68.231:1081 (1317ms)
-  - 2.188.210.5:4443 (278ms)
-  - 2.188.210.83:4443 (272ms)
-  - 81.91.159.14:7776
-  - 85.9.87.26:8080
-  - 5.202.120.123:3129
-  - 78.39.253.49:8080
-  - 78.39.253.48:8080
-  - 185.83.182.206:2020 (241ms)
-  - 193.178.203.141:8080
-  - 81.12.70.98:8080 (275ms)
+  - 87.107.68.231:1081 (210ms)
+  - 185.145.185.218:8080 (4354ms)
+  - 185.83.182.206:2020 (244ms)
+  - 37.75.246.67:8080 (1246ms)
+  - 178.239.147.91:10818
   - 81.90.144.170:9000
-  - 185.105.184.45:1110 (222ms)
-  - 46.209.30.11:8080 (3380ms)
-  - 5.202.52.103:6220
-  - 46.245.123.30:1081
-  - 82.99.227.43:8080 (233ms)
-  - 195.181.40.34:8080 (1336ms)
-  - 185.109.244.69:8080
-  - 31.47.51.152:1111
-  - 79.175.188.203:443 (294ms)
+  - 46.209.207.152:8080
+  - 185.129.213.210:8080
+  - 80.191.46.62:1090 (3295ms)
+  - 185.212.195.34:8085 (5351ms)
+  - 89.46.219.134:8000
   - 84.241.29.213:8080
-  - 5.202.52.101:6220 (3387ms)
-  - 185.212.195.34:8085
-  - 46.209.199.145:8090 (275ms)
-  - 85.133.248.62:10808
-  - 185.155.15.63:8080
-  - 37.255.203.235:8080
+  - 31.25.92.114:8080
+  - 46.209.30.11:8080 (224ms)
+  - 81.12.70.99:8080
+  - 176.65.241.92:10817
+  - 82.99.227.43:8080 (1233ms)
+  - 185.105.184.45:1110 (204ms)
+  - 84.241.30.38:8080
+  - 109.230.83.178:5060 (209ms)
+  - 5.202.52.101:6220 (4323ms)
+  - 5.202.52.103:6220 (1295ms)
+  - 81.91.159.14:7776 (214ms)
+  - 79.175.188.203:443 (214ms)
+  - 80.191.40.131:5678
+  - 46.209.15.187:8080
+  - 94.182.199.250:8080
+  - 46.209.199.145:8090
+  - 5.200.72.62:3129
+  - 195.181.40.34:8080
   - 185.172.214.189:8080
-  - zula.ir:443 (469ms)
-  - iranserver.com:443 (172ms)
-  - zula.ir:80 (386ms)
-  - 2.189.59.5:443
+  - 78.38.67.210:3636
+  - 193.178.203.141:8080
+  - 93.126.6.68:3128
+  - 85.9.87.26:8080
+  - 31.216.62.129:2020 (214ms)
+  - zula.ir:2052
+  - 2.189.59.7:443
   - 2.189.59.6:443
-  - 2.189.59.3:443
-  - 2.189.59.4:443
-  - 118ejob.ir:80 (535ms)
-  - linkxt.gozar8.ir:443 (877ms)
-  - 185.24.255.24:80
-  - 94.183.124.95:82 (294ms)
+  - 185.231.181.82:8443
+  - 103.130.147.40:1122
   type: select
 - interval: 600
   name: IR-AUTO
