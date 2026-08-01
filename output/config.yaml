@@ -4,88 +4,44 @@ log-level: info
 mixed-port: 7890
 mode: Rule
 proxies:
-- name: 185.142.156.229:2080 (279ms)
+- name: 185.142.156.229:2080 (172ms)
   port: 2080
   server: 185.142.156.229
   type: socks5
   udp: true
-- name: 185.214.39.2:9944 (4430ms)
-  port: 9944
-  server: 185.214.39.2
-  type: http
-  udp: true
-- name: 46.209.207.152:8080
-  port: 8080
-  server: 46.209.207.152
-  type: http
-  udp: true
-- name: 46.209.30.11:8080
-  port: 8080
-  server: 46.209.30.11
-  type: http
-  udp: true
-- name: 109.230.83.178:5060
-  port: 5060
-  server: 109.230.83.178
-  type: http
-  udp: true
-- name: 185.129.213.210:8080
-  port: 8080
-  server: 185.129.213.210
-  type: http
-  udp: true
-- name: 46.209.207.158:8080
-  port: 8080
-  server: 46.209.207.158
-  type: http
-  udp: true
-- name: 5.202.120.123:3129
-  port: 3129
-  server: 5.202.120.123
-  type: http
-  udp: true
 - name: 178.252.171.229:8080
   port: 8080
   server: 178.252.171.229
-  type: socks5
+  type: http
   udp: true
-- name: 78.39.253.49:8080
+- name: 94.183.6.226:9090
+  port: 9090
+  server: 94.183.6.226
+  type: http
+  udp: true
+- name: 81.12.70.98:8080
   port: 8080
-  server: 78.39.253.49
-  type: socks5
+  server: 81.12.70.98
+  type: http
   udp: true
-- name: 193.178.203.141:8080
-  port: 8080
-  server: 193.178.203.141
-  type: socks5
+- name: 46.209.199.145:8090
+  port: 8090
+  server: 46.209.199.145
+  type: http
   udp: true
-- name: 185.212.195.34:8085
-  port: 8085
-  server: 185.212.195.34
-  type: socks5
+- name: 5.160.134.17:10818
+  port: 10818
+  server: 5.160.134.17
+  type: http
   udp: true
-- name: 185.109.244.69:8080
-  port: 8080
-  server: 185.109.244.69
+- name: 217.219.162.114:5678 (206ms)
+  port: 5678
+  server: 217.219.162.114
   type: socks5
   udp: true
 - alterId: 0
   cipher: auto
-  name: 37.32.23.122:443 (276ms)
-  network: ws
-  port: 443
-  server: 37.32.23.122
-  tls: false
-  type: vmess
-  udp: true
-  uuid: d12bc882-43c7-415e-87c5-2a7fdc8371c0
-  ws-opts:
-    headers:
-      Host: ''
-    path: /websocket/
-- alterId: 0
-  cipher: auto
-  name: anten.ir:2082 (391ms)
+  name: anten.ir:2082 (255ms)
   network: ws
   port: 2082
   server: anten.ir
@@ -97,20 +53,6 @@ proxies:
     headers:
       Host: 9.ir.cdn.mypings.ir
     path: /s2BSpP6uUOPQ499phpYH87TsXl
-- alterId: 0
-  cipher: auto
-  name: varzesh3.com:8880 (221ms)
-  network: ws
-  port: 8880
-  server: varzesh3.com
-  tls: true
-  type: vmess
-  udp: true
-  uuid: 93e982d2-e2f9-460f-a6b4-ccc629038426
-  ws-opts:
-    headers:
-      Host: 4.ir.cdn.mypings.ir
-    path: /
 - alterId: 0
   cipher: auto
   name: cl.northbookway.shop:1080
@@ -127,91 +69,7 @@ proxies:
     path: /api
 - alterId: 0
   cipher: auto
-  name: iranserver.com:443 (391ms)
-  network: ws
-  port: 443
-  server: iranserver.com
-  tls: true
-  type: vmess
-  udp: true
-  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-  ws-opts:
-    headers:
-      Host: nina.bond
-    path: /linkvws
-- alterId: 0
-  cipher: auto
-  name: zula.ir:80 (529ms)
-  network: ws
-  port: 80
-  server: zula.ir
-  tls: false
-  type: vmess
-  udp: true
-  uuid: c9e99213-170b-458a-b45b-79454ac7cf4b
-  ws-opts:
-    headers:
-      Host: zula.ir
-    path: /vmess
-- alterId: 0
-  cipher: auto
-  name: zula.ir:2052
-  network: ws
-  port: 2052
-  server: zula.ir
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 726a2899-b33f-4116-8abd-581932352830
-  ws-opts:
-    headers:
-      Host: zula.ir
-    path: /
-- alterId: 0
-  cipher: auto
-  name: site.hooracoffee.ir:443 (762ms)
-  network: ws
-  port: 443
-  server: site.hooracoffee.ir
-  tls: true
-  type: vmess
-  udp: true
-  uuid: ed954dba-5ad5-4688-8174-247944361c38
-  ws-opts:
-    headers:
-      Host: site.hooracoffee.ir
-    path: /www
-- alterId: 0
-  cipher: auto
-  name: 185.231.181.82:8443
-  network: ws
-  port: 8443
-  server: 185.231.181.82
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 37b0f4af-2fbb-4b40-92e2-894bf7bf598c
-  ws-opts:
-    headers:
-      Host: mim.emperorr.sbs
-    path: /ws
-- alterId: 0
-  cipher: auto
-  name: linkxt.gozar8.ir:443 (892ms)
-  network: ws
-  port: 443
-  server: linkxt.gozar8.ir
-  tls: true
-  type: vmess
-  udp: true
-  uuid: 6ad27411-ee45-46ed-a33a-5f67e3d13d6a
-  ws-opts:
-    headers:
-      Host: linkxt.gozar8.ir
-    path: /
-- alterId: 0
-  cipher: auto
-  name: 185.143.233.114:80 (150ms)
+  name: 185.143.233.114:80 (94ms)
   network: ws
   port: 80
   server: 185.143.233.114
@@ -233,43 +91,23 @@ proxy-groups:
   type: select
 - name: IR-ALL
   proxies:
-  - 185.142.156.229:2080 (279ms)
-  - 185.214.39.2:9944 (4430ms)
-  - 37.32.23.122:443 (276ms)
-  - anten.ir:2082 (391ms)
-  - varzesh3.com:8880 (221ms)
-  - iranserver.com:443 (391ms)
-  - zula.ir:80 (529ms)
-  - site.hooracoffee.ir:443 (762ms)
-  - linkxt.gozar8.ir:443 (892ms)
-  - 185.143.233.114:80 (150ms)
+  - 185.142.156.229:2080 (172ms)
+  - 217.219.162.114:5678 (206ms)
+  - anten.ir:2082 (255ms)
+  - 185.143.233.114:80 (94ms)
   type: select
 - name: IR-ALL-RAW
   proxies: &id001
-  - 185.142.156.229:2080 (279ms)
-  - 185.214.39.2:9944 (4430ms)
-  - 46.209.207.152:8080
-  - 46.209.30.11:8080
-  - 109.230.83.178:5060
-  - 185.129.213.210:8080
-  - 46.209.207.158:8080
-  - 5.202.120.123:3129
+  - 185.142.156.229:2080 (172ms)
   - 178.252.171.229:8080
-  - 78.39.253.49:8080
-  - 193.178.203.141:8080
-  - 185.212.195.34:8085
-  - 185.109.244.69:8080
-  - 37.32.23.122:443 (276ms)
-  - anten.ir:2082 (391ms)
-  - varzesh3.com:8880 (221ms)
+  - 94.183.6.226:9090
+  - 81.12.70.98:8080
+  - 46.209.199.145:8090
+  - 5.160.134.17:10818
+  - 217.219.162.114:5678 (206ms)
+  - anten.ir:2082 (255ms)
   - cl.northbookway.shop:1080
-  - iranserver.com:443 (391ms)
-  - zula.ir:80 (529ms)
-  - zula.ir:2052
-  - site.hooracoffee.ir:443 (762ms)
-  - 185.231.181.82:8443
-  - linkxt.gozar8.ir:443 (892ms)
-  - 185.143.233.114:80 (150ms)
+  - 185.143.233.114:80 (94ms)
   type: select
 - interval: 600
   name: IR-AUTO
