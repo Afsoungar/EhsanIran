@@ -4,34 +4,19 @@ log-level: info
 mixed-port: 7890
 mode: Rule
 proxies:
-- name: 178.252.180.59:10909
-  port: 10909
-  server: 178.252.180.59
-  type: http
+- name: 93.118.127.222:1081
+  port: 1081
+  server: 93.118.127.222
+  type: socks5
   udp: true
-- name: 5.160.103.45:80
+- name: 185.88.177.40:80 (227ms)
   port: 80
-  server: 5.160.103.45
+  server: 185.88.177.40
   type: http
   udp: true
-- name: 81.12.70.99:8080
+- name: 82.99.227.43:8080
   port: 8080
-  server: 81.12.70.99
-  type: http
-  udp: true
-- name: 78.39.253.49:8080 (2395ms)
-  port: 8080
-  server: 78.39.253.49
-  type: http
-  udp: true
-- name: 37.75.246.67:8080
-  port: 8080
-  server: 37.75.246.67
-  type: http
-  udp: true
-- name: 185.4.29.243:7887 (342ms)
-  port: 7887
-  server: 185.4.29.243
+  server: 82.99.227.43
   type: http
   udp: true
 - name: 2.181.34.250:8080
@@ -39,14 +24,19 @@ proxies:
   server: 2.181.34.250
   type: http
   udp: true
-- name: 109.122.240.157:8118
-  port: 8118
-  server: 109.122.240.157
+- name: 81.12.70.98:8080
+  port: 8080
+  server: 81.12.70.98
   type: http
   udp: true
-- name: 185.140.232.21:1400
-  port: 1400
-  server: 185.140.232.21
+- name: 185.4.29.243:7887
+  port: 7887
+  server: 185.4.29.243
+  type: http
+  udp: true
+- name: 217.219.83.186:2222
+  port: 2222
+  server: 217.219.83.186
   type: http
   udp: true
 - name: 185.212.195.34:8085
@@ -54,55 +44,89 @@ proxies:
   server: 185.212.195.34
   type: http
   udp: true
-- name: 185.118.153.110:8080
+- name: 79.127.30.250:8080 (1278ms)
   port: 8080
-  server: 185.118.153.110
+  server: 79.127.30.250
   type: http
   udp: true
-- name: 46.245.123.30:1081
-  port: 1081
-  server: 46.245.123.30
+- name: 5.63.9.218:10818
+  port: 10818
+  server: 5.63.9.218
   type: http
   udp: true
-- name: 193.178.203.141:8080 (5322ms)
+- name: 185.172.212.233:8080
   port: 8080
-  server: 193.178.203.141
+  server: 185.172.212.233
   type: http
   udp: true
-- name: 188.136.208.253:8080 (1225ms)
+- name: 31.47.38.2:80 (5472ms)
+  port: 80
+  server: 31.47.38.2
+  type: http
+  udp: true
+- name: 188.121.117.38:6565
+  port: 6565
+  server: 188.121.117.38
+  type: http
+  udp: true
+- name: 84.241.30.214:8080
   port: 8080
-  server: 188.136.208.253
-  type: http
+  server: 84.241.30.214
+  type: socks5
   udp: true
-- name: 94.183.163.42:3129
-  port: 3129
-  server: 94.183.163.42
-  type: http
+- name: 178.252.171.229:8080 (1248ms)
+  port: 8080
+  server: 178.252.171.229
+  type: socks5
   udp: true
-- name: 85.133.190.40:8097
-  port: 8097
-  server: 85.133.190.40
-  type: http
+- name: 94.182.177.92:80
+  port: 80
+  server: 94.182.177.92
+  type: socks5
   udp: true
-- name: 91.228.133.191:8888 (194ms)
+- name: 91.228.133.191:8888
   port: 8888
   server: 91.228.133.191
   type: socks5
   udp: true
+- name: 185.155.15.63:8080
+  port: 8080
+  server: 185.155.15.63
+  type: socks5
+  udp: true
+- name: 178.252.180.59:10909
+  port: 10909
+  server: 178.252.180.59
+  type: socks5
+  udp: true
 - alterId: 0
   cipher: auto
-  name: 185.24.255.24:80
+  name: 185.143.234.120:80 (149ms)
   network: ws
   port: 80
-  server: 185.24.255.24
+  server: 185.143.234.120
   tls: false
   type: vmess
   udp: true
-  uuid: 80abb903-24e0-4dbd-9c2f-a57e9a267555
+  uuid: b831381d-6324-4d53-ad4f-8cda48b30811
   ws-opts:
     headers:
-      Host: ''
-    path: /ws
+      Host: koochehpas.com
+    path: /graphql
+- alterId: 0
+  cipher: auto
+  name: 185.143.233.114:80 (148ms)
+  network: ws
+  port: 80
+  server: 185.143.233.114
+  tls: false
+  type: vmess
+  udp: true
+  uuid: cf7f2d7c-d4f8-469a-bfd5-97484bb98d2c
+  ws-opts:
+    headers:
+      Host: 214.zirogame-79.site
+    path: /
 proxy-groups:
 - name: MAIN
   proxies:
@@ -113,32 +137,36 @@ proxy-groups:
   type: select
 - name: IR-ALL
   proxies:
-  - 78.39.253.49:8080 (2395ms)
-  - 185.4.29.243:7887 (342ms)
-  - 193.178.203.141:8080 (5322ms)
-  - 188.136.208.253:8080 (1225ms)
-  - 91.228.133.191:8888 (194ms)
+  - 185.88.177.40:80 (227ms)
+  - 79.127.30.250:8080 (1278ms)
+  - 31.47.38.2:80 (5472ms)
+  - 178.252.171.229:8080 (1248ms)
+  - 185.143.234.120:80 (149ms)
+  - 185.143.233.114:80 (148ms)
   type: select
 - name: IR-ALL-RAW
   proxies: &id001
-  - 178.252.180.59:10909
-  - 5.160.103.45:80
-  - 81.12.70.99:8080
-  - 78.39.253.49:8080 (2395ms)
-  - 37.75.246.67:8080
-  - 185.4.29.243:7887 (342ms)
+  - 93.118.127.222:1081
+  - 185.88.177.40:80 (227ms)
+  - 82.99.227.43:8080
   - 2.181.34.250:8080
-  - 109.122.240.157:8118
-  - 185.140.232.21:1400
+  - 81.12.70.98:8080
+  - 185.4.29.243:7887
+  - 217.219.83.186:2222
   - 185.212.195.34:8085
-  - 185.118.153.110:8080
-  - 46.245.123.30:1081
-  - 193.178.203.141:8080 (5322ms)
-  - 188.136.208.253:8080 (1225ms)
-  - 94.183.163.42:3129
-  - 85.133.190.40:8097
-  - 91.228.133.191:8888 (194ms)
-  - 185.24.255.24:80
+  - 79.127.30.250:8080 (1278ms)
+  - 5.63.9.218:10818
+  - 185.172.212.233:8080
+  - 31.47.38.2:80 (5472ms)
+  - 188.121.117.38:6565
+  - 84.241.30.214:8080
+  - 178.252.171.229:8080 (1248ms)
+  - 94.182.177.92:80
+  - 91.228.133.191:8888
+  - 185.155.15.63:8080
+  - 178.252.180.59:10909
+  - 185.143.234.120:80 (149ms)
+  - 185.143.233.114:80 (148ms)
   type: select
 - interval: 600
   name: IR-AUTO
