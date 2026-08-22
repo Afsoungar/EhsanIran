@@ -4,134 +4,69 @@ log-level: info
 mixed-port: 7890
 mode: Rule
 proxies:
-- name: 88.135.36.246:1081
-  port: 1081
-  server: 88.135.36.246
-  type: socks5
-  udp: true
-- name: 2.184.51.130:10810
-  port: 10810
-  server: 2.184.51.130
-  type: socks5
-  udp: true
-- name: 5.144.133.195:9050 (189ms)
-  port: 9050
-  server: 5.144.133.195
-  type: socks5
-  udp: true
-- name: 31.47.38.2:80
-  port: 80
-  server: 31.47.38.2
-  type: http
-  udp: true
-- name: 185.118.153.110:8080 (193ms)
-  port: 8080
-  server: 185.118.153.110
-  type: http
-  udp: true
-- name: 93.118.142.196:8088 (279ms)
-  port: 8088
-  server: 93.118.142.196
-  type: http
-  udp: true
-- name: 109.230.89.126:3129
-  port: 3129
-  server: 109.230.89.126
-  type: http
-  udp: true
-- name: 185.88.177.40:80 (169ms)
-  port: 80
-  server: 185.88.177.40
-  type: http
-  udp: true
 - name: 5.200.72.58:3129
   port: 3129
   server: 5.200.72.58
   type: http
   udp: true
-- name: 81.12.70.98:8080
+- name: 31.47.38.2:80 (320ms)
+  port: 80
+  server: 31.47.38.2
+  type: http
+  udp: true
+- name: 109.230.83.178:5060 (3351ms)
+  port: 5060
+  server: 109.230.83.178
+  type: http
+  udp: true
+- name: 185.88.177.40:80 (222ms)
+  port: 80
+  server: 185.88.177.40
+  type: http
+  udp: true
+- name: 2.181.34.250:8080
   port: 8080
-  server: 81.12.70.98
+  server: 2.181.34.250
   type: http
   udp: true
-- name: 81.90.158.110:3129
-  port: 3129
-  server: 81.90.158.110
-  type: http
-  udp: true
-- name: 185.109.244.69:8080
-  port: 8080
-  server: 185.109.244.69
-  type: http
-  udp: true
-- name: 195.181.40.34:8080 (2241ms)
-  port: 8080
-  server: 195.181.40.34
-  type: http
-  udp: true
-- name: 94.183.6.226:9090
-  port: 9090
-  server: 94.183.6.226
-  type: http
-  udp: true
-- name: 217.219.83.186:2222 (305ms)
-  port: 2222
-  server: 217.219.83.186
-  type: http
-  udp: true
-- name: 185.4.29.243:7887
+- name: 185.4.29.243:7887 (2288ms)
   port: 7887
   server: 185.4.29.243
   type: http
   udp: true
-- name: 5.63.9.218:10818
-  port: 10818
-  server: 5.63.9.218
+- name: 93.118.142.196:8088 (282ms)
+  port: 8088
+  server: 93.118.142.196
   type: http
   udp: true
-- name: 78.39.253.49:8080
+- name: 94.183.6.226:9090 (3399ms)
+  port: 9090
+  server: 94.183.6.226
+  type: http
+  udp: true
+- name: 81.12.54.65:4040 (287ms)
+  port: 4040
+  server: 81.12.54.65
+  type: http
+  udp: true
+- name: 5.200.72.59:3129
+  port: 3129
+  server: 5.200.72.59
+  type: http
+  udp: true
+- name: 95.215.161.153:8080
   port: 8080
-  server: 78.39.253.49
-  type: http
-  udp: true
-- name: 81.91.157.133:5678 (1258ms)
-  port: 5678
-  server: 81.91.157.133
-  type: http
-  udp: true
-- name: 79.175.188.203:443 (200ms)
-  port: 443
-  server: 79.175.188.203
-  type: http
-  udp: true
-- name: 81.12.89.74:4153
-  port: 4153
-  server: 81.12.89.74
-  type: http
-  udp: true
-- name: 151.233.50.238:1081
-  port: 1081
-  server: 151.233.50.238
-  type: http
+  server: 95.215.161.153
+  type: socks5
   udp: true
 - name: 178.252.171.229:8080
   port: 8080
   server: 178.252.171.229
-  type: http
-  udp: true
-- name: 2.180.22.218:80 (300ms)
-  port: 80
-  server: 2.180.22.218
   type: socks5
   udp: true
-- name: 87.107.68.231:1081
-  port: 1081
-  server: 87.107.68.231
-  type: socks5
-  udp: true
-- name: 79.127.30.250:8080 (4291ms)
+- name: 85.9.87.26:8080
   port: 8080
-  server: 79.127.30.250
+  server: 85.9.87.26
   type: socks5
   udp: true
 - name: 37.255.203.235:8080
@@ -139,20 +74,37 @@ proxies:
   server: 37.255.203.235
   type: socks5
   udp: true
+- name: 185.172.214.189:8080 (1220ms)
+  port: 8080
+  server: 185.172.214.189
+  type: socks5
+  udp: true
+- name: 185.118.153.110:8080 (2321ms)
+  port: 8080
+  server: 185.118.153.110
+  type: socks5
+  udp: true
 - alterId: 0
   cipher: auto
-  name: 185.24.255.24:80
+  name: 185.143.233.114:80 (131ms)
   network: ws
   port: 80
-  server: 185.24.255.24
+  server: 185.143.233.114
   tls: false
   type: vmess
   udp: true
-  uuid: 80abb903-24e0-4dbd-9c2f-a57e9a267555
+  uuid: cf7f2d7c-d4f8-469a-bfd5-97484bb98d2c
   ws-opts:
     headers:
-      Host: ''
-    path: /ws
+      Host: 185.143.233.114
+    path: /
+- cipher: chacha20-ietf-poly1305
+  name: e2.cover20.ir:30874 (481ms)
+  password: BlRtjyYlj18kYcrEL/8wcbSyqNKSPESiwSDDvisu9+o=
+  port: 30874
+  server: e2.cover20.ir
+  type: ss
+  udp: true
 proxy-groups:
 - name: MAIN
   proxies:
@@ -163,47 +115,38 @@ proxy-groups:
   type: select
 - name: IR-ALL
   proxies:
-  - 5.144.133.195:9050 (189ms)
-  - 185.118.153.110:8080 (193ms)
-  - 93.118.142.196:8088 (279ms)
-  - 185.88.177.40:80 (169ms)
-  - 195.181.40.34:8080 (2241ms)
-  - 217.219.83.186:2222 (305ms)
-  - 81.91.157.133:5678 (1258ms)
-  - 79.175.188.203:443 (200ms)
-  - 2.180.22.218:80 (300ms)
-  - 79.127.30.250:8080 (4291ms)
+  - 31.47.38.2:80 (320ms)
+  - 109.230.83.178:5060 (3351ms)
+  - 185.88.177.40:80 (222ms)
+  - 185.4.29.243:7887 (2288ms)
+  - 93.118.142.196:8088 (282ms)
+  - 94.183.6.226:9090 (3399ms)
+  - 81.12.54.65:4040 (287ms)
+  - 185.172.214.189:8080 (1220ms)
+  - 185.118.153.110:8080 (2321ms)
+  - 185.143.233.114:80 (131ms)
+  - e2.cover20.ir:30874 (481ms)
   type: select
 - name: IR-ALL-RAW
   proxies: &id001
-  - 88.135.36.246:1081
-  - 2.184.51.130:10810
-  - 5.144.133.195:9050 (189ms)
-  - 31.47.38.2:80
-  - 185.118.153.110:8080 (193ms)
-  - 93.118.142.196:8088 (279ms)
-  - 109.230.89.126:3129
-  - 185.88.177.40:80 (169ms)
   - 5.200.72.58:3129
-  - 81.12.70.98:8080
-  - 81.90.158.110:3129
-  - 185.109.244.69:8080
-  - 195.181.40.34:8080 (2241ms)
-  - 94.183.6.226:9090
-  - 217.219.83.186:2222 (305ms)
-  - 185.4.29.243:7887
-  - 5.63.9.218:10818
-  - 78.39.253.49:8080
-  - 81.91.157.133:5678 (1258ms)
-  - 79.175.188.203:443 (200ms)
-  - 81.12.89.74:4153
-  - 151.233.50.238:1081
+  - 31.47.38.2:80 (320ms)
+  - 109.230.83.178:5060 (3351ms)
+  - 185.88.177.40:80 (222ms)
+  - 2.181.34.250:8080
+  - 185.4.29.243:7887 (2288ms)
+  - 93.118.142.196:8088 (282ms)
+  - 94.183.6.226:9090 (3399ms)
+  - 81.12.54.65:4040 (287ms)
+  - 5.200.72.59:3129
+  - 95.215.161.153:8080
   - 178.252.171.229:8080
-  - 2.180.22.218:80 (300ms)
-  - 87.107.68.231:1081
-  - 79.127.30.250:8080 (4291ms)
+  - 85.9.87.26:8080
   - 37.255.203.235:8080
-  - 185.24.255.24:80
+  - 185.172.214.189:8080 (1220ms)
+  - 185.118.153.110:8080 (2321ms)
+  - 185.143.233.114:80 (131ms)
+  - e2.cover20.ir:30874 (481ms)
   type: select
 - interval: 600
   name: IR-AUTO
