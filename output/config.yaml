@@ -4,14 +4,19 @@ log-level: info
 mixed-port: 7890
 mode: Rule
 proxies:
-- name: 5.144.133.195:9050 (181ms)
-  port: 9050
-  server: 5.144.133.195
-  type: socks5
+- name: 85.133.169.45:8118 (185ms)
+  port: 8118
+  server: 85.133.169.45
+  type: http
   udp: true
-- name: 185.49.96.89:8080 (1184ms)
+- name: 185.49.96.89:8080
   port: 8080
   server: 185.49.96.89
+  type: http
+  udp: true
+- name: 185.109.244.69:8080
+  port: 8080
+  server: 185.109.244.69
   type: http
   udp: true
 - name: 5.57.32.204:10818
@@ -19,29 +24,9 @@ proxies:
   server: 5.57.32.204
   type: http
   udp: true
-- name: 79.127.30.250:8080
+- name: 85.9.94.252:8080
   port: 8080
-  server: 79.127.30.250
-  type: http
-  udp: true
-- name: 217.219.83.186:2222 (4403ms)
-  port: 2222
-  server: 217.219.83.186
-  type: http
-  udp: true
-- name: 78.39.253.49:8080
-  port: 8080
-  server: 78.39.253.49
-  type: http
-  udp: true
-- name: 81.90.144.170:9000
-  port: 9000
-  server: 81.90.144.170
-  type: http
-  udp: true
-- name: 5.63.9.218:10818
-  port: 10818
-  server: 5.63.9.218
+  server: 85.9.94.252
   type: http
   udp: true
 - name: 151.233.50.238:1081
@@ -49,14 +34,49 @@ proxies:
   server: 151.233.50.238
   type: http
   udp: true
-- name: 5.202.197.66:9050 (5060ms)
-  port: 9050
-  server: 5.202.197.66
+- name: 46.100.94.217:1081
+  port: 1081
+  server: 46.100.94.217
   type: http
   udp: true
-- name: 185.88.177.40:80 (155ms)
+- name: 185.88.177.40:80
   port: 80
   server: 185.88.177.40
+  type: http
+  udp: true
+- name: 78.39.253.49:8080
+  port: 8080
+  server: 78.39.253.49
+  type: http
+  udp: true
+- name: 31.47.38.2:80 (4283ms)
+  port: 80
+  server: 31.47.38.2
+  type: http
+  udp: true
+- name: 80.191.40.131:5678
+  port: 5678
+  server: 80.191.40.131
+  type: socks5
+  udp: true
+- name: 85.9.87.26:8080 (2261ms)
+  port: 8080
+  server: 85.9.87.26
+  type: socks5
+  udp: true
+- name: 5.61.30.85:8080 (172ms)
+  port: 8080
+  server: 5.61.30.85
+  type: socks5
+  udp: true
+- name: 91.228.133.191:8888 (172ms)
+  port: 8888
+  server: 91.228.133.191
+  type: socks5
+  udp: true
+- name: 93.126.6.68:3128
+  port: 3128
+  server: 93.126.6.68
   type: socks5
   udp: true
 - alterId: 0
@@ -75,18 +95,32 @@ proxies:
     path: /websocket/
 - alterId: 0
   cipher: auto
-  name: zula.ir:2096
+  name: 185.143.233.114:80 (100ms)
   network: ws
-  port: 2096
-  server: zula.ir
-  tls: true
+  port: 80
+  server: 185.143.233.114
+  tls: false
   type: vmess
   udp: true
-  uuid: 98b879fc-ed38-4537-f02f-e88e4892d48c
+  uuid: cf7f2d7c-d4f8-469a-bfd5-97484bb98d2c
   ws-opts:
     headers:
-      Host: eu4.nlist.eu.org
-    path: /liu
+      Host: 185.143.233.114
+    path: /
+- alterId: 0
+  cipher: auto
+  name: 185.143.233.114:80 (92ms)
+  network: ws
+  port: 80
+  server: 185.143.233.114
+  tls: false
+  type: vmess
+  udp: true
+  uuid: cf7f2d7c-d4f8-469a-bfd5-97484bb98d2c
+  ws-opts:
+    headers:
+      Host: 214.zirogame-79.site
+    path: /
 proxy-groups:
 - name: MAIN
   proxies:
@@ -97,27 +131,34 @@ proxy-groups:
   type: select
 - name: IR-ALL
   proxies:
-  - 5.144.133.195:9050 (181ms)
-  - 185.49.96.89:8080 (1184ms)
-  - 217.219.83.186:2222 (4403ms)
-  - 5.202.197.66:9050 (5060ms)
-  - 185.88.177.40:80 (155ms)
+  - 85.133.169.45:8118 (185ms)
+  - 31.47.38.2:80 (4283ms)
+  - 85.9.87.26:8080 (2261ms)
+  - 5.61.30.85:8080 (172ms)
+  - 91.228.133.191:8888 (172ms)
+  - 185.143.233.114:80 (100ms)
+  - 185.143.233.114:80 (92ms)
   type: select
 - name: IR-ALL-RAW
   proxies: &id001
-  - 5.144.133.195:9050 (181ms)
-  - 185.49.96.89:8080 (1184ms)
+  - 85.133.169.45:8118 (185ms)
+  - 185.49.96.89:8080
+  - 185.109.244.69:8080
   - 5.57.32.204:10818
-  - 79.127.30.250:8080
-  - 217.219.83.186:2222 (4403ms)
-  - 78.39.253.49:8080
-  - 81.90.144.170:9000
-  - 5.63.9.218:10818
+  - 85.9.94.252:8080
   - 151.233.50.238:1081
-  - 5.202.197.66:9050 (5060ms)
-  - 185.88.177.40:80 (155ms)
+  - 46.100.94.217:1081
+  - 185.88.177.40:80
+  - 78.39.253.49:8080
+  - 31.47.38.2:80 (4283ms)
+  - 80.191.40.131:5678
+  - 85.9.87.26:8080 (2261ms)
+  - 5.61.30.85:8080 (172ms)
+  - 91.228.133.191:8888 (172ms)
+  - 93.126.6.68:3128
   - 37.32.23.122:443
-  - zula.ir:2096
+  - 185.143.233.114:80 (100ms)
+  - 185.143.233.114:80 (92ms)
   type: select
 - interval: 600
   name: IR-AUTO
