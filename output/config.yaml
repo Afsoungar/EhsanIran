@@ -4,59 +4,34 @@ log-level: info
 mixed-port: 7890
 mode: Rule
 proxies:
+- name: 46.100.94.217:1081
+  port: 1081
+  server: 46.100.94.217
+  type: socks5
+  udp: true
 - name: 62.60.210.173:1081
   port: 1081
   server: 62.60.210.173
   type: socks5
   udp: true
-- name: 87.107.68.231:1081
-  port: 1081
-  server: 87.107.68.231
-  type: socks5
-  udp: true
-- name: 37.32.9.113:8080
-  port: 8080
-  server: 37.32.9.113
+- name: 185.214.39.2:9944
+  port: 9944
+  server: 185.214.39.2
   type: http
   udp: true
-- name: 31.14.124.45:8080 (1197ms)
+- name: 46.209.15.187:8080
   port: 8080
-  server: 31.14.124.45
+  server: 46.209.15.187
   type: http
   udp: true
-- name: 185.88.177.40:80 (160ms)
+- name: 2.181.34.250:8080
+  port: 8080
+  server: 2.181.34.250
+  type: http
+  udp: true
+- name: 5.160.103.45:80
   port: 80
-  server: 185.88.177.40
-  type: http
-  udp: true
-- name: 109.230.83.178:5060
-  port: 5060
-  server: 109.230.83.178
-  type: http
-  udp: true
-- name: 46.209.207.149:8080
-  port: 8080
-  server: 46.209.207.149
-  type: http
-  udp: true
-- name: 81.90.144.170:9000 (1173ms)
-  port: 9000
-  server: 81.90.144.170
-  type: http
-  udp: true
-- name: 195.181.40.34:8080
-  port: 8080
-  server: 195.181.40.34
-  type: http
-  udp: true
-- name: 185.191.76.23:2080 (167ms)
-  port: 2080
-  server: 185.191.76.23
-  type: http
-  udp: true
-- name: 185.118.153.110:8080 (168ms)
-  port: 8080
-  server: 185.118.153.110
+  server: 5.160.103.45
   type: http
   udp: true
 - name: 212.16.86.46:8080
@@ -64,76 +39,128 @@ proxies:
   server: 212.16.86.46
   type: http
   udp: true
-- name: 185.214.39.2:9944 (4264ms)
-  port: 9944
-  server: 185.214.39.2
+- name: 46.209.207.149:8080
+  port: 8080
+  server: 46.209.207.149
   type: http
   udp: true
-- name: 151.233.50.238:1081
-  port: 1081
-  server: 151.233.50.238
+- name: 195.181.40.34:8080
+  port: 8080
+  server: 195.181.40.34
   type: http
   udp: true
-- name: 78.109.200.168:9910 (2218ms)
+- name: 80.191.46.62:1090
+  port: 1090
+  server: 80.191.46.62
+  type: http
+  udp: true
+- name: 46.209.207.155:8080
+  port: 8080
+  server: 46.209.207.155
+  type: http
+  udp: true
+- name: 81.12.70.98:8080 (3340ms)
+  port: 8080
+  server: 81.12.70.98
+  type: http
+  udp: true
+- name: 78.109.200.168:9910 (1274ms)
   port: 9910
   server: 78.109.200.168
   type: http
   udp: true
-- name: 78.109.200.189:9910 (189ms)
+- name: 78.109.200.189:9910 (246ms)
   port: 9910
   server: 78.109.200.189
   type: http
   udp: true
-- name: 217.11.23.106:8080 (4272ms)
-  port: 8080
-  server: 217.11.23.106
+- name: 87.107.68.231:1081
+  port: 1081
+  server: 87.107.68.231
   type: http
   udp: true
-- name: 78.38.67.95:4153
-  port: 4153
-  server: 78.38.67.95
+- name: 37.202.237.4:443 (291ms)
+  port: 443
+  server: 37.202.237.4
   type: http
   udp: true
-- name: 78.110.121.34:10808 (168ms)
-  port: 10808
-  server: 78.110.121.34
-  type: socks5
+- name: 185.212.195.34:8085
+  port: 8085
+  server: 185.212.195.34
+  type: http
   udp: true
-- name: 31.25.92.114:8080
+- name: 5.63.9.218:10818
+  port: 10818
+  server: 5.63.9.218
+  type: http
+  udp: true
+- name: 185.191.76.23:2080 (219ms)
+  port: 2080
+  server: 185.191.76.23
+  type: http
+  udp: true
+- name: 93.118.127.234:8080
   port: 8080
-  server: 31.25.92.114
-  type: socks5
+  server: 93.118.127.234
+  type: http
   udp: true
 - name: 85.9.87.26:8080
   port: 8080
   server: 85.9.87.26
   type: socks5
   udp: true
-- name: 31.7.65.18:443
-  port: 443
-  server: 31.7.65.18
+- name: 80.191.40.133:5678
+  port: 5678
+  server: 80.191.40.133
   type: socks5
   udp: true
-- name: 78.39.253.48:8080
-  port: 8080
-  server: 78.39.253.48
+- name: 78.110.121.34:10808 (211ms)
+  port: 10808
+  server: 78.110.121.34
   type: socks5
   udp: true
-- name: 85.133.169.45:8118
-  port: 8118
-  server: 85.133.169.45
-  type: socks5
+- alterId: 0
+  cipher: auto
+  name: 118ejob.ir:80 (1022ms)
+  network: ws
+  port: 80
+  server: 118ejob.ir
+  tls: false
+  type: vmess
   udp: true
-- name: 37.202.237.4:443 (271ms)
-  port: 443
-  server: 37.202.237.4
-  type: socks5
+  uuid: 47d0805b-6b81-49f1-9813-776032d2c076
+  ws-opts:
+    headers:
+      Host: at1-vmess.sshmax.xyz
+    path: /vmess
+- alterId: 0
+  cipher: auto
+  name: 185.143.233.114:80 (134ms)
+  network: ws
+  port: 80
+  server: 185.143.233.114
+  tls: false
+  type: vmess
   udp: true
-- name: 194.31.108.109:2080 (166ms)
-  port: 2080
-  server: 194.31.108.109
-  type: socks5
+  uuid: cf7f2d7c-d4f8-469a-bfd5-97484bb98d2c
+  ws-opts:
+    headers:
+      Host: 185.143.233.114
+    path: /
+- alterId: 0
+  cipher: auto
+  name: 185.143.233.114:80 (132ms)
+  network: ws
+  port: 80
+  server: 185.143.233.114
+  tls: false
+  type: vmess
   udp: true
+  uuid: cf7f2d7c-d4f8-469a-bfd5-97484bb98d2c
+  ws-opts:
+    headers:
+      Host: 214.zirogame-79.site
+    path: /
 proxy-groups:
 - name: MAIN
   proxies:
@@ -144,47 +171,44 @@ proxy-groups:
   type: select
 - name: IR-ALL
   proxies:
-  - 31.14.124.45:8080 (1197ms)
-  - 185.88.177.40:80 (160ms)
-  - 81.90.144.170:9000 (1173ms)
-  - 185.191.76.23:2080 (167ms)
-  - 185.118.153.110:8080 (168ms)
-  - 185.214.39.2:9944 (4264ms)
-  - 78.109.200.168:9910 (2218ms)
-  - 78.109.200.189:9910 (189ms)
-  - 217.11.23.106:8080 (4272ms)
-  - 78.110.121.34:10808 (168ms)
-  - 37.202.237.4:443 (271ms)
-  - 194.31.108.109:2080 (166ms)
+  - 81.12.70.98:8080 (3340ms)
+  - 78.109.200.168:9910 (1274ms)
+  - 78.109.200.189:9910 (246ms)
+  - 37.202.237.4:443 (291ms)
+  - 185.191.76.23:2080 (219ms)
+  - 78.110.121.34:10808 (211ms)
+  - 118ejob.ir:80 (1022ms)
+  - 185.143.233.114:80 (134ms)
+  - 185.143.233.114:80 (132ms)
   type: select
 - name: IR-ALL-RAW
   proxies: &id001
+  - 46.100.94.217:1081
   - 62.60.210.173:1081
-  - 87.107.68.231:1081
-  - 37.32.9.113:8080
-  - 31.14.124.45:8080 (1197ms)
-  - 185.88.177.40:80 (160ms)
-  - 109.230.83.178:5060
-  - 46.209.207.149:8080
-  - 81.90.144.170:9000 (1173ms)
-  - 195.181.40.34:8080
-  - 185.191.76.23:2080 (167ms)
-  - 185.118.153.110:8080 (168ms)
+  - 185.214.39.2:9944
+  - 46.209.15.187:8080
+  - 2.181.34.250:8080
+  - 5.160.103.45:80
   - 212.16.86.46:8080
-  - 185.214.39.2:9944 (4264ms)
-  - 151.233.50.238:1081
-  - 78.109.200.168:9910 (2218ms)
-  - 78.109.200.189:9910 (189ms)
-  - 217.11.23.106:8080 (4272ms)
-  - 78.38.67.95:4153
-  - 78.110.121.34:10808 (168ms)
-  - 31.25.92.114:8080
+  - 46.209.207.149:8080
+  - 195.181.40.34:8080
+  - 80.191.46.62:1090
+  - 46.209.207.155:8080
+  - 81.12.70.98:8080 (3340ms)
+  - 78.109.200.168:9910 (1274ms)
+  - 78.109.200.189:9910 (246ms)
+  - 87.107.68.231:1081
+  - 37.202.237.4:443 (291ms)
+  - 185.212.195.34:8085
+  - 5.63.9.218:10818
+  - 185.191.76.23:2080 (219ms)
+  - 93.118.127.234:8080
   - 85.9.87.26:8080
-  - 31.7.65.18:443
-  - 78.39.253.48:8080
-  - 85.133.169.45:8118
-  - 37.202.237.4:443 (271ms)
-  - 194.31.108.109:2080 (166ms)
+  - 80.191.40.133:5678
+  - 78.110.121.34:10808 (211ms)
+  - 118ejob.ir:80 (1022ms)
+  - 185.143.233.114:80 (134ms)
+  - 185.143.233.114:80 (132ms)
   type: select
 - interval: 600
   name: IR-AUTO
