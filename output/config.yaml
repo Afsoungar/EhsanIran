@@ -9,34 +9,24 @@ proxies:
   server: 62.60.210.173
   type: socks5
   udp: true
-- name: 212.16.86.46:8080
-  port: 8080
-  server: 212.16.86.46
-  type: http
+- name: 37.202.237.4:443 (284ms)
+  port: 443
+  server: 37.202.237.4
+  type: socks5
   udp: true
-- name: 31.47.38.2:80
+- name: 185.88.177.40:80 (234ms)
   port: 80
-  server: 31.47.38.2
+  server: 185.88.177.40
   type: http
   udp: true
-- name: 109.230.89.126:3129
-  port: 3129
-  server: 109.230.89.126
+- name: 185.214.39.2:9944
+  port: 9944
+  server: 185.214.39.2
   type: http
   udp: true
-- name: 185.212.195.34:8085
-  port: 8085
-  server: 185.212.195.34
-  type: http
-  udp: true
-- name: 151.233.50.238:1081
-  port: 1081
-  server: 151.233.50.238
-  type: http
-  udp: true
-- name: 78.109.200.189:9910 (1376ms)
-  port: 9910
-  server: 78.109.200.189
+- name: 37.32.9.113:8080 (3346ms)
+  port: 8080
+  server: 37.32.9.113
   type: http
   udp: true
 - name: 178.252.171.229:8080
@@ -44,122 +34,75 @@ proxies:
   server: 178.252.171.229
   type: http
   udp: true
-- name: 81.12.89.74:4153
-  port: 4153
-  server: 81.12.89.74
+- name: 5.202.179.138:3129
+  port: 3129
+  server: 5.202.179.138
   type: http
   udp: true
-- name: 5.202.191.225:8080
+- name: 78.157.46.76:8090
+  port: 8090
+  server: 78.157.46.76
+  type: http
+  udp: true
+- name: 46.209.15.187:8080
   port: 8080
-  server: 5.202.191.225
-  type: socks5
+  server: 46.209.15.187
+  type: http
   udp: true
-- name: 37.202.237.4:443 (285ms)
-  port: 443
-  server: 37.202.237.4
-  type: socks5
+- name: 109.230.83.178:5060 (277ms)
+  port: 5060
+  server: 109.230.83.178
+  type: http
   udp: true
-- name: 194.31.108.109:2080 (3284ms)
-  port: 2080
-  server: 194.31.108.109
-  type: socks5
+- name: 46.209.207.147:8080
+  port: 8080
+  server: 46.209.207.147
+  type: http
   udp: true
-- name: 37.148.9.84:2080
-  port: 2080
-  server: 37.148.9.84
-  type: socks5
+- name: 81.12.70.98:8080 (4402ms)
+  port: 8080
+  server: 81.12.70.98
+  type: http
   udp: true
-- name: 78.109.200.168:9910 (1329ms)
+- name: 2.179.95.57:8080 (296ms)
+  port: 8080
+  server: 2.179.95.57
+  type: http
+  udp: true
+- name: 109.122.240.157:8118 (3337ms)
+  port: 8118
+  server: 109.122.240.157
+  type: http
+  udp: true
+- name: 78.109.200.189:9910 (2369ms)
   port: 9910
-  server: 78.109.200.168
-  type: socks5
-  udp: true
-- name: 37.255.203.235:8080
-  port: 8080
-  server: 37.255.203.235
-  type: socks5
-  udp: true
-- name: 78.110.121.34:10808 (738ms)
-  port: 10808
-  server: 78.110.121.34
-  type: socks5
-  udp: true
-- name: 87.107.68.231:1081
-  port: 1081
-  server: 87.107.68.231
-  type: socks5
-  udp: true
-- name: 109.95.61.203:1080 (228ms)
-  port: 1080
-  server: 109.95.61.203
-  type: socks5
+  server: 78.109.200.189
+  type: http
   udp: true
 - name: 80.191.40.133:5678
   port: 5678
   server: 80.191.40.133
+  type: http
+  udp: true
+- name: 5.202.120.123:3128
+  port: 3128
+  server: 5.202.120.123
   type: socks5
   udp: true
-- name: 217.219.162.114:5678
-  port: 5678
-  server: 217.219.162.114
-  type: socks5
-  udp: true
 - alterId: 0
   cipher: auto
-  name: 118ejob.ir:80 (653ms)
+  name: zula.ir:2096
   network: ws
-  port: 80
-  server: 118ejob.ir
-  tls: false
+  port: 2096
+  server: zula.ir
+  tls: true
   type: vmess
   udp: true
-  uuid: 47d0805b-6b81-49f1-9813-776032d2c076
+  uuid: 98b879fc-ed38-4537-f02f-e88e4892d48c
   ws-opts:
     headers:
-      Host: at1-vmess.sshmax.xyz
-    path: /vmess
-- alterId: 0
-  cipher: auto
-  name: 185.143.234.120:80 (136ms)
-  network: ws
-  port: 80
-  server: 185.143.234.120
-  tls: false
-  type: vmess
-  udp: true
-  uuid: b831381d-6324-4d53-ad4f-8cda48b30811
-  ws-opts:
-    headers:
-      Host: koochehpas.com
-    path: /graphql
-- alterId: 0
-  cipher: auto
-  name: 185.59.113.4:443
-  network: ws
-  port: 443
-  server: 185.59.113.4
-  tls: false
-  type: vmess
-  udp: true
-  uuid: efc02ac5-685e-4c88-b3da-ce3dfc236585
-  ws-opts:
-    headers:
-      Host: amir.amirport.ir
-    path: /
-- alterId: 0
-  cipher: auto
-  name: 185.24.255.24:80
-  network: ws
-  port: 80
-  server: 185.24.255.24
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 80abb903-24e0-4dbd-9c2f-a57e9a267555
-  ws-opts:
-    headers:
-      Host: ''
-    path: /ws
+      Host: eu4.nlist.eu.org
+    path: /liu
 proxy-groups:
 - name: MAIN
   proxies:
@@ -170,41 +113,35 @@ proxy-groups:
   type: select
 - name: IR-ALL
   proxies:
-  - 78.109.200.189:9910 (1376ms)
-  - 37.202.237.4:443 (285ms)
-  - 194.31.108.109:2080 (3284ms)
-  - 78.109.200.168:9910 (1329ms)
-  - 78.110.121.34:10808 (738ms)
-  - 109.95.61.203:1080 (228ms)
-  - 118ejob.ir:80 (653ms)
-  - 185.143.234.120:80 (136ms)
+  - 37.202.237.4:443 (284ms)
+  - 185.88.177.40:80 (234ms)
+  - 37.32.9.113:8080 (3346ms)
+  - 109.230.83.178:5060 (277ms)
+  - 81.12.70.98:8080 (4402ms)
+  - 2.179.95.57:8080 (296ms)
+  - 109.122.240.157:8118 (3337ms)
+  - 78.109.200.189:9910 (2369ms)
   type: select
 - name: IR-ALL-RAW
   proxies: &id001
   - 62.60.210.173:1081
-  - 212.16.86.46:8080
-  - 31.47.38.2:80
-  - 109.230.89.126:3129
-  - 185.212.195.34:8085
-  - 151.233.50.238:1081
-  - 78.109.200.189:9910 (1376ms)
+  - 37.202.237.4:443 (284ms)
+  - 185.88.177.40:80 (234ms)
+  - 185.214.39.2:9944
+  - 37.32.9.113:8080 (3346ms)
   - 178.252.171.229:8080
-  - 81.12.89.74:4153
-  - 5.202.191.225:8080
-  - 37.202.237.4:443 (285ms)
-  - 194.31.108.109:2080 (3284ms)
-  - 37.148.9.84:2080
-  - 78.109.200.168:9910 (1329ms)
-  - 37.255.203.235:8080
-  - 78.110.121.34:10808 (738ms)
-  - 87.107.68.231:1081
-  - 109.95.61.203:1080 (228ms)
+  - 5.202.179.138:3129
+  - 78.157.46.76:8090
+  - 46.209.15.187:8080
+  - 109.230.83.178:5060 (277ms)
+  - 46.209.207.147:8080
+  - 81.12.70.98:8080 (4402ms)
+  - 2.179.95.57:8080 (296ms)
+  - 109.122.240.157:8118 (3337ms)
+  - 78.109.200.189:9910 (2369ms)
   - 80.191.40.133:5678
-  - 217.219.162.114:5678
-  - 118ejob.ir:80 (653ms)
-  - 185.143.234.120:80 (136ms)
-  - 185.59.113.4:443
-  - 185.24.255.24:80
+  - 5.202.120.123:3128
+  - zula.ir:2096
   type: select
 - interval: 600
   name: IR-AUTO
