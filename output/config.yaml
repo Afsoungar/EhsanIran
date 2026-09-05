@@ -4,19 +4,14 @@ log-level: info
 mixed-port: 7890
 mode: Rule
 proxies:
+- name: 93.118.123.196:1081
+  port: 1081
+  server: 93.118.123.196
+  type: socks5
+  udp: true
 - name: 62.60.210.173:1081
   port: 1081
   server: 62.60.210.173
-  type: socks5
-  udp: true
-- name: 37.202.237.4:443 (295ms)
-  port: 443
-  server: 37.202.237.4
-  type: socks5
-  udp: true
-- name: 93.118.127.222:1081
-  port: 1081
-  server: 93.118.127.222
   type: socks5
   udp: true
 - name: 78.110.121.34:10818
@@ -24,49 +19,59 @@ proxies:
   server: 78.110.121.34
   type: http
   udp: true
-- name: 185.118.153.110:8080
+- name: 195.181.40.34:8080
   port: 8080
-  server: 185.118.153.110
+  server: 195.181.40.34
   type: http
   udp: true
-- name: 94.183.6.226:9090
-  port: 9090
-  server: 94.183.6.226
+- name: 95.38.78.88:80 (3564ms)
+  port: 80
+  server: 95.38.78.88
   type: http
   udp: true
-- name: 109.230.83.178:5060
-  port: 5060
-  server: 109.230.83.178
+- name: 37.202.237.4:443 (1292ms)
+  port: 443
+  server: 37.202.237.4
   type: http
   udp: true
-- name: 81.90.144.170:9000 (1209ms)
-  port: 9000
-  server: 81.90.144.170
-  type: http
-  udp: true
-- name: 151.233.50.238:1081
-  port: 1081
-  server: 151.233.50.238
-  type: http
-  udp: true
-- name: 78.109.200.189:9910 (225ms)
-  port: 9910
-  server: 78.109.200.189
-  type: http
-  udp: true
-- name: 93.118.127.234:8080
+- name: 78.39.253.49:8080 (183ms)
   port: 8080
-  server: 93.118.127.234
+  server: 78.39.253.49
   type: http
   udp: true
-- name: 185.211.59.126:10808
-  port: 10808
-  server: 185.211.59.126
+- name: 185.212.195.34:8085 (2206ms)
+  port: 8085
+  server: 185.212.195.34
+  type: http
+  udp: true
+- name: 185.214.39.2:9944
+  port: 9944
+  server: 185.214.39.2
+  type: http
+  udp: true
+- name: 37.255.203.235:8080 (5327ms)
+  port: 8080
+  server: 37.255.203.235
+  type: http
+  udp: true
+- name: 82.99.227.43:8080
+  port: 8080
+  server: 82.99.227.43
   type: socks5
   udp: true
-- name: 88.135.36.246:1080 (162ms)
-  port: 1080
-  server: 88.135.36.246
+- name: 194.31.108.109:2080 (1168ms)
+  port: 2080
+  server: 194.31.108.109
+  type: socks5
+  udp: true
+- name: 31.47.38.2:80
+  port: 80
+  server: 31.47.38.2
+  type: socks5
+  udp: true
+- name: 185.60.59.245:10808
+  port: 10808
+  server: 185.60.59.245
   type: socks5
   udp: true
 - alterId: 0
@@ -83,6 +88,20 @@ proxies:
     headers:
       Host: eu4.nlist.eu.org
     path: /liu
+- alterId: 0
+  cipher: auto
+  name: 185.143.233.114:80 (93ms)
+  network: ws
+  port: 80
+  server: 185.143.233.114
+  tls: false
+  type: vmess
+  udp: true
+  uuid: cf7f2d7c-d4f8-469a-bfd5-97484bb98d2c
+  ws-opts:
+    headers:
+      Host: 214.zirogame-79.site
+    path: /
 proxy-groups:
 - name: MAIN
   proxies:
@@ -93,27 +112,32 @@ proxy-groups:
   type: select
 - name: IR-ALL
   proxies:
-  - 37.202.237.4:443 (295ms)
-  - 81.90.144.170:9000 (1209ms)
-  - 78.109.200.189:9910 (225ms)
-  - 88.135.36.246:1080 (162ms)
+  - 95.38.78.88:80 (3564ms)
+  - 37.202.237.4:443 (1292ms)
+  - 78.39.253.49:8080 (183ms)
+  - 185.212.195.34:8085 (2206ms)
+  - 37.255.203.235:8080 (5327ms)
+  - 194.31.108.109:2080 (1168ms)
+  - 185.143.233.114:80 (93ms)
   type: select
 - name: IR-ALL-RAW
   proxies: &id001
+  - 93.118.123.196:1081
   - 62.60.210.173:1081
-  - 37.202.237.4:443 (295ms)
-  - 93.118.127.222:1081
   - 78.110.121.34:10818
-  - 185.118.153.110:8080
-  - 94.183.6.226:9090
-  - 109.230.83.178:5060
-  - 81.90.144.170:9000 (1209ms)
-  - 151.233.50.238:1081
-  - 78.109.200.189:9910 (225ms)
-  - 93.118.127.234:8080
-  - 185.211.59.126:10808
-  - 88.135.36.246:1080 (162ms)
+  - 195.181.40.34:8080
+  - 95.38.78.88:80 (3564ms)
+  - 37.202.237.4:443 (1292ms)
+  - 78.39.253.49:8080 (183ms)
+  - 185.212.195.34:8085 (2206ms)
+  - 185.214.39.2:9944
+  - 37.255.203.235:8080 (5327ms)
+  - 82.99.227.43:8080
+  - 194.31.108.109:2080 (1168ms)
+  - 31.47.38.2:80
+  - 185.60.59.245:10808
   - zula.ir:2096
+  - 185.143.233.114:80 (93ms)
   type: select
 - interval: 600
   name: IR-AUTO
