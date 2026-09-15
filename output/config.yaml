@@ -4,49 +4,94 @@ log-level: info
 mixed-port: 7890
 mode: Rule
 proxies:
-- name: 81.29.249.82:5071 (2249ms)
-  port: 5071
-  server: 81.29.249.82
-  type: socks5
-  udp: true
 - name: 62.60.210.173:1081
   port: 1081
   server: 62.60.210.173
   type: socks5
+  udp: true
+- name: 81.29.249.82:5071 (184ms)
+  port: 5071
+  server: 81.29.249.82
+  type: socks5
+  udp: true
+- name: 5.202.120.123:3129
+  port: 3129
+  server: 5.202.120.123
+  type: http
+  udp: true
+- name: 85.133.190.40:8097
+  port: 8097
+  server: 85.133.190.40
+  type: http
+  udp: true
+- name: 185.212.195.34:8085
+  port: 8085
+  server: 185.212.195.34
+  type: http
+  udp: true
+- name: 46.209.207.155:8080
+  port: 8080
+  server: 46.209.207.155
+  type: http
+  udp: true
+- name: 80.191.40.133:5678
+  port: 5678
+  server: 80.191.40.133
+  type: http
+  udp: true
+- name: 46.28.74.98:3129
+  port: 3129
+  server: 46.28.74.98
+  type: http
   udp: true
 - name: 2.181.34.250:8080
   port: 8080
   server: 2.181.34.250
   type: http
   udp: true
-- name: 46.209.15.187:8080
+- name: 185.109.244.69:8080
   port: 8080
-  server: 46.209.15.187
+  server: 185.109.244.69
   type: http
   udp: true
-- name: 194.31.108.109:2080 (166ms)
-  port: 2080
-  server: 194.31.108.109
+- name: 79.127.30.250:8080
+  port: 8080
+  server: 79.127.30.250
   type: socks5
   udp: true
-- name: 178.252.134.190:3128
-  port: 3128
-  server: 178.252.134.190
+- name: 185.60.59.245:10808
+  port: 10808
+  server: 185.60.59.245
   type: socks5
   udp: true
-- name: 2.184.51.130:10800
-  port: 10800
-  server: 2.184.51.130
+- name: 2.188.210.83:4443
+  port: 4443
+  server: 2.188.210.83
   type: socks5
   udp: true
-- name: 5.144.133.195:9050 (169ms)
+- name: 5.144.133.195:9050 (179ms)
   port: 9050
   server: 5.144.133.195
+  type: socks5
+  udp: true
+- name: 89.46.219.130:8080 (1236ms)
+  port: 8080
+  server: 89.46.219.130
+  type: socks5
+  udp: true
+- name: 87.107.68.231:1081
+  port: 1081
+  server: 87.107.68.231
   type: socks5
   udp: true
 - name: 93.118.123.196:1080
   port: 1080
   server: 93.118.123.196
+  type: socks5
+  udp: true
+- name: 2.184.51.130:10800
+  port: 10800
+  server: 2.184.51.130
   type: socks5
   udp: true
 - alterId: 0
@@ -65,6 +110,20 @@ proxies:
     path: /websocket/
 - alterId: 0
   cipher: auto
+  name: 118ejob.ir:80 (503ms)
+  network: ws
+  port: 80
+  server: 118ejob.ir
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 47d0805b-6b81-49f1-9813-776032d2c076
+  ws-opts:
+    headers:
+      Host: at1-vmess.sshmax.xyz
+    path: /vmess
+- alterId: 0
+  cipher: auto
   name: zula.ir:2096
   network: ws
   port: 2096
@@ -77,20 +136,6 @@ proxies:
     headers:
       Host: eu4.nlist.eu.org
     path: /liu
-- alterId: 0
-  cipher: auto
-  name: 185.24.255.24:80
-  network: ws
-  port: 80
-  server: 185.24.255.24
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 80abb903-24e0-4dbd-9c2f-a57e9a267555
-  ws-opts:
-    headers:
-      Host: ''
-    path: /ws
 proxy-groups:
 - name: MAIN
   proxies:
@@ -101,24 +146,34 @@ proxy-groups:
   type: select
 - name: IR-ALL
   proxies:
-  - 81.29.249.82:5071 (2249ms)
-  - 194.31.108.109:2080 (166ms)
-  - 5.144.133.195:9050 (169ms)
+  - 81.29.249.82:5071 (184ms)
+  - 5.144.133.195:9050 (179ms)
+  - 89.46.219.130:8080 (1236ms)
+  - 118ejob.ir:80 (503ms)
   type: select
 - name: IR-ALL-RAW
   proxies: &id001
-  - 81.29.249.82:5071 (2249ms)
   - 62.60.210.173:1081
+  - 81.29.249.82:5071 (184ms)
+  - 5.202.120.123:3129
+  - 85.133.190.40:8097
+  - 185.212.195.34:8085
+  - 46.209.207.155:8080
+  - 80.191.40.133:5678
+  - 46.28.74.98:3129
   - 2.181.34.250:8080
-  - 46.209.15.187:8080
-  - 194.31.108.109:2080 (166ms)
-  - 178.252.134.190:3128
-  - 2.184.51.130:10800
-  - 5.144.133.195:9050 (169ms)
+  - 185.109.244.69:8080
+  - 79.127.30.250:8080
+  - 185.60.59.245:10808
+  - 2.188.210.83:4443
+  - 5.144.133.195:9050 (179ms)
+  - 89.46.219.130:8080 (1236ms)
+  - 87.107.68.231:1081
   - 93.118.123.196:1080
+  - 2.184.51.130:10800
   - 37.32.23.122:443
+  - 118ejob.ir:80 (503ms)
   - zula.ir:2096
-  - 185.24.255.24:80
   type: select
 - interval: 600
   name: IR-AUTO
