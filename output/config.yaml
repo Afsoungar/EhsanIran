@@ -4,19 +4,9 @@ log-level: info
 mixed-port: 7890
 mode: Rule
 proxies:
-- name: 93.118.123.196:1081
-  port: 1081
-  server: 93.118.123.196
-  type: socks5
-  udp: true
-- name: 77.104.76.230:9001
-  port: 9001
-  server: 77.104.76.230
-  type: http
-  udp: true
-- name: 89.46.219.133:80
-  port: 80
-  server: 89.46.219.133
+- name: 46.209.207.148:8080
+  port: 8080
+  server: 46.209.207.148
   type: http
   udp: true
 - name: 5.200.72.60:3129
@@ -24,67 +14,82 @@ proxies:
   server: 5.200.72.60
   type: http
   udp: true
-- name: 195.181.40.34:8080
-  port: 8080
-  server: 195.181.40.34
-  type: http
-  udp: true
-- name: 46.100.44.35:8080 (4252ms)
+- name: 46.100.44.35:8080
   port: 8080
   server: 46.100.44.35
   type: http
   udp: true
-- name: 185.118.153.110:8080 (187ms)
-  port: 8080
-  server: 185.118.153.110
+- name: 81.12.28.35:3129
+  port: 3129
+  server: 81.12.28.35
   type: http
   udp: true
-- name: 79.175.133.48:8080
+- name: 46.209.15.187:8080
   port: 8080
-  server: 79.175.133.48
+  server: 46.209.15.187
   type: http
   udp: true
-- name: 89.46.219.130:8080 (195ms)
-  port: 8080
-  server: 89.46.219.130
+- name: 5.63.9.218:10818
+  port: 10818
+  server: 5.63.9.218
   type: http
   udp: true
-- name: 81.90.158.110:3128
-  port: 3128
-  server: 81.90.158.110
-  type: socks5
+- name: 217.11.23.106:8080
+  port: 8080
+  server: 217.11.23.106
+  type: http
   udp: true
-- name: 31.7.65.18:443
-  port: 443
-  server: 31.7.65.18
-  type: socks5
+- name: 81.12.89.74:4153
+  port: 4153
+  server: 81.12.89.74
+  type: http
   udp: true
-- name: 87.107.68.231:1081 (5288ms)
-  port: 1081
-  server: 87.107.68.231
-  type: socks5
+- name: 46.209.207.158:8080
+  port: 8080
+  server: 46.209.207.158
+  type: http
   udp: true
-- name: 194.31.108.109:2080 (168ms)
+- name: 185.214.39.2:9944 (4269ms)
+  port: 9944
+  server: 185.214.39.2
+  type: http
+  udp: true
+- name: 77.104.76.230:9001
+  port: 9001
+  server: 77.104.76.230
+  type: http
+  udp: true
+- name: 194.31.108.109:2080 (182ms)
   port: 2080
   server: 194.31.108.109
   type: socks5
   udp: true
-- name: 78.157.46.76:8090
-  port: 8090
-  server: 78.157.46.76
+- name: 185.88.177.40:80 (184ms)
+  port: 80
+  server: 185.88.177.40
   type: socks5
   udp: true
-- name: 5.144.133.195:9050 (171ms)
+- name: 37.148.9.84:2080
+  port: 2080
+  server: 37.148.9.84
+  type: socks5
+  udp: true
+- name: 93.118.123.196:1080
+  port: 1080
+  server: 93.118.123.196
+  type: socks5
+  udp: true
+- name: 5.144.133.195:9050 (191ms)
   port: 9050
   server: 5.144.133.195
   type: socks5
   udp: true
-- name: 37.32.43.137:1080 (185ms)
+- name: 37.32.43.137:1080 (194ms)
   port: 1080
   server: 37.32.43.137
   type: socks5
   udp: true
-- name: 62.60.210.173:1080 (172ms)
+- name: 62.60.210.173:1080 (181ms)
   port: 1080
   server: 62.60.210.173
   type: socks5
@@ -104,6 +109,41 @@ proxies:
   server: 2.184.51.130
   type: socks5
   udp: true
+- alterId: 0
+  cipher: auto
+  name: 37.32.23.122:443
+  network: ws
+  port: 443
+  server: 37.32.23.122
+  tls: false
+  type: vmess
+  udp: true
+  uuid: d12bc882-43c7-415e-87c5-2a7fdc8371c0
+  ws-opts:
+    headers:
+      Host: ''
+    path: /websocket/
+- alterId: 0
+  cipher: auto
+  name: 185.24.255.24:80
+  network: ws
+  port: 80
+  server: 185.24.255.24
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 80abb903-24e0-4dbd-9c2f-a57e9a267555
+  ws-opts:
+    headers:
+      Host: ''
+    path: /ws
+- cipher: aes-128-gcm
+  name: www.asamping.ir:1468 (373ms)
+  password: l2NidZbckMu4PnIHsJTYJg
+  port: 1468
+  server: www.asamping.ir
+  type: ss
+  udp: true
 proxy-groups:
 - name: MAIN
   proxies:
@@ -114,37 +154,40 @@ proxy-groups:
   type: select
 - name: IR-ALL
   proxies:
-  - 46.100.44.35:8080 (4252ms)
-  - 185.118.153.110:8080 (187ms)
-  - 89.46.219.130:8080 (195ms)
-  - 87.107.68.231:1081 (5288ms)
-  - 194.31.108.109:2080 (168ms)
-  - 5.144.133.195:9050 (171ms)
-  - 37.32.43.137:1080 (185ms)
-  - 62.60.210.173:1080 (172ms)
+  - 185.214.39.2:9944 (4269ms)
+  - 194.31.108.109:2080 (182ms)
+  - 185.88.177.40:80 (184ms)
+  - 5.144.133.195:9050 (191ms)
+  - 37.32.43.137:1080 (194ms)
+  - 62.60.210.173:1080 (181ms)
+  - www.asamping.ir:1468 (373ms)
   type: select
 - name: IR-ALL-RAW
   proxies: &id001
-  - 93.118.123.196:1081
-  - 77.104.76.230:9001
-  - 89.46.219.133:80
+  - 46.209.207.148:8080
   - 5.200.72.60:3129
-  - 195.181.40.34:8080
-  - 46.100.44.35:8080 (4252ms)
-  - 185.118.153.110:8080 (187ms)
-  - 79.175.133.48:8080
-  - 89.46.219.130:8080 (195ms)
-  - 81.90.158.110:3128
-  - 31.7.65.18:443
-  - 87.107.68.231:1081 (5288ms)
-  - 194.31.108.109:2080 (168ms)
-  - 78.157.46.76:8090
-  - 5.144.133.195:9050 (171ms)
-  - 37.32.43.137:1080 (185ms)
-  - 62.60.210.173:1080 (172ms)
+  - 46.100.44.35:8080
+  - 81.12.28.35:3129
+  - 46.209.15.187:8080
+  - 5.63.9.218:10818
+  - 217.11.23.106:8080
+  - 81.12.89.74:4153
+  - 46.209.207.158:8080
+  - 185.214.39.2:9944 (4269ms)
+  - 77.104.76.230:9001
+  - 194.31.108.109:2080 (182ms)
+  - 185.88.177.40:80 (184ms)
+  - 37.148.9.84:2080
+  - 93.118.123.196:1080
+  - 5.144.133.195:9050 (191ms)
+  - 37.32.43.137:1080 (194ms)
+  - 62.60.210.173:1080 (181ms)
   - 195.158.230.124:10803
   - 188.213.196.103:10808
   - 2.184.51.130:10800
+  - 37.32.23.122:443
+  - 185.24.255.24:80
+  - www.asamping.ir:1468 (373ms)
   type: select
 - interval: 600
   name: IR-AUTO
