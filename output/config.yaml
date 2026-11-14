@@ -4,39 +4,29 @@ log-level: info
 mixed-port: 7890
 mode: Rule
 proxies:
-- name: 5.144.133.195:9050 (164ms)
-  port: 9050
-  server: 5.144.133.195
+- name: 37.32.26.209:10818
+  port: 10818
+  server: 37.32.26.209
   type: socks5
   udp: true
-- name: 185.126.5.223:8080 (3262ms)
-  port: 8080
-  server: 185.126.5.223
-  type: http
-  udp: true
-- name: 93.118.120.60:8080
-  port: 8080
-  server: 93.118.120.60
-  type: http
-  udp: true
-- name: 81.12.89.73:8080 (177ms)
-  port: 8080
-  server: 81.12.89.73
-  type: http
-  udp: true
-- name: 81.90.158.110:3129
+- name: 5.200.72.58:3129
   port: 3129
-  server: 81.90.158.110
+  server: 5.200.72.58
   type: http
   udp: true
-- name: 217.219.83.186:2222
-  port: 2222
-  server: 217.219.83.186
-  type: http
-  udp: true
-- name: 2.179.95.57:8080 (1253ms)
+- name: 185.145.185.217:8080
   port: 8080
-  server: 2.179.95.57
+  server: 185.145.185.217
+  type: http
+  udp: true
+- name: 80.191.46.62:1090 (197ms)
+  port: 1090
+  server: 80.191.46.62
+  type: http
+  udp: true
+- name: 46.209.15.187:8080
+  port: 8080
+  server: 46.209.15.187
   type: http
   udp: true
 - name: 185.214.39.2:9944
@@ -44,39 +34,39 @@ proxies:
   server: 185.214.39.2
   type: http
   udp: true
-- name: 85.9.87.26:8080
+- name: 46.100.35.25:8080 (3282ms)
   port: 8080
-  server: 85.9.87.26
-  type: http
-  udp: true
-- name: 46.100.35.25:1081
-  port: 1081
   server: 46.100.35.25
   type: http
   udp: true
-- name: 5.200.72.61:3129
-  port: 3129
-  server: 5.200.72.61
+- name: 78.109.206.198:80 (171ms)
+  port: 80
+  server: 78.109.206.198
   type: http
   udp: true
-- name: 178.252.171.226:8080
+- name: 46.249.124.244:1390
+  port: 1390
+  server: 46.249.124.244
+  type: socks5
+  udp: true
+- name: 46.209.207.149:8080
   port: 8080
-  server: 178.252.171.226
-  type: http
+  server: 46.209.207.149
+  type: socks5
   udp: true
-- name: 94.183.6.226:9090
-  port: 9090
-  server: 94.183.6.226
-  type: http
-  udp: true
-- name: 81.12.28.35:3129
-  port: 3129
-  server: 81.12.28.35
-  type: http
-  udp: true
-- name: 46.209.207.147:8080
+- name: 93.118.120.60:8080
   port: 8080
-  server: 46.209.207.147
+  server: 93.118.120.60
+  type: socks5
+  udp: true
+- name: 94.183.150.152:1080 (2259ms)
+  port: 1080
+  server: 94.183.150.152
+  type: socks5
+  udp: true
+- name: 46.209.207.158:8080
+  port: 8080
+  server: 46.209.207.158
   type: socks5
   udp: true
 - name: 46.209.207.151:8080
@@ -84,66 +74,49 @@ proxies:
   server: 46.209.207.151
   type: socks5
   udp: true
-- name: 37.32.26.209:10808 (176ms)
+- name: 195.146.33.226:10808
   port: 10808
-  server: 37.32.26.209
+  server: 195.146.33.226
   type: socks5
   udp: true
-- name: 93.118.123.196:1080
-  port: 1080
-  server: 93.118.123.196
+- name: 195.158.230.124:10803
+  port: 10803
+  server: 195.158.230.124
   type: socks5
   udp: true
-- name: 80.210.50.126:9999
-  port: 9999
-  server: 80.210.50.126
-  type: socks5
-  udp: true
-- name: 81.29.249.82:5071
-  port: 5071
-  server: 81.29.249.82
-  type: socks5
-  udp: true
-- name: 2.184.51.130:10800
-  port: 10800
-  server: 2.184.51.130
+- name: 188.213.196.103:10808
+  port: 10808
+  server: 188.213.196.103
   type: socks5
   udp: true
 - alterId: 0
   cipher: auto
-  name: 185.143.234.120:80 (93ms)
+  name: 185.143.233.114:80 (81ms)
   network: ws
   port: 80
-  server: 185.143.234.120
+  server: 185.143.233.114
   tls: false
   type: vmess
   udp: true
-  uuid: b831381d-6324-4d53-ad4f-8cda48b30811
+  uuid: cf7f2d7c-d4f8-469a-bfd5-97484bb98d2c
   ws-opts:
     headers:
-      Host: koochehpas.com
-    path: /graphql
+      Host: 214.zirogame-79.site
+    path: /
 - alterId: 0
   cipher: auto
-  name: b2n.ir:443 (599ms)
+  name: zula.ir:2096
   network: ws
-  port: 443
-  server: b2n.ir
+  port: 2096
+  server: zula.ir
   tls: true
   type: vmess
   udp: true
-  uuid: b3a21def-5fcc-47a8-a6a0-a34e29d5288a
+  uuid: 98b879fc-ed38-4537-f02f-e88e4892d48c
   ws-opts:
     headers:
-      Host: b2n.ir
-    path: /wss51068
-- cipher: xchacha20-ietf-poly1305
-  name: dlc.deltapc.digital:36542 (177ms)
-  password: tfvsLbsXV9PdNmxPA4zaWr7EOezLjv3dXejQq2Y5sXA=
-  port: 36542
-  server: dlc.deltapc.digital
-  type: ss
-  udp: true
+      Host: eu4.nlist.eu.org
+    path: /liu
 proxy-groups:
 - name: MAIN
   proxies:
@@ -154,41 +127,33 @@ proxy-groups:
   type: select
 - name: IR-ALL
   proxies:
-  - 5.144.133.195:9050 (164ms)
-  - 185.126.5.223:8080 (3262ms)
-  - 81.12.89.73:8080 (177ms)
-  - 2.179.95.57:8080 (1253ms)
-  - 37.32.26.209:10808 (176ms)
-  - 185.143.234.120:80 (93ms)
-  - b2n.ir:443 (599ms)
-  - dlc.deltapc.digital:36542 (177ms)
+  - 80.191.46.62:1090 (197ms)
+  - 46.100.35.25:8080 (3282ms)
+  - 78.109.206.198:80 (171ms)
+  - 94.183.150.152:1080 (2259ms)
+  - 185.143.233.114:80 (81ms)
   type: select
 - name: IR-ALL-RAW
   proxies: &id001
-  - 5.144.133.195:9050 (164ms)
-  - 185.126.5.223:8080 (3262ms)
-  - 93.118.120.60:8080
-  - 81.12.89.73:8080 (177ms)
-  - 81.90.158.110:3129
-  - 217.219.83.186:2222
-  - 2.179.95.57:8080 (1253ms)
+  - 37.32.26.209:10818
+  - 5.200.72.58:3129
+  - 185.145.185.217:8080
+  - 80.191.46.62:1090 (197ms)
+  - 46.209.15.187:8080
   - 185.214.39.2:9944
-  - 85.9.87.26:8080
-  - 46.100.35.25:1081
-  - 5.200.72.61:3129
-  - 178.252.171.226:8080
-  - 94.183.6.226:9090
-  - 81.12.28.35:3129
-  - 46.209.207.147:8080
+  - 46.100.35.25:8080 (3282ms)
+  - 78.109.206.198:80 (171ms)
+  - 46.249.124.244:1390
+  - 46.209.207.149:8080
+  - 93.118.120.60:8080
+  - 94.183.150.152:1080 (2259ms)
+  - 46.209.207.158:8080
   - 46.209.207.151:8080
-  - 37.32.26.209:10808 (176ms)
-  - 93.118.123.196:1080
-  - 80.210.50.126:9999
-  - 81.29.249.82:5071
-  - 2.184.51.130:10800
-  - 185.143.234.120:80 (93ms)
-  - b2n.ir:443 (599ms)
-  - dlc.deltapc.digital:36542 (177ms)
+  - 195.146.33.226:10808
+  - 195.158.230.124:10803
+  - 188.213.196.103:10808
+  - 185.143.233.114:80 (81ms)
+  - zula.ir:2096
   type: select
 - interval: 600
   name: IR-AUTO
