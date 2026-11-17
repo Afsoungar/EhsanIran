@@ -4,29 +4,14 @@ log-level: info
 mixed-port: 7890
 mode: Rule
 proxies:
-- name: 2.179.95.57:8080
-  port: 8080
-  server: 2.179.95.57
-  type: http
+- name: 94.183.150.152:1081
+  port: 1081
+  server: 94.183.150.152
+  type: socks5
   udp: true
-- name: 217.219.83.186:2222 (3319ms)
-  port: 2222
-  server: 217.219.83.186
-  type: http
-  udp: true
-- name: 185.112.35.184:3129
-  port: 3129
-  server: 185.112.35.184
-  type: http
-  udp: true
-- name: 94.183.6.226:9090
-  port: 9090
-  server: 94.183.6.226
-  type: http
-  udp: true
-- name: 85.9.87.26:8080 (3328ms)
-  port: 8080
-  server: 85.9.87.26
+- name: 185.214.39.2:9944
+  port: 9944
+  server: 185.214.39.2
   type: http
   udp: true
 - name: 81.90.144.170:9000
@@ -34,44 +19,49 @@ proxies:
   server: 81.90.144.170
   type: http
   udp: true
-- name: 78.157.46.76:8090
-  port: 8090
-  server: 78.157.46.76
+- name: 31.14.124.45:8080 (1206ms)
+  port: 8080
+  server: 31.14.124.45
   type: http
   udp: true
-- name: 87.107.68.231:1081
+- name: 195.181.40.34:8080 (169ms)
+  port: 8080
+  server: 195.181.40.34
+  type: http
+  udp: true
+- name: 178.252.171.226:8080
+  port: 8080
+  server: 178.252.171.226
+  type: http
+  udp: true
+- name: 80.191.46.62:1099 (1211ms)
+  port: 1099
+  server: 80.191.46.62
+  type: http
+  udp: true
+- name: 95.38.170.222:1082 (169ms)
+  port: 1082
+  server: 95.38.170.222
+  type: http
+  udp: true
+- name: 93.118.120.60:8080
+  port: 8080
+  server: 93.118.120.60
+  type: http
+  udp: true
+- name: 46.100.35.25:1081
   port: 1081
-  server: 87.107.68.231
+  server: 46.100.35.25
   type: http
   udp: true
-- name: 185.109.244.69:8080 (155ms)
+- name: 46.209.30.11:8080 (176ms)
   port: 8080
-  server: 185.109.244.69
-  type: http
-  udp: true
-- name: 94.183.150.152:1080 (164ms)
-  port: 1080
-  server: 94.183.150.152
+  server: 46.209.30.11
   type: socks5
   udp: true
-- name: 78.38.67.95:4153
-  port: 4153
-  server: 78.38.67.95
-  type: socks5
-  udp: true
-- name: 178.252.165.122:8080
-  port: 8080
-  server: 178.252.165.122
-  type: socks5
-  udp: true
-- name: 89.46.219.130:8080
-  port: 8080
-  server: 89.46.219.130
-  type: socks5
-  udp: true
-- name: 5.144.133.195:9050 (169ms)
-  port: 9050
-  server: 5.144.133.195
+- name: 80.210.50.126:9999
+  port: 9999
+  server: 80.210.50.126
   type: socks5
   udp: true
 - name: 84.241.25.131:10808
@@ -79,42 +69,27 @@ proxies:
   server: 84.241.25.131
   type: socks5
   udp: true
-- name: 37.32.43.137:1080 (172ms)
-  port: 1080
-  server: 37.32.43.137
-  type: socks5
-  udp: true
-- name: 195.146.33.226:10808
-  port: 10808
-  server: 195.146.33.226
-  type: socks5
-  udp: true
-- name: 62.60.210.173:1080 (168ms)
-  port: 1080
-  server: 62.60.210.173
-  type: socks5
-  udp: true
-- name: 188.213.196.103:10808
-  port: 10808
-  server: 188.213.196.103
+- name: 2.184.51.130:10800
+  port: 10800
+  server: 2.184.51.130
   type: socks5
   udp: true
 - alterId: 0
   cipher: auto
-  name: 185.143.233.114:80 (58ms)
+  name: 185.143.234.120:80 (89ms)
   network: ws
   port: 80
-  server: 185.143.233.114
+  server: 185.143.234.120
   tls: false
   type: vmess
   udp: true
-  uuid: cf7f2d7c-d4f8-469a-bfd5-97484bb98d2c
+  uuid: b831381d-6324-4d53-ad4f-8cda48b30811
   ws-opts:
     headers:
-      Host: 214.zirogame-79.site
-    path: /
+      Host: koochehpas.com
+    path: /graphql
 - cipher: xchacha20-ietf-poly1305
-  name: dlc.deltapc.digital:36542 (196ms)
+  name: dlc.deltapc.digital:36542 (436ms)
   password: tfvsLbsXV9PdNmxPA4zaWr7EOezLjv3dXejQq2Y5sXA=
   port: 36542
   server: dlc.deltapc.digital
@@ -130,39 +105,32 @@ proxy-groups:
   type: select
 - name: IR-ALL
   proxies:
-  - 217.219.83.186:2222 (3319ms)
-  - 85.9.87.26:8080 (3328ms)
-  - 185.109.244.69:8080 (155ms)
-  - 94.183.150.152:1080 (164ms)
-  - 5.144.133.195:9050 (169ms)
-  - 37.32.43.137:1080 (172ms)
-  - 62.60.210.173:1080 (168ms)
-  - 185.143.233.114:80 (58ms)
-  - dlc.deltapc.digital:36542 (196ms)
+  - 31.14.124.45:8080 (1206ms)
+  - 195.181.40.34:8080 (169ms)
+  - 80.191.46.62:1099 (1211ms)
+  - 95.38.170.222:1082 (169ms)
+  - 46.209.30.11:8080 (176ms)
+  - 185.143.234.120:80 (89ms)
+  - dlc.deltapc.digital:36542 (436ms)
   type: select
 - name: IR-ALL-RAW
   proxies: &id001
-  - 2.179.95.57:8080
-  - 217.219.83.186:2222 (3319ms)
-  - 185.112.35.184:3129
-  - 94.183.6.226:9090
-  - 85.9.87.26:8080 (3328ms)
+  - 94.183.150.152:1081
+  - 185.214.39.2:9944
   - 81.90.144.170:9000
-  - 78.157.46.76:8090
-  - 87.107.68.231:1081
-  - 185.109.244.69:8080 (155ms)
-  - 94.183.150.152:1080 (164ms)
-  - 78.38.67.95:4153
-  - 178.252.165.122:8080
-  - 89.46.219.130:8080
-  - 5.144.133.195:9050 (169ms)
+  - 31.14.124.45:8080 (1206ms)
+  - 195.181.40.34:8080 (169ms)
+  - 178.252.171.226:8080
+  - 80.191.46.62:1099 (1211ms)
+  - 95.38.170.222:1082 (169ms)
+  - 93.118.120.60:8080
+  - 46.100.35.25:1081
+  - 46.209.30.11:8080 (176ms)
+  - 80.210.50.126:9999
   - 84.241.25.131:10808
-  - 37.32.43.137:1080 (172ms)
-  - 195.146.33.226:10808
-  - 62.60.210.173:1080 (168ms)
-  - 188.213.196.103:10808
-  - 185.143.233.114:80 (58ms)
-  - dlc.deltapc.digital:36542 (196ms)
+  - 2.184.51.130:10800
+  - 185.143.234.120:80 (89ms)
+  - dlc.deltapc.digital:36542 (436ms)
   type: select
 - interval: 600
   name: IR-AUTO
