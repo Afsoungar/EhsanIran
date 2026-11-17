@@ -4,97 +4,90 @@ log-level: info
 mixed-port: 7890
 mode: Rule
 proxies:
-- name: 94.183.150.152:1081
-  port: 1081
-  server: 94.183.150.152
-  type: socks5
-  udp: true
-- name: 185.214.39.2:9944
-  port: 9944
-  server: 185.214.39.2
+- name: 109.122.240.157:8118 (159ms)
+  port: 8118
+  server: 109.122.240.157
   type: http
   udp: true
-- name: 81.90.144.170:9000
-  port: 9000
-  server: 81.90.144.170
+- name: 5.200.72.58:3129
+  port: 3129
+  server: 5.200.72.58
   type: http
   udp: true
-- name: 31.14.124.45:8080 (1206ms)
+- name: 188.136.208.242:8080
+  port: 8080
+  server: 188.136.208.242
+  type: http
+  udp: true
+- name: 31.14.124.45:8080
   port: 8080
   server: 31.14.124.45
   type: http
   udp: true
-- name: 195.181.40.34:8080 (169ms)
+- name: 2.179.95.57:8080
   port: 8080
-  server: 195.181.40.34
+  server: 2.179.95.57
   type: http
   udp: true
-- name: 178.252.171.226:8080
-  port: 8080
-  server: 178.252.171.226
+- name: 78.38.67.95:4153
+  port: 4153
+  server: 78.38.67.95
   type: http
   udp: true
-- name: 80.191.46.62:1099 (1211ms)
-  port: 1099
-  server: 80.191.46.62
-  type: http
-  udp: true
-- name: 95.38.170.222:1082 (169ms)
-  port: 1082
-  server: 95.38.170.222
-  type: http
-  udp: true
-- name: 93.118.120.60:8080
-  port: 8080
-  server: 93.118.120.60
-  type: http
-  udp: true
-- name: 46.100.35.25:1081
+- name: 94.183.150.152:1081
   port: 1081
-  server: 46.100.35.25
+  server: 94.183.150.152
   type: http
   udp: true
-- name: 46.209.30.11:8080 (176ms)
+- name: 5.160.103.246:8080
   port: 8080
-  server: 46.209.30.11
+  server: 5.160.103.246
   type: socks5
   udp: true
-- name: 80.210.50.126:9999
-  port: 9999
-  server: 80.210.50.126
+- name: 89.46.219.130:8080
+  port: 8080
+  server: 89.46.219.130
   type: socks5
   udp: true
-- name: 84.241.25.131:10808
+- name: 185.88.177.40:80 (163ms)
+  port: 80
+  server: 185.88.177.40
+  type: socks5
+  udp: true
+- name: 46.38.138.184:1080 (179ms)
+  port: 1080
+  server: 46.38.138.184
+  type: socks5
+  udp: true
+- name: 195.146.33.226:10808
   port: 10808
-  server: 84.241.25.131
+  server: 195.146.33.226
   type: socks5
   udp: true
-- name: 2.184.51.130:10800
-  port: 10800
-  server: 2.184.51.130
+- name: 195.158.230.124:10803 (1189ms)
+  port: 10803
+  server: 195.158.230.124
+  type: socks5
+  udp: true
+- name: 188.213.196.103:10808
+  port: 10808
+  server: 188.213.196.103
   type: socks5
   udp: true
 - alterId: 0
   cipher: auto
-  name: 185.143.234.120:80 (89ms)
+  name: b2n.ir:443 (603ms)
   network: ws
-  port: 80
-  server: 185.143.234.120
-  tls: false
+  port: 443
+  server: b2n.ir
+  tls: true
   type: vmess
   udp: true
-  uuid: b831381d-6324-4d53-ad4f-8cda48b30811
+  uuid: b3a21def-5fcc-47a8-a6a0-a34e29d5288a
   ws-opts:
     headers:
-      Host: koochehpas.com
-    path: /graphql
-- cipher: xchacha20-ietf-poly1305
-  name: dlc.deltapc.digital:36542 (436ms)
-  password: tfvsLbsXV9PdNmxPA4zaWr7EOezLjv3dXejQq2Y5sXA=
-  port: 36542
-  server: dlc.deltapc.digital
-  type: ss
-  udp: true
+      Host: b2n.ir
+    path: /wss51068
 proxy-groups:
 - name: MAIN
   proxies:
@@ -105,32 +98,29 @@ proxy-groups:
   type: select
 - name: IR-ALL
   proxies:
-  - 31.14.124.45:8080 (1206ms)
-  - 195.181.40.34:8080 (169ms)
-  - 80.191.46.62:1099 (1211ms)
-  - 95.38.170.222:1082 (169ms)
-  - 46.209.30.11:8080 (176ms)
-  - 185.143.234.120:80 (89ms)
-  - dlc.deltapc.digital:36542 (436ms)
+  - 109.122.240.157:8118 (159ms)
+  - 185.88.177.40:80 (163ms)
+  - 46.38.138.184:1080 (179ms)
+  - 195.158.230.124:10803 (1189ms)
+  - b2n.ir:443 (603ms)
   type: select
 - name: IR-ALL-RAW
   proxies: &id001
+  - 109.122.240.157:8118 (159ms)
+  - 5.200.72.58:3129
+  - 188.136.208.242:8080
+  - 31.14.124.45:8080
+  - 2.179.95.57:8080
+  - 78.38.67.95:4153
   - 94.183.150.152:1081
-  - 185.214.39.2:9944
-  - 81.90.144.170:9000
-  - 31.14.124.45:8080 (1206ms)
-  - 195.181.40.34:8080 (169ms)
-  - 178.252.171.226:8080
-  - 80.191.46.62:1099 (1211ms)
-  - 95.38.170.222:1082 (169ms)
-  - 93.118.120.60:8080
-  - 46.100.35.25:1081
-  - 46.209.30.11:8080 (176ms)
-  - 80.210.50.126:9999
-  - 84.241.25.131:10808
-  - 2.184.51.130:10800
-  - 185.143.234.120:80 (89ms)
-  - dlc.deltapc.digital:36542 (436ms)
+  - 5.160.103.246:8080
+  - 89.46.219.130:8080
+  - 185.88.177.40:80 (163ms)
+  - 46.38.138.184:1080 (179ms)
+  - 195.146.33.226:10808
+  - 195.158.230.124:10803 (1189ms)
+  - 188.213.196.103:10808
+  - b2n.ir:443 (603ms)
   type: select
 - interval: 600
   name: IR-AUTO
