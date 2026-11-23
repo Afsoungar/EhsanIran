@@ -4,74 +4,104 @@ log-level: info
 mixed-port: 7890
 mode: Rule
 proxies:
-- name: 80.191.46.62:1090 (1184ms)
+- name: 78.39.253.49:8080
+  port: 8080
+  server: 78.39.253.49
+  type: http
+  udp: true
+- name: 79.175.133.48:8080
+  port: 8080
+  server: 79.175.133.48
+  type: http
+  udp: true
+- name: 5.198.179.172:10810
+  port: 10810
+  server: 5.198.179.172
+  type: http
+  udp: true
+- name: 80.191.46.62:1090 (2201ms)
   port: 1090
   server: 80.191.46.62
   type: http
   udp: true
-- name: 78.157.46.76:8090
-  port: 8090
-  server: 78.157.46.76
+- name: 5.200.72.58:3129
+  port: 3129
+  server: 5.200.72.58
   type: http
   udp: true
-- name: 195.181.40.34:8080 (180ms)
+- name: 195.181.40.34:8080 (5349ms)
   port: 8080
   server: 195.181.40.34
   type: http
   udp: true
-- name: 94.183.6.226:9090
-  port: 9090
-  server: 94.183.6.226
+- name: 178.252.171.226:8080 (2241ms)
+  port: 8080
+  server: 178.252.171.226
   type: http
   udp: true
-- name: 94.183.150.152:1081
-  port: 1081
-  server: 94.183.150.152
+- name: 5.200.72.61:3129
+  port: 3129
+  server: 5.200.72.61
   type: http
   udp: true
-- name: 78.38.67.95:4153
-  port: 4153
-  server: 78.38.67.95
+- name: 188.136.208.253:8080
+  port: 8080
+  server: 188.136.208.253
   type: http
   udp: true
-- name: 178.252.134.188:3128
+- name: 2.179.95.57:8080 (3312ms)
+  port: 8080
+  server: 2.179.95.57
+  type: http
+  udp: true
+- name: 188.136.208.242:8080
+  port: 8080
+  server: 188.136.208.242
+  type: http
+  udp: true
+- name: 5.63.9.218:10818
+  port: 10818
+  server: 5.63.9.218
+  type: http
+  udp: true
+- name: 81.90.158.110:3128
   port: 3128
-  server: 178.252.134.188
+  server: 81.90.158.110
   type: socks5
   udp: true
-- name: 178.252.165.226:1080 (4254ms)
-  port: 1080
-  server: 178.252.165.226
-  type: socks5
-  udp: true
-- name: 31.25.92.114:8080
+- name: 87.107.184.182:8080
   port: 8080
-  server: 31.25.92.114
+  server: 87.107.184.182
   type: socks5
   udp: true
-- name: 5.202.191.225:8080 (3257ms)
-  port: 8080
-  server: 5.202.191.225
+- name: 87.107.68.231:1081
+  port: 1081
+  server: 87.107.68.231
   type: socks5
   udp: true
-- name: 87.248.156.7:4080
-  port: 4080
-  server: 87.248.156.7
+- name: 80.210.50.126:9999
+  port: 9999
+  server: 80.210.50.126
   type: socks5
   udp: true
-- name: 109.122.240.157:8118 (159ms)
-  port: 8118
-  server: 109.122.240.157
+- name: 84.241.25.131:10808
+  port: 10808
+  server: 84.241.25.131
   type: socks5
   udp: true
-- name: 5.144.133.195:9050 (167ms)
-  port: 9050
-  server: 5.144.133.195
-  type: socks5
-  udp: true
-- name: 62.60.210.173:1080 (173ms)
+- name: 37.32.43.137:1080 (189ms)
   port: 1080
-  server: 62.60.210.173
+  server: 37.32.43.137
+  type: socks5
+  udp: true
+- name: 195.146.33.226:10808
+  port: 10808
+  server: 195.146.33.226
+  type: socks5
+  udp: true
+- name: 81.29.249.82:5071
+  port: 5071
+  server: 81.29.249.82
   type: socks5
   udp: true
 - name: 195.158.230.124:10803
@@ -86,49 +116,35 @@ proxies:
   udp: true
 - alterId: 0
   cipher: auto
-  name: 185.143.234.120:80 (57ms)
+  name: 37.32.23.122:443
   network: ws
-  port: 80
-  server: 185.143.234.120
+  port: 443
+  server: 37.32.23.122
   tls: false
   type: vmess
   udp: true
-  uuid: b831381d-6324-4d53-ad4f-8cda48b30811
+  uuid: d12bc882-43c7-415e-87c5-2a7fdc8371c0
   ws-opts:
     headers:
-      Host: koochehpas.com
-    path: /graphql
+      Host: ''
+    path: /websocket/
 - alterId: 0
   cipher: auto
-  name: 185.143.233.114:80 (57ms)
+  name: 185.24.255.24:80
   network: ws
   port: 80
-  server: 185.143.233.114
+  server: 185.24.255.24
   tls: false
   type: vmess
   udp: true
-  uuid: cf7f2d7c-d4f8-469a-bfd5-97484bb98d2c
+  uuid: 80abb903-24e0-4dbd-9c2f-a57e9a267555
   ws-opts:
     headers:
-      Host: 185.143.233.114
-    path: /
+      Host: ''
+    path: /ws
 - alterId: 0
   cipher: auto
-  name: 185.143.233.114:80 (57ms)
-  network: ws
-  port: 80
-  server: 185.143.233.114
-  tls: false
-  type: vmess
-  udp: true
-  uuid: cf7f2d7c-d4f8-469a-bfd5-97484bb98d2c
-  ws-opts:
-    headers:
-      Host: 214.zirogame-79.site
-    path: /
-- alterId: 0
-  cipher: auto
-  name: b2n.ir:443 (441ms)
+  name: b2n.ir:443 (294ms)
   network: ws
   port: 443
   server: b2n.ir
@@ -157,40 +173,40 @@ proxy-groups:
   type: select
 - name: IR-ALL
   proxies:
-  - 80.191.46.62:1090 (1184ms)
-  - 195.181.40.34:8080 (180ms)
-  - 178.252.165.226:1080 (4254ms)
-  - 5.202.191.225:8080 (3257ms)
-  - 109.122.240.157:8118 (159ms)
-  - 5.144.133.195:9050 (167ms)
-  - 62.60.210.173:1080 (173ms)
-  - 185.143.234.120:80 (57ms)
-  - 185.143.233.114:80 (57ms)
-  - 185.143.233.114:80 (57ms)
-  - b2n.ir:443 (441ms)
+  - 80.191.46.62:1090 (2201ms)
+  - 195.181.40.34:8080 (5349ms)
+  - 178.252.171.226:8080 (2241ms)
+  - 2.179.95.57:8080 (3312ms)
+  - 37.32.43.137:1080 (189ms)
+  - b2n.ir:443 (294ms)
   type: select
 - name: IR-ALL-RAW
   proxies: &id001
-  - 80.191.46.62:1090 (1184ms)
-  - 78.157.46.76:8090
-  - 195.181.40.34:8080 (180ms)
-  - 94.183.6.226:9090
-  - 94.183.150.152:1081
-  - 78.38.67.95:4153
-  - 178.252.134.188:3128
-  - 178.252.165.226:1080 (4254ms)
-  - 31.25.92.114:8080
-  - 5.202.191.225:8080 (3257ms)
-  - 87.248.156.7:4080
-  - 109.122.240.157:8118 (159ms)
-  - 5.144.133.195:9050 (167ms)
-  - 62.60.210.173:1080 (173ms)
+  - 78.39.253.49:8080
+  - 79.175.133.48:8080
+  - 5.198.179.172:10810
+  - 80.191.46.62:1090 (2201ms)
+  - 5.200.72.58:3129
+  - 195.181.40.34:8080 (5349ms)
+  - 178.252.171.226:8080 (2241ms)
+  - 5.200.72.61:3129
+  - 188.136.208.253:8080
+  - 2.179.95.57:8080 (3312ms)
+  - 188.136.208.242:8080
+  - 5.63.9.218:10818
+  - 81.90.158.110:3128
+  - 87.107.184.182:8080
+  - 87.107.68.231:1081
+  - 80.210.50.126:9999
+  - 84.241.25.131:10808
+  - 37.32.43.137:1080 (189ms)
+  - 195.146.33.226:10808
+  - 81.29.249.82:5071
   - 195.158.230.124:10803
   - 188.213.196.103:10808
-  - 185.143.234.120:80 (57ms)
-  - 185.143.233.114:80 (57ms)
-  - 185.143.233.114:80 (57ms)
-  - b2n.ir:443 (441ms)
+  - 37.32.23.122:443
+  - 185.24.255.24:80
+  - b2n.ir:443 (294ms)
   - 62.60.193.9:2090
   type: select
 - interval: 600
